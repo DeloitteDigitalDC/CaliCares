@@ -7,14 +7,21 @@ var sqlite3 = require('sqlite3'),
 // Create the users table if it doesn't exist
 db.run('select * from users', function(err){
   if(err){
-    db.run('CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT, "username" TEXT, "password" TEXT, "salt" TEXT, "nickName" TEXT, "gravatarHash" TEXT, "pregnant" BOOLEAN)');
+    db.run('CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT, "username" TEXT, "password" TEXT, "salt" TEXT, "nickName" TEXT, "gravatarHash" TEXT, "address" TEXT, "zip" TEXT)');
   }
 });
 
-// create the drugs table if it doesn't exist
+// TODO: delete create the drugs table if it doesn't exist
 db.run('select * from drugs', function(err){
   if(err){
     db.run('CREATE TABLE "drugs" ("db_id" INTEGER PRIMARY KEY AUTOINCREMENT, "username" TEXT, "name" TEXT, "id" TEXT, "expirationDate" TEXT)');
+  }
+});
+
+// create the kids table if it doesn't exist
+db.run('select * from kids', function(err){
+  if(err){
+    db.run('CREATE TABLE "kids" ("kid_id" INTEGER PRIMARY KEY AUTOINCREMENT, "username" TEXT, "name" TEXT, "id" TEXT, "age" TEXT, "birthday" TEXT)');
   }
 });
 
