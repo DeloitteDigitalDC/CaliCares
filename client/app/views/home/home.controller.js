@@ -18,6 +18,9 @@
     facilities.getFacilities().then(function (res) {
       console.log(res.data);
     });
+    facilities.getByZipcode('91762').then(function (res) {
+      console.log(res.data);
+    });
   }
 
 })();

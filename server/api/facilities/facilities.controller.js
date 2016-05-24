@@ -21,14 +21,36 @@ var facilities = {};
  * @param {Object} res - the response objects
  *
  * @example
- * router.get('/:type/event', auth.ensureAuthenticated,  ctrl.getEvent);
+ * router.get('/', auth.ensureAuthenticated,  ctrl.getFacilities);
  */
 facilities.getFacilities = function getFacilities(req, res) {
   var qs     = req.query;
     
   qs.api_key = qs.api_key || apiKey;
 
-  request(cwsUrl, function (err, response, body) {
+  request(cwsUrl + '?$$app_token=' + qs.api_key, function (err, response, body) {
+    res.send(utils.confirmJSON(body));
+  });
+};
+
+/**
+ * Get facility data by zipcode
+ *
+ * @memberof facilities.controller
+ *
+ * @param {Object} req - the request object
+ * @param {Object} res - the response objects
+ *
+ * @example
+ * router.get('/:zipcode', auth.ensureAuthenticated,  ctrl.getByZipcode);
+ */
+facilities.getByZipcode = function getByZipcode(req, res) {
+  var qs     = req.query,
+      params = req.params;
+    
+  qs.api_key = qs.api_key || apiKey;
+
+  request(cwsUrl + '?facility_zip=' + params.zipcode + '&$$app_token=' + qs.api_key, function (err, response, body) {
     res.send(utils.confirmJSON(body));
   });
 };

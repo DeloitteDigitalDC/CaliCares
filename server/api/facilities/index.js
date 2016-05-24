@@ -18,6 +18,7 @@ module.exports = function() {
       ctrl   = require('./facilities.controller');
 
   router.get('/', ctrl.getFacilities);
+  router.get('/:zipcode', ctrl.getByZipcode);
 
   return router;
 };

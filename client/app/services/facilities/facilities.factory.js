@@ -16,19 +16,32 @@
 
   function facilities($http) {
     return {
-      getFacilities  : getFacilities
+      getFacilities  : getFacilities,
+      getByZipcode : getByZipcode
     };
     
     /**
      * gets facilities from api
      *
-     * @memberof user
+     * @memberof facilities
      *
-     * @param {String} username - the username
-     * @param {String} password - the password
+     * @param {String} zipcode - the zipcode to search by
      */
     function getFacilities() {
       var promise = $http.get('/facilities');
+      
+      return promise;
+    }
+    
+    /**
+     * gets facilities from api of a certain zipcode
+     *
+     * @memberof facilities
+     *
+     * @param {String} zipcode - the zipcode to search by
+     */
+    function getByZipcode(zipcode) {
+      var promise = $http.get('/facilities/' + zipcode);
       
       return promise;
     }
