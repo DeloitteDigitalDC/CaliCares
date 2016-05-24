@@ -10,8 +10,8 @@
   <app-section class="bg-pills">
     <div class="row">
       <div class="col-sm-12">
-        <ui-gmap-google-map center='HomeCtrl.map.center' zoom='map.zoom'>
-          <ui-gmap-marker coords="HomeCtrl.marker.coords" idKey="HomeCtrl.marker.idKey"></ui-gmap-marker>
+        <ui-gmap-google-map center="HomeCtrl.map.center" zoom="HomeCtrl.map.zoom">
+          <ui-gmap-markers models="HomeCtrl.markers" idkey="HomeCtrl.markers.id" coords="'markerCoords'" fit="true"></ui-gmap-markers>
         </ui-gmap-google-map>
       </div>
     </div>
