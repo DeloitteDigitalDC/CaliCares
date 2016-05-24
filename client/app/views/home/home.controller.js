@@ -14,7 +14,10 @@
     .module('rex')
     .controller('HomeCtrl', HomeCtrl);
 
-  function HomeCtrl() {
+  function HomeCtrl(facilities) {
+    facilities.getFacilities().then(function (res) {
+      console.log(res.data);
+    });
   }
 
 })();

@@ -14,7 +14,7 @@
     .module('rex')
     .controller('CabinetCtrl', CabinetCtrl);
 
-  function CabinetCtrl(drug, util, user, $state, facilities) {
+  function CabinetCtrl(drug, util, user, $state) {
     var vm = this;
     var recalls;
 
@@ -29,9 +29,6 @@
       vm.drugs = user.getCabinetDrugs();
 
       _queryRecalls();
-      facilities.getFacilities().then(function(res) {
-        console.log(res);
-      });
     }
 
     /**
