@@ -1,22 +1,40 @@
+/** shades of orange **/
+$dark-orange: #c4680c;
+$orange : #E79024;
+$light-orange : #F9A95A;
+
+/** shades of blue **/
+$dark-blue: #0D455E;
+$blue : #406D99; //TODO: get real hex code
+$light-blue: #1F97CC;
+
+/*** shade of aqua ***/
+$dark-aqua: #069EB2;
+$aqua: #6BBDE5; //TODO: get real hex code
+$light-aqua: #31E0F7;
+
+/** shades of gray **/
+$gray : #B3B3B3;
+$medGray : #BCBCBC;
+$lightGray : #E6E6E6;
+$lighterGray : $lightGray;
+
+/* for fonts */
+$fontGray : #4D4D4D;
+
+
+/********* OVER WRITING COLORS FROM LAST TIME, SO STUFF WILL UNIVERSALLY START TO CHANGE **/
+
 /** shades of red **/
 $lava : #B2151B;
 $scarlet : #ED1C24;
 $coral : #F4777C;
 
 /** shades of teal **/
-$darkTeal : #007F76;
-$teal : #00A99D;
-$lightTeal : #66CBC4;
+// $darkTeal : #007F76;
+// $teal : #00A99D;
+// $lightTeal : #66CBC4;
 
-/** shades of gray **/
-$gray : #B3B3B3;
-$medGray : #CCCCCC;
-$lightGray : #E6E6E6;
-$lighterGray : #F7F7F7;
-
-
-
-/* for fonts */
-$fontGray : #4D4D4D;
-
-
+$darkTeal : $dark-blue;
+$teal : $blue;
+$lightTeal : $light-blue;

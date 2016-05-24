@@ -38,7 +38,8 @@
       addCabinetDrug   : addCabinetDrug,
       addDrug          : addDrug,
       deleteCabinetDrug: deleteCabinetDrug,
-      editDrug         : editDrug
+      editDrug         : editDrug,
+      getKids: getKids
     };
 
     /**
@@ -171,6 +172,20 @@
       userObj.drugs = userObj.drugs || [];
 
       return userObj.drugs;
+    }
+
+
+    /**
+     * return just the kid data from the cached user object.
+     *
+     * @memberof user
+     */
+    function getKids() {
+      userObj = userObj || {};
+
+      userObj.kids = userObj.kids || [];
+
+      return userObj.kids;
     }
 
     /**
@@ -337,7 +352,7 @@
 
       getDetails();
 
-      $state.go('main.cabinet', {}, {reload: true});
+      $state.go('main.myFamily', {}, {reload: true});
     }
   }
 

@@ -50,7 +50,7 @@
     "build": "node node_modules/grunt-cli/bin/grunt build",
     "build-full": "node node_modules/grunt-cli/bin/grunt && npm run test-server",
 
-    "server": "node node_modules/grunt-cli/bin/grunt serve",
+    "start": "node node_modules/grunt-cli/bin/grunt serve",
     "docs": "node node_modules/grunt-cli/bin/grunt jsdoc",
     "linter": "node node_modules/grunt-cli/bin/grunt jshint",
 

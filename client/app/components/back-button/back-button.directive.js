@@ -37,12 +37,10 @@
           $state.go('main.search.searchResults');
         }
         else {
-          $state.go('main.cabinet');
+          $state.go('main.myFamily');
         }
       }
     }
   }
 
 })();
-
-

@@ -43,7 +43,7 @@
        */
       function homeRoute() {
         if(typeof(scope.user) !== 'undefined' && scope.user.data) {
-          return 'main.cabinet';
+          return 'main.myFamily';
         }
         else {
           return 'main.home';
@@ -62,5 +62,3 @@
   }
 
 })();
-
-

@@ -49,7 +49,7 @@
         if ($cookies.get('uid')) {
           event.preventDefault();
 
-          $state.go('main.cabinet');
+          $state.go('main.myFamily');
         }
       }
     }

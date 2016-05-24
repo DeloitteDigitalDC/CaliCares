@@ -18,18 +18,19 @@ var user = {};
 user.getDetails = function (req, res) {
   var userObj = {data: {}};
 
-  db.get('SELECT id, username, nickName, gravatarHash, pregnant FROM users WHERE username = ?', req.params.uid.toLowerCase(), function (err, row) {
+  //TODO: make sure pw and hash arent returned
+  db.get('SELECT * FROM users WHERE username = ?', req.params.uid.toLowerCase(), function (err, row) {
     if (err) {
       res.status(500).send(err);
     } else {
       userObj.uid        = req.params.uid;
       userObj.data       = row;
       userObj.data.email = row.username;
-      db.all('SELECT * FROM drugs WHERE username = ?', req.params.uid, function (err, rows) {
+      db.all('SELECT * FROM kids WHERE username = ?', req.params.uid, function (err, rows) {
         if (err) {
           res.status(500).send(err);
         } else {
-          userObj.data.drugs = rows;
+          userObj.data.kids = rows;
           res.send(userObj);
         }
       });
@@ -68,6 +69,27 @@ user.setDetails = function (req, res) {
  */
 user.getCabinetDrugs = function (req, res) {
   db.all('SELECT * FROM drugs WHERE username = ?', req.params.uid.toLowerCase(), function (err, rows) {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.send(rows);
+    }
+  });
+};
+
+
+/**
+ * get cabinet drugs
+ *
+ * @memberof user.controller
+ *
+ * @param req
+ * @param res
+ *
+ * @TODO do we need this function?
+ */
+user.getChildren = function (req, res) {
+  db.all('SELECT * FROM kids WHERE username = ?', req.params.uid.toLowerCase(), function (err, rows) {
     if (err) {
       res.status(500).send(err);
     } else {
