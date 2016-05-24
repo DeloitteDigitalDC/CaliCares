@@ -9,3 +9,4 @@ bower_components
 npm-debug.log
 server/auth/sessions/*.json
 server/db/database.sqlite3
+server/settings.json
