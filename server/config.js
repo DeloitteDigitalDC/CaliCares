@@ -19,6 +19,20 @@ catch(e) {
 }
 
 module.exports = {
+  // url for the cws data
+  cwsUrl: 'https://chhs.data.ca.gov/resource/mffa-c6z5.json',
+
+  // api key for cws data
+  cwsKey: (function () {
+    var key = process.env.CWS_KEY || settings.CWS_KEY ;
+
+    if (!key) {
+      console.log(chalk.magenta('### No API key has been attached. For production please provide and FDA API key. (FDA_KEY=thisisthekeyigotfromfda)'));
+    }
+
+    return key;
+  })(),
+  
   // url for the fda data
   fdaUrl: 'https://api.fda.gov/',
 

@@ -17,7 +17,7 @@ module.exports = function(auth) {
   var router = require('express').Router(),
       ctrl   = require('./fda.controller');
 
-  router.get('/:type/event', auth.ensureAuthenticated,  ctrl.getEvent);
+  router.get('/:type/event', ctrl.getEvent);
 
   router.get('/:type/label', auth.ensureAuthenticated, ctrl.getLabel);
 
