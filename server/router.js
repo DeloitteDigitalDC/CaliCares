@@ -12,6 +12,7 @@
 var config = require('./config');
 
 module.exports = function router(app, auth) {
+  app.use('/facilities', require('./api/facilities/'));
   app.use('/fda', require('./api/fda/')(auth));
   app.use('/user', require('./api/user/')(auth));
 
