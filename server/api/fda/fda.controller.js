@@ -7,13 +7,13 @@
 var request = require('request'),
     config  = require('../../config'),
     utils   = require('../../utils'),
-    cwsUrl  = config.cwsUrl,
-    apiKey  = config.cwsKey;
+    fdaUrl  = config.fdaUrl,
+    apiKey  = config.fdaKey;
 
 var fda = {};
 
 /**
- * Get facility data
+ * Get event data for and of the fda categories
  *
  * @memberof fda.controller
  *
@@ -24,7 +24,6 @@ var fda = {};
  * router.get('/:type/event', auth.ensureAuthenticated,  ctrl.getEvent);
  */
 fda.getEvent = function getEvent(req, res) {
-  console.log("reached");
   var qs     = req.query,
       params = req.params;
 
@@ -35,7 +34,7 @@ fda.getEvent = function getEvent(req, res) {
     keepAlive: true
   };
 
-  request(cwsUrl, function (err, response, body) {
+  request(fdaUrl + params.type + '/event.json', opts, function (err, response, body) {
     res.send(utils.confirmJSON(body));
   });
 };
