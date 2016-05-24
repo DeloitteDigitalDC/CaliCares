@@ -85,9 +85,11 @@ user.getCabinetDrugs = function (req, res) {
  *
  * @param req
  * @param res
+ *
+ * @TODO do we need this function?
  */
 user.getChildren = function (req, res) {
-  db.all('SELECT * FROM drugs WHERE username = ?', req.params.uid.toLowerCase(), function (err, rows) {
+  db.all('SELECT * FROM kids WHERE username = ?', req.params.uid.toLowerCase(), function (err, rows) {
     if (err) {
       res.status(500).send(err);
     } else {
