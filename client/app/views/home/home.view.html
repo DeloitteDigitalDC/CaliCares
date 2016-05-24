@@ -9,8 +9,9 @@
   </div>
   <app-section class="bg-pills">
     <div class="row">
-      <div class="col-sm-12">
+      <div class="col-sm-8 col-sm-offset-4">
         <ui-gmap-google-map center="HomeCtrl.map.center" zoom="HomeCtrl.map.zoom">
+          <!-- <ui-gmap-circle center="HomeCtrl.map.center" radius="HomeCtrl.centerCircle.radius" fill="HomeCtrl.centerCircle.fill" stroke="HomeCtrl.centerCircle.stroke"></ui-gmap-circle> -->
           <ui-gmap-markers models="HomeCtrl.markers" idkey="HomeCtrl.markers.id" coords="'markerCoords'"></ui-gmap-markers>
         </ui-gmap-google-map>
       </div>
