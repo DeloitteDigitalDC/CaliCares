@@ -27,7 +27,7 @@ input.ng-invalid-pattern {
 }
 
 .rex-input, .rex-button {
-  border-radius: 6px;
+  border-radius: 3px;
   font-size: 1.2em;
   border: solid 1px $lightGray ;
 
@@ -44,13 +44,11 @@ input.ng-invalid-pattern {
 }
 
 .rex-button {
-  padding: 10px;
   background-color: $teal;
-  border: solid 4px $teal;
+  border: solid 1px $teal;
   color: #fff;
   width: 100%;
-  font-weight: 700;
-  text-transform: uppercase;
+  text-transform: capitalize;;
 
   &.ng-click-active {
     background-color: $darkTeal;
@@ -80,5 +78,10 @@ input.ng-invalid-pattern {
     border: solid 4px $lava;
     color: #fff;
 
+  }
+
+  &.clear-button {
+    background-color: transparent;
+    border-color: white;
   }
 }
