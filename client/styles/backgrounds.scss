@@ -11,8 +11,8 @@
 }
 .bg-pills {
   background-color: $lighterGray;
-  background: url('../images/ReX-pillpattern.png') no-repeat; /* fallback */
-  background-image: url('../images/ReX-pillpattern.png'), linear-gradient(to bottom, $lightGray 10%, $lighterGray); /* W3C */
+  // background: url('../images/ReX-pillpattern.png') no-repeat; /* fallback */
+  // background-image: url('../images/ReX-pillpattern.png'), linear-gradient(to bottom, $lightGray 10%, $lighterGray); /* W3C */
 }
 
 .bg-coral {
@@ -40,8 +40,12 @@
   background: linear-gradient($teal 10%, $darkTeal);
 }
 
+.bg-dark-blue {
+  background-color: $dark-blue;
+}
+
 .bg-image {
-  background: url('../images/father-child-laughing.jpg') no-repeat scroll 0% 50%;
+  background: url('../images/mother-kid.jpeg') no-repeat scroll 0% 43%;
   background-size: 100%;
   width: 100%;
 }

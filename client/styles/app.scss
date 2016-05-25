@@ -15,6 +15,11 @@
 @import "shared/profile-shared";
 @import "modals";
 
+body {
+  background-color: white;
+}
+
+
 [ui-view].ng-enter, [ui-view].ng-leave {
   transition:all .5s ease-in-out;
 }
@@ -87,6 +92,7 @@
 @import '../app/views/drug-profile/recalls/recalls.style.scss';
 @import '../app/views/drug-profile/uses/uses.style.scss';
 @import '../app/views/drug-profile/warnings/warnings.style.scss';
+@import '../app/views/facility-search/facility-search.style.scss';
 @import '../app/views/home/home.view.scss';
 @import '../app/views/login/login.style.scss';
 @import '../app/views/main/main.view.scss';
