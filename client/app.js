@@ -45,8 +45,8 @@ angular
     });
 
     uiGmapGoogleMapApiProvider.configure({
-      //    key: 'your api key',
-      v: '3.20', //defaults to latest 3.X anyhow
+      key: 'AIzaSyDOQhYDQuKnQ26uTbBTeXXMBEc_sxmTNO0',
+      // v: '3.20', //defaults to latest 3.X anyhow
       libraries: 'weather,geometry,visualization'
     });
   });
