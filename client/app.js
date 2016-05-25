@@ -17,8 +17,8 @@ angular
     'ngSanitize',
     'ngMaterial',
     'ngTouch',
-    'nemLogging',
-    'uiGmapgoogle-maps'
+    'uiGmapgoogle-maps',
+    'nemLogging'
   ])
   .config(function ($httpProvider, $urlRouterProvider, $locationProvider) {
     $httpProvider.defaults.withCredentials = true;
