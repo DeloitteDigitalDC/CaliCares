@@ -19,8 +19,13 @@ h2 {
 
 h3 {
   font-size: 2em;
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: 15px;
+}
+
+h4 {
+  font-weight: 400;
+  margin:0;
 }
 
 a {
@@ -57,6 +62,14 @@ a {
 
 .text-white{
   color: white;
+}
+
+.text-dark-orange {
+  color: $dark-orange;
+}
+
+.text-light-aqua {
+  color: $light-aqua;
 }
 
 /** text helper classes **/
