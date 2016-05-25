@@ -6,7 +6,7 @@ app-header {
 
 // header styles
 .app-header {
-  height: 130px;
+  height: 75px;
   position: relative;
   z-index: 100;
 
@@ -36,10 +36,12 @@ app-header {
 
   .icon-logo-Rex {
     position: absolute;
-    left: 50%;
     margin-left: -85px;
     top: 50%;
     margin-top: -40px;
+    transform: scale(.8);
+    left: 0;
+    margin-left: 0;
   }
 
   .user-account {
