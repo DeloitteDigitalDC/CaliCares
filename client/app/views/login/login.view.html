@@ -1,10 +1,9 @@
 <div class="login access-shared">
   <app-section class="text-center bg-white">
     <h2 class="boldest text-teal">Sign In</h2>
-    <hr class="thickest">
   </app-section>
 
-  <app-section class="bg-pills">
+  <app-section >
     <alert type="warning" ng-if="LoginCtrl.userInfo.username.$invalid">Username required</alert>
 
     <form class="form" name="LoginCtrl.userInfo" ng-submit="LoginCtrl.login()" novalidate>
