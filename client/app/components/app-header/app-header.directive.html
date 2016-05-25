@@ -1,3 +1,11 @@
+<app-section class="user-header" role="banner" ng-class="{'logged-in': user.data}">
+  <section>
+    <div class="user">
+      <span class="username hidden-xs">Welcome back {{user.data.nickName}}!</span>
+      <a class="logout" ui-sref="main.userProfile">Logout</a>
+    </div>
+  </section>
+</app-section>
 <app-section class="bg-white" role="banner">
   <section class="app-header" ng-class="{'logged-in': user.data}">
     <a tabindex="0" ui-sref="{{homeRoute}}" title="ReX" alt="Rex">
@@ -5,14 +13,27 @@
       <span class="sr-only">Return to the Main Page</span>
     </a>
 
-    <a class="user-account" ui-sref="main.userProfile">
-      <rex-icon hash="user.data.gravatarHash" size="48"></rex-icon>
-
-      <span class="username hidden-xs">Hi {{user.data.nickName}}!</span>
-    </a>
-
     <button class="plus-button" ng-class="{'open': headerOptions.open}" ng-click="goTo()" ng-if="headerOptions.display">
       <span class="sr-only">{{headerOptions.open ? 'Go Back to the Cabinet' : 'Add Drug to Cabinet'}}</span>
     </button>
+   
+    <div class="nav-pages">
+      <a class="nav-button" ui-sref="main.myFamily" ui-sref-active="active">
+        <div class="nav-icon family"></div>
+        <span class="nav-name">Your Family</span>
+      </a>
+      <a class="nav-button" ui-sref="main.inbox" ui-sref-active="active">
+        <div class="nav-icon inbox"></div>
+        <span class="nav-name">Inbox</span>
+      </a>
+      <a class="nav-button" ui-sref="main.facilities" ui-sref-active="active">
+        <div class="nav-icon facilities"></div>
+        <span class="nav-name">Facilities Near You</span>
+      </a>
+      <a class="nav-button" ui-sref="main.help" ui-sref-active="active">
+        <div class="nav-icon help"></div>
+        <span class="nav-name">Help</span>
+      </a>
+    </div>
   </section>
 </app-section>
