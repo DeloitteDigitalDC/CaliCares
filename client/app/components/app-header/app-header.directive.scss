@@ -12,7 +12,16 @@ app-header {
   position: relative;
   z-index: 100;
 
-
+  .nav-pages{
+    display: none;
+    position: absolute;
+    right: 0;
+    
+    .nav-button{
+      margin: 0 35px 0 35px;
+    }
+  }
+  
   .plus-button {
     transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.2s;
     position: absolute;
@@ -84,7 +93,82 @@ app-header {
       right: 0;
       margin-left: 0;
     }
+    
+    .nav-pages{
+      display: inline-flex;
+      
+      .nav-button{
+        
+      }
+    }
   }
+}
+
+//User header styles
+.user-header{
+  background-color: white;
+  border-bottom: 1px #ABABAB solid;  
+  .user{
+    display: none;
+    position: absolute;
+    right: 49px;
+    top: 50%;
+    margin-top: -11px;
+  }
+  .username{
+    margin-right: 30px;
+  }
+  
+  // start custom state styles
+  &.logged-in {
+    .user{
+      display: inline-block;
+    }
+    .user-account {
+      display: inline-block;
+      right: 0;
+      margin-left: 0;
+    }
+    
+    .nav-pages{
+      display: inline-block;
+    }
+  }
+}
+
+// icons
+.nav-icon{
+  height: 50px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: 50%;
+  background-position-y: 50%;
+  margin-bottom: 5px;
+  &.family{
+    background-image: url("/images/static/yourfamily_static.svg");
+    .active &{
+      background-image: url("/images/over/yourfamily_over.svg");
+    }
+  }
+  &.inbox{
+    background-image: url("/images/static/inbox_static.svg");
+    .active &{
+      background-image: url("/images/over/inbox_over.svg");
+    }
+  }
+  &.facilities{
+    background-image: url("/images/static/facilities_static.svg");
+    .active &{
+      background-image: url("/images/over/facilities_over.svg");
+    }
+  }
+  &.help{
+    background-image: url("/images/static/help_static.svg");
+    .active &{
+      background-image: url("/images/over/help_over.svg");
+    }
+  }
+  
 }
 
 @media #{$lessThanTablet} {
