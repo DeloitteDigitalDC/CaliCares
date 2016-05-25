@@ -2,15 +2,22 @@
   <app-section class="bg-white">
     <div class="row">
       <div class="col-sm-12">
-        <h2 class="text-teal button-pad">Facility Search</h2>
+        <h2 class="text-teal button-pad">Search for facilities near you</h2>
+        <p>Finding services for support of your adoptive children</p>
       </div>
+    </div>
+  </app-section>
+
+  <app-section class="bg-gray">
+    <div class="row">
+
     </div>
   </app-section>
 
   <app-section class="bg-lighter-gray">
     <div class="row">
       <div class="col-sm-4 locationList">
-        <div class="well" ng-repeat="facility in FacilitySearch.facilitiesInZip track by $index" ng-click="FacilitySearch.getIndex($index)">
+        <div class="card" ng-repeat="facility in FacilitySearch.facilitiesInZip track by $index" ng-click="FacilitySearch.getIndex($index)" ng-class-even="'evenBackground'" ng-class-odd="'oddBackground'">
           <p>{{facility.facility_name}}<p>
           <p>{{facility.facility_type}}<p>
           <p>{{facility.facility_address}}<p>
@@ -18,10 +25,28 @@
         </div>
       </div>
       <div class="col-sm-8">
-        <ui-gmap-google-map center="FacilitySearch.map.center" zoom="FacilitySearch.map.zoom">
+        <ui-gmap-google-map center="FacilitySearch.map.center" zoom="FacilitySearch.map.zoom" options="FacilitySearch.options">
+
           <!-- Code below to be changed to identify map center -->
           <!-- <ui-gmap-circle center="FacilitySearch.map.center" radius="FacilitySearch.centerCircle.radius" fill="FacilitySearch.centerCircle.fill" stroke="FacilitySearch.centerCircle.stroke"></ui-gmap-circle> -->
-          <ui-gmap-markers models="FacilitySearch.markers" idkey="FacilitySearch.markers.id" coords="'markerCoords'" click="FacilitySearch.getId"></ui-gmap-markers>
+
+          <!-- <ui-gmap-markers options="FacilitySearch.markerOptions" models="FacilitySearch.markers" idkey="FacilitySearch.markers.id" coords="'markerCoords'" click="FacilitySearch.windowOnClick">
+            <ui-gmap-windows show="FacilitySearch.windowShow" closeClick="FacilitySearch.closeClick" options="FacilitySearch.windowOptions">
+                <div>{{FacilitySearch.title}}</div>
+            </ui-gmap-windows>
+          </ui-gmap-markers> -->
+
+          <!-- <ui-gmap-window show="FacilitySearch.map.window.show" coords="FacilitySearch.map.window.model.markerCoords" options="FacilitySearch.map.window.options" closeclick="FacilitySearch.map.window.closeClick()" isIconVisibleOnClick="true">
+             <div ng-non-bindable="">test</div>
+          </ui-gmap-window> -->
+
+          <ui-gmap-markers idkey="FacilitySearch.markers.id" models="FacilitySearch.markers" coords="'markerCoords'" events="FacilitySearch.map.markersEvents" options="FacilitySearch.markerOptions">
+          </ui-gmap-markers>
+
+          <ui-gmap-window show="FacilitySearch.map.window.show" coords="FacilitySearch.map.window.model.markerCoords" options="FacilitySearch.map.window.options" closeclick="FacilitySearch.map.window.closeClick()" isIconVisibleOnClick="true">
+             <div>{{FacilitySearch.map.window.model.name}}</div>
+          </ui-gmap-window>
+
         </ui-gmap-google-map>
       </div>
     </div>

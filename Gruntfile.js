@@ -508,7 +508,7 @@ module.exports = function (grunt) {
     'ngAnnotate',
     'autoprefixer',
     'copy:dist',
-    'cdnify',
+    // 'cdnify',
     'cssmin',
     'uglify',
     'filerev',

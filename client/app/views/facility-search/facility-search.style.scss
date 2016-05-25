@@ -4,9 +4,27 @@
     height: 400px;
   }
   .locationList{
-    border: 1px solid black; //colors will be changed based on comps
     height: 400px;
     overflow: scroll;
+  }
+
+  ui-gmap-markers{
+    &.active {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .card{
+    // background-color: $blue;
+  }
+
+  .evenBackground{
+    background-color: $blue;
+  }
+
+  .oddBackground{
+    background-color: $orange;
   }
 
 }
