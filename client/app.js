@@ -17,6 +17,7 @@ angular
     'ngSanitize',
     'ngMaterial',
     'ngTouch',
+    'nemLogging',
     'uiGmapgoogle-maps'
   ])
   .config(function ($httpProvider, $urlRouterProvider, $locationProvider) {

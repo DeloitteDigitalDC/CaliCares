@@ -2,7 +2,7 @@ app-header {
   position: relative;
   z-index: 5;
   display: block;
-  border-bottom: solid 4px $light-orange;
+  border-bottom: solid 5px $light-orange;
   border-top: solid 4px $light-orange;
 }
 
@@ -16,12 +16,12 @@ app-header {
     display: none;
     position: absolute;
     right: 0;
-    
+
     .nav-button{
       margin: 0 35px 0 35px;
     }
   }
-  
+
   .plus-button {
     transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.2s;
     position: absolute;
@@ -48,12 +48,10 @@ app-header {
 
   .icon-logo-Rex {
     position: absolute;
-    margin-left: -85px;
-    top: 50%;
-    margin-top: -40px;
-    transform: scale(.8);
+    margin-top: -50px;
+    transform: scale(.5);
     left: 0;
-    margin-left: 0;
+    margin-left: -50;
   }
 
   .user-account {
@@ -81,24 +79,17 @@ app-header {
 
   // start custom state styles
   &.logged-in {
-    .icon-logo-Rex {
-      transition: all .3s;
-
-      left: 0;
-      margin-left: 0;
-    }
-
     .user-account {
       display: inline-block;
       right: 0;
       margin-left: 0;
     }
-    
+
     .nav-pages{
       display: inline-flex;
-      
+
       .nav-button{
-        
+
       }
     }
   }
@@ -107,7 +98,7 @@ app-header {
 //User header styles
 .user-header{
   background-color: white;
-  border-bottom: 1px #ABABAB solid;  
+  border-bottom: 1px #ABABAB solid;
   .user{
     display: none;
     position: absolute;
@@ -118,7 +109,7 @@ app-header {
   .username{
     margin-right: 30px;
   }
-  
+
   // start custom state styles
   &.logged-in {
     .user{
@@ -129,7 +120,7 @@ app-header {
       right: 0;
       margin-left: 0;
     }
-    
+
     .nav-pages{
       display: inline-block;
     }
@@ -168,7 +159,7 @@ app-header {
       background-image: url("/images/over/help_over.svg");
     }
   }
-  
+
 }
 
 @media #{$lessThanTablet} {
