@@ -2,6 +2,8 @@ app-header {
   position: relative;
   z-index: 5;
   display: block;
+  border-bottom: solid 3px $orange;
+  border-top: solid 3px $orange;
 }
 
 // header styles
@@ -9,6 +11,7 @@ app-header {
   height: 75px;
   position: relative;
   z-index: 100;
+
 
   .plus-button {
     transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.2s;
