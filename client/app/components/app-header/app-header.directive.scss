@@ -4,6 +4,7 @@ app-header {
   display: block;
   border-bottom: solid 4px $light-orange;
   border-top: solid 4px $light-orange;
+  border-bottom: solid 3px $orange;
 }
 
 // header styles
@@ -83,6 +84,35 @@ app-header {
       display: inline-block;
       right: 0;
       margin-left: 0;
+    }
+//User header styles
+.user-header{
+  background-color: white;
+  border-bottom: 1px #ABABAB solid;  
+  .user{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -11px;
+  }
+  .username{
+    margin-right: 30px;
+  }
+  
+  // start custom state styles
+  &.logged-in {
+    .user{
+      display: inline-block;
+    }
+    .user-account {
+      display: inline-block;
+      right: 0;
+      margin-left: 0;
+    }
+    
+    .nav-pages{
+      display: inline-block;
     }
   }
 }

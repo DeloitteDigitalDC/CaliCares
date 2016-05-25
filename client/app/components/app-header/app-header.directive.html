@@ -1,14 +1,16 @@
+<app-section class="user-header" role="banner" ng-class="{'logged-in': user.data}">
+  <section>
+    <div class="user">
+      <span class="username hidden-xs">Welcome back {{user.data.nickName}}!</span>
+      <a class="logout" ui-sref="main.userProfile">Logout</a>
+    </div>
+  </section>
+</app-section>
 <app-section class="bg-white" role="banner">
   <section class="app-header" ng-class="{'logged-in': user.data}">
     <a tabindex="0" ui-sref="{{homeRoute}}" title="ReX" alt="Rex">
       Logo
       <span class="sr-only">Return to the Main Page</span>
-    </a>
-
-    <a class="user-account" ui-sref="main.userProfile">
-      <rex-icon hash="user.data.gravatarHash" size="48"></rex-icon>
-
-      <span class="username hidden-xs">Hi {{user.data.nickName}}!</span>
     </a>
 
     <button class="plus-button" ng-class="{'open': headerOptions.open}" ng-click="goTo()" ng-if="headerOptions.display">
