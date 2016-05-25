@@ -9,11 +9,46 @@
   </div>
   <app-section class="bg-pills">
     <div class="row">
-      <div class="col-sm-8 col-sm-offset-4">
-        <ui-gmap-google-map center="HomeCtrl.map.center" zoom="HomeCtrl.map.zoom">
-          <!-- <ui-gmap-circle center="HomeCtrl.map.center" radius="HomeCtrl.centerCircle.radius" fill="HomeCtrl.centerCircle.fill" stroke="HomeCtrl.centerCircle.stroke"></ui-gmap-circle> -->
-          <ui-gmap-markers models="HomeCtrl.markers" idkey="HomeCtrl.markers.id" coords="'markerCoords'"></ui-gmap-markers>
-        </ui-gmap-google-map>
+      <div class="col-sm-12">
+        <p class="margin-bottom">
+          Keeping track of your family’s health has never been easier. With ReX, you have access to helpful information
+          about the medicine you have in your home. ReX will alert you with personalized warnings and useful tips
+          regarding the contents of your medicine cabinet. When it comes to you and your family’s well being, you can
+          rely on ReX.</div>
+      </p>
+    </div>
+    <div class="row extra-margin-top">
+      <div class="col-sm-4">
+        <card>
+          <h4 class="text-teal">How It Works</h4>
+          <hr class="standard">
+          <p>
+            Your profile customization and drug input enables ReX to provide you tailored warnings, relevant recalls,
+            and further guidance about what’s within your own medicine cabinet.
+          </p>
+        </card>
+      </div>
+      <div class="col-sm-4">
+        <card>
+          <h4 class="text-teal bold">Get Started</h4>
+          <hr class="standard">
+          <p>
+            Getting started is easy. Fill out your profile, inform us about your family members and medications, and
+            leave the rest up to ReX.
+          </p>
+          <button type="button" class="btn rex-button" ui-sref="main.signUp">Sign Up</button>
+
+        </card>
+      </div>
+      <div class="col-sm-4">
+        <card>
+          <h4 class="text-teal bold">Already Have an Account?</h4>
+          <hr class="standard">
+          <p>
+            If you've already created an account, simply sign in to easily manage and monitor your medicine cabinet.
+          </p>
+          <button type="button" class="btn rex-button gray-button" ui-sref="main.login">Sign In</button>
+        </card>
       </div>
     </div>
   </app-section>
