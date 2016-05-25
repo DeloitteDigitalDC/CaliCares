@@ -29,7 +29,7 @@ input.ng-invalid-pattern {
 .rex-input, .rex-button {
   border-radius: 3px;
   font-size: 1.2em;
-  border: solid 1px $lightGray ;
+  border: solid 2px $blue;
 
 }
 
@@ -49,6 +49,7 @@ input.ng-invalid-pattern {
   color: #fff;
   width: 100%;
   text-transform: capitalize;;
+  font-weight:400;
 
   &.ng-click-active {
     background-color: $darkTeal;
