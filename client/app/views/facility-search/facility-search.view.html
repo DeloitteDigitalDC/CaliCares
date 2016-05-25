@@ -1,0 +1,29 @@
+<div class="facility-search">
+  <app-section class="bg-white">
+    <div class="row">
+      <div class="col-sm-12">
+        <h2 class="text-teal button-pad">Facility Search</h2>
+      </div>
+    </div>
+  </app-section>
+
+  <app-section class="bg-lighter-gray">
+    <div class="row">
+      <div class="col-sm-4 locationList">
+        <div class="well" ng-repeat="facility in FacilitySearch.facilitiesInZip track by $index" ng-click="FacilitySearch.getIndex($index)">
+          <p>{{facility.facility_name}}<p>
+          <p>{{facility.facility_type}}<p>
+          <p>{{facility.facility_address}}<p>
+          <p>{{facility.facility_city}},&#32{{facility.facility_state}}&#32{{facility.facility_zip}}<p>
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <ui-gmap-google-map center="FacilitySearch.map.center" zoom="FacilitySearch.map.zoom">
+          <!-- Code below to be changed to identify map center -->
+          <!-- <ui-gmap-circle center="FacilitySearch.map.center" radius="FacilitySearch.centerCircle.radius" fill="FacilitySearch.centerCircle.fill" stroke="FacilitySearch.centerCircle.stroke"></ui-gmap-circle> -->
+          <ui-gmap-markers models="FacilitySearch.markers" idkey="FacilitySearch.markers.id" coords="'markerCoords'" click="FacilitySearch.getId"></ui-gmap-markers>
+        </ui-gmap-google-map>
+      </div>
+    </div>
+  </app-section>
+</div>
