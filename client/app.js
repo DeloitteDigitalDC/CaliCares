@@ -16,7 +16,8 @@ angular
     'ui.router',
     'ngSanitize',
     'ngMaterial',
-    'ngTouch'
+    'ngTouch',
+    'uiGmapgoogle-maps'
   ])
   .config(function ($httpProvider, $urlRouterProvider, $locationProvider) {
     $httpProvider.defaults.withCredentials = true;
