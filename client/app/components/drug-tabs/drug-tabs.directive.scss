@@ -1,19 +1,27 @@
 .drug-tabs {
+  > div {
+
+    padding:0  10px; 
+  }
+  border-bottom: solid 1px $gray;
+  margin-top: 20px;
   div {
     display: inline-block;
-    margin-right: 15px;
+    margin-right: 30px;
   }
   a {
     font-weight: 500;
-    color: $teal;
+    color: $fontGray;
   }
 
   a.pregnancy{
     content: 'Pregnancy & BreastFeeding';
   }
 
-  .active a {
-    color: $darkTeal;
-    text-decoration: underline;
+  .active {
+    border-bottom: solid $blue;
+    a {
+      color: $darkTeal;
+    }
   }
 }

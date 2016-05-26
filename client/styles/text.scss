@@ -30,7 +30,9 @@ h4 {
 
 a {
   font-weight: bold;
-  text-decoration: none;
+  &:hover, &:focus, &:active {
+      text-decoration: none;
+  }
 }
 .light-weight{
   font-weight: 300;

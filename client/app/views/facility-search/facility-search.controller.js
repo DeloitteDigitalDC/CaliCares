@@ -8,13 +8,13 @@
  * @description
  * Controller for rex
  */
-(function () {
+(function() {
 
   angular
     .module('rex')
     .controller('FacilitySearch', FacilitySearch);
 
-  function FacilitySearch(facilities) {
+  function FacilitySearch(facilities, uiGmapGoogleMapApi) {
     var vm = this;
     vm.userZip = '90008'; //need to get from user
     vm.userLatitude = 0;
@@ -43,14 +43,18 @@
     //       opacity: 0.5
     //   },
     // };
-    init();
 
-    function getIndex(index){
+    uiGmapGoogleMapApi.then(function(maps) {
+      init();
+    });
+
+
+    function getIndex(index) {
       //in progress
       console.log(index);
     }
 
-    function getId(marker, eventName, model, eventArgs){
+    function getId(marker, eventName, model, eventArgs) {
       //in progress
       console.log(marker);
       console.log(model);
@@ -63,36 +67,38 @@
     }
 
     //gets coordinates for a given address and adds markers to map
-    function getCoords(geocoder, address, addMarker){
-      geocoder.geocode( { 'address': address }, function(results, status) {
-          if (status == google.maps.GeocoderStatus.OK && results.length > 0) {
-            var location = results[0].geometry.location,
+    function getCoords(geocoder, address, addMarker) {
+      geocoder.geocode({
+        'address': address
+      }, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK && results.length > 0) {
+          var location = results[0].geometry.location,
             lat = location.lat(),
             lng = location.lng();
-            if (addMarker){
-              var marker = {
-                id: String(vm.markers.length+1),
-                markerCoords: {
-                    latitude: lat,
-                    longitude: lng
-                }
+          if (addMarker) {
+            var marker = {
+              id: String(vm.markers.length + 1),
+              markerCoords: {
+                latitude: lat,
+                longitude: lng
               }
-              vm.markers.push(marker);
             }
-            else{
-              vm.userLatitude = lat;
-              vm.userLongitude = lng;
-            }
+            console.log(marker);
+            vm.markers.push(marker);
+          } else {
+            vm.userLatitude = lat;
+            vm.userLongitude = lng;
           }
+        }
       });
     }
 
-    function init(){
+    function init() {
       var geocoder = new google.maps.Geocoder();
       getCoords(geocoder, vm.userZip, false);
-      facilities.getByZipcode(vm.userZip).then(function (res) {
+      facilities.getByZipcode(vm.userZip).then(function(res) {
         vm.facilitiesInZip = res.data;
-        for (var facility in vm.facilitiesInZip){
+        for (var facility in vm.facilitiesInZip) {
           var address = vm.facilitiesInZip[facility].facility_address + ', ' + vm.facilitiesInZip[facility].facility_zip;
           getCoords(geocoder, address, true);
         }
@@ -100,6 +106,6 @@
       });
     };
 
-    }
+  }
 
-    })();
+})();
