@@ -1,12 +1,15 @@
 .bar{
-  // background-color: $dark-gray;
+  background-color: $darkGray;
+
   p{
     color: white;
     transform: translateY(4px);
   }
 }
+
 .inbox {
   .msg-column{
     border-left: 1px $medGray solid;
   }
 }
+
