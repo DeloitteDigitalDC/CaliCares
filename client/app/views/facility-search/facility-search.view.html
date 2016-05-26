@@ -17,11 +17,14 @@
   <app-section class="bg-lighter-gray">
     <div class="row">
       <div class="col-sm-4 locationList">
-        <div class="card" ng-repeat="facility in FacilitySearch.facilitiesInZip track by $index" ng-click="FacilitySearch.getIndex($index)" ng-class-even="'evenBackground'" ng-class-odd="'oddBackground'">
+        <!-- <div class="card" ng-repeat="facility in FacilitySearch.facilitiesInZip track by $index" ng-click="FacilitySearch.getIndex($index)" ng-class-even="'evenBackground'" ng-class-odd="'oddBackground'">
           <p>{{facility.facility_name}}<p>
           <p>{{facility.facility_type}}<p>
           <p>{{facility.facility_address}}<p>
           <p>{{facility.facility_city}},&#32{{facility.facility_state}}&#32{{facility.facility_zip}}<p>
+        </div> -->
+        <div ng-repeat="facility in FacilitySearch.facilitiesInZip track by $index" ng-class-even="'evenBackground'" ng-class-odd="'oddBackground'">
+          <list-card ng-click="FacilitySearch.getIndex($index)" facility="facility"></list-card>
         </div>
       </div>
       <div class="col-sm-8">
