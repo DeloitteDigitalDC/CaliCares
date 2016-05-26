@@ -1,4 +1,8 @@
 .drug-tabs {
+  > div {
+
+    padding:0  10px; 
+  }
   border-bottom: solid 1px $gray;
   margin-top: 20px;
   div {
@@ -14,8 +18,10 @@
     content: 'Pregnancy & BreastFeeding';
   }
 
-  .active a {
-    color: $darkTeal;
-    text-decoration: underline;
+  .active {
+    border-bottom: solid $blue;
+    a {
+      color: $darkTeal;
+    }
   }
 }

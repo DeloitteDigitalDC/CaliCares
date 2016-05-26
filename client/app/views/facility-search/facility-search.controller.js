@@ -83,6 +83,7 @@
                 longitude: lng
               }
             }
+            console.log(marker);
             vm.markers.push(marker);
           } else {
             vm.userLatitude = lat;
