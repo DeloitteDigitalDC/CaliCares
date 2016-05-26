@@ -89,13 +89,22 @@ module.exports = function(app) {
     checkUserExists(req.body.username).then(function() {
       bcrypt.genSalt(10, function(err, salt) {
         bcrypt.hash(req.body.password, salt, function(err, hash) {
-          db.run('INSERT INTO users (username, password, salt, nickName, gravatarHash, address, zip) VALUES(?, ?, ?, ?, ?, ?, ?)', [req.body.username.toLowerCase(),
+          db.run('INSERT INTO users (username, password, salt, nickName, gravatarHash, address, zip, headHousehold, phone1, phone2, homeType, providerNum, email1, email2, insurance) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
+              req.body.username.toLowerCase(),
               hash,
               salt,
               req.body.firstName,
               md5(req.body.username.toLowerCase()),
               '360 Grand Ave, Oakland, CA 94610',
-              '94610'
+              '94610',
+              'Chuck Taylor, Sarah Taylor',
+              '123-456-7890',
+              '555-555-5555',
+              'Foster',
+              '1234-5678',
+              req.body.username.toLowerCase(),
+              'myemail@email.com',
+              'USAA'
             ],
             function(err) {
               if (err) {

@@ -7,7 +7,7 @@ var sqlite3 = require('sqlite3'),
 // Create the users table if it doesn't exist
 db.run('select * from users', function(err){
   if(err){
-    db.run('CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT, "username" TEXT, "password" TEXT, "salt" TEXT, "nickName" TEXT, "gravatarHash" TEXT, "address" TEXT, "zip" TEXT)');
+    db.run('CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT, "username" TEXT, "password" TEXT, "salt" TEXT, "nickName" TEXT, "gravatarHash" TEXT, "address" TEXT, "zip" TEXT, "headHousehold" TEXT, "phone1" TEXT, "phone2" TEXT, "homeType" TEXT, "providerNum" TEXT, "email1" TEXT, "email2" TEXT, "insurance" TEXT)');
   }
 });
 

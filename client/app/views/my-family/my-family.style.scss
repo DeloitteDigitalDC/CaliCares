@@ -2,6 +2,19 @@
   h3{
     font-size: 1.75em;
     font-weight: 300;
-    margin: 0;
+    color: $blue;
+  }
+
+  .tab-section {
+    padding-top: 0;
+    margin-top: -15px;
+  }
+
+  .tab-sub-section {
+    border-top: solid 1px $gray;
+    padding: 20px 0;
+    .row {
+      margin-bottom: 10px;
+    }
   }
 }

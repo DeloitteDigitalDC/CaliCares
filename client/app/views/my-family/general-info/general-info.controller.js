@@ -14,11 +14,22 @@
     .module('rex')
     .controller('GeneralInfo', GeneralInfo);
 
-  function GeneralInfo() {
+  function GeneralInfo(user) {
     var vm = this;
 
-    vm.foo = [];
+    init();
+
+    /**
+     * @memberof MyFamily
+     */
+    function init() {
+      // vm.kids = user.getKids();
+      user.getDetails().then(function (userData) {
+          vm.user = userData.data.data;
+          console.log(vm.user);
+
+      });
+    }
   }
 
 })();
-
