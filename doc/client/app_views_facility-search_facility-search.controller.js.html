@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: app/views/facility-search/facility-search.controller.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <link type="text/css" rel="stylesheet" href="styles/angular-blueprint.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: app/views/facility-search/facility-search.controller.js</h1>
+
+    
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
+
+/**
+ * @ngdoc controller
+ *
+ * @name FacilitySearch
+ *
+ * @description
+ * Controller for rex
+ */
+(function () {
+
+  angular
+    .module('rex')
+    .controller('FacilitySearch', FacilitySearch);
+
+  function FacilitySearch(facilities) {
+    var vm = this;
+    vm.userZip = '90008'; //need to get from user
+    vm.userLatitude = 0;
+    vm.userLongitude = 0;
+    vm.facilitiesInZip = [];
+    vm.getIndex = getIndex;
+    vm.getId = getId;
+    vm.map = {
+      center: {
+        latitude: 0,
+        longitude: 0
+      },
+      zoom: 13,
+      markersEvents: {
+          click: function(marker, eventName, model, eventArgs) {
+            console.log(model);
+            vm.map.window.model = model;
+            vm.map.window.show = true;
+          }
+      },
+      window: {
+        marker: {},
+        show: false,
+        closeClick: function() {
+          this.show = false;
+        },
+        options: {}
+      }
+    };
+    vm.markers = [];
+    // To do: Code below to show center of map
+    // vm.centerCircle = {
+    //   radius: 10,
+    //   stroke: {
+    //       color: '#08B21F',
+    //       weight: 2,
+    //       opacity: 1
+    //   },
+    //   fill: {
+    //       color: '#08B21F',
+    //       opacity: 0.5
+    //   },
+    // };
+
+    vm.markerOptions = {
+      visible: true
+    };
+
+    vm.windowOptions = {
+      visible: false,
+      content: 'test'
+    };
+
+    vm.windowShow = false;
+
+    vm.windowOnClick = function() {
+      console.log('in window on click');
+      console.log(vm.windowOptions.visible);
+      vm.windowOptions.visible = !vm.windowOptions.visible;
+      vm.windowShow = !vm.windowShow;
+    };
+
+    vm.closeClick = function() {
+       vm.windowOptions.visible = false;
+       vm.windowShow = false;
+    };
+
+    vm.title = "Window Title!";
+
+    var styleArray = [ //any style array defined in the google documentation you linked
+      {
+        featureType: "all",
+        stylers: [
+          { saturation: -80 }
+        ]
+      },{
+        featureType: "road.arterial",
+        elementType: "geometry",
+        stylers: [
+          { hue: "#00ffee" },
+          { saturation: 50 }
+        ]
+      },{
+        featureType: "poi.business",
+        elementType: "labels",
+        stylers: [
+          { visibility: "off" }
+        ]
+      }
+    ];
+    vm.options = {
+       styles: styleArray
+    };
+
+    init();
+
+    function getIndex(index){
+      //in progress
+      console.log(vm.markers[index]);
+      vm.map.window.model = vm.markers[index];
+      vm.map.window.show = true;
+    }
+
+    function getId(marker, eventName, model, eventArgs){
+      //in progress
+      console.log(marker);
+      console.log(model);
+    }
+
+    //sets correct map center based on user zipcode
+    function configureMap() {
+      vm.map.center.latitude = vm.userLatitude;
+      vm.map.center.longitude = vm.userLongitude;
+    }
+
+    //gets coordinates for a given address and adds markers to map
+    function getCoords(geocoder, address, addMarker, facilityName){
+      geocoder.geocode( { 'address': address }, function(results, status) {
+          if (status == google.maps.GeocoderStatus.OK &amp;&amp; results.length > 0) {
+            var location = results[0].geometry.location,
+            lat = location.lat(),
+            lng = location.lng();
+            if (addMarker){
+              var marker = {
+                id: String(vm.markers.length),
+                name: facilityName,
+                markerCoords: {
+                    latitude: lat,
+                    longitude: lng
+                },
+                options: {
+                  visible: true
+                }
+              }
+              vm.markers.push(marker);
+            }
+            else{
+              vm.userLatitude = lat;
+              vm.userLongitude = lng;
+            }
+          }
+      });
+    }
+
+    function init(){
+      var geocoder = new google.maps.Geocoder();
+      getCoords(geocoder, vm.userZip, false);
+      facilities.getByZipcode(vm.userZip).then(function (res) {
+        vm.facilitiesInZip = res.data;
+        for (var facility in vm.facilitiesInZip){
+          var address = vm.facilitiesInZip[facility].facility_address + ', ' + vm.facilitiesInZip[facility].facility_zip;
+          getCoords(geocoder, address, true, vm.facilitiesInZip[facility].facility_name);
+        }
+        configureMap();
+      });
+    };
+
+    }
+
+    })();
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="module-rex.html">rex</a></li></ul><h3>controller</h3><ul><li><a href="AddDrugModalCtrl.html">AddDrugModalCtrl</a></li><li><a href="AppCtrl.html">AppCtrl</a></li><li><a href="DrugProfileCtrl.html">DrugProfileCtrl</a></li><li><a href="FacilitySearch.html">FacilitySearch</a></li><li><a href="HomeCtrl.html">HomeCtrl</a></li><li><a href="LoginCtrl.html">LoginCtrl</a></li><li><a href="MainCtrl.html">MainCtrl</a></li><li><a href="MyFamily.html">MyFamily</a></li><li><a href="PregnancyCtrl.html">PregnancyCtrl</a></li><li><a href="RecallsCtrl.html">RecallsCtrl</a></li><li><a href="RemoveDrugModal.html">RemoveDrugModal</a></li><li><a href="Search.html">Search</a></li><li><a href="SearchResults.html">SearchResults</a></li><li><a href="SignUp.html">SignUp</a></li><li><a href="UserProfileCtrl.html">UserProfileCtrl</a></li><li><a href="UsesCtrl.html">UsesCtrl</a></li><li><a href="WarningsCtrl.html">WarningsCtrl</a></li></ul><h3>directive</h3><ul><li><a href="appFooter.html">appFooter</a></li><li><a href="appHeader.html">appHeader</a></li><li><a href="appSection.html">appSection</a></li><li><a href="backButton.html">backButton</a></li><li><a href="card.html">card</a></li><li><a href="cardFade.html">cardFade</a></li><li><a href="drugCard.html">drugCard</a></li><li><a href="drugTabs.html">drugTabs</a></li><li><a href="plusButton.html">plusButton</a></li><li><a href="rexgAutofocus.html">rexgAutofocus</a></li><li><a href="searchInput.html">searchInput</a></li><li><a href="userIcon.html">userIcon</a></li></ul><h3>constant</h3><ul><li><a href="CONST.html">CONST</a></li></ul><h3>factory</h3><ul><li><a href="drugs.html">drugs</a></li><li><a href="facilities.html">facilities</a></li><li><a href="modals.html">modals</a></li><li><a href="notify.html">notify</a></li><li><a href="user.html">user</a></li><li><a href="util.html">util</a></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> 
+    using <a href="https://github.com/allenhwkim/angular-jsdoc">Angular-JSDoc template </a> 
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+<script>
+  // scroll to the current document navigation
+  var href=window.location.href.match(/\/([^\/]+$)/)[1];
+  if (currentNav = document.querySelector("nav a[href='"+href+"']"))
+    currentNav.scrollIntoView(true);
+  // scroll to the top of the document
+  if (window.location.hash == "")
+    document.querySelector("body").scrollIntoView(true);
+  // adjust the width of main section by navigation width
+  var navWidth = document.querySelector('nav').getBoundingClientRect().width;
+  var mainWidth = document.querySelector('#main').getBoundingClientRect().width;
+  document.querySelector('#main').style.width = (mainWidth - navWidth)+'px';
+</script>
+</body>
+</html>
