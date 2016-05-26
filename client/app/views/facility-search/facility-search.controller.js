@@ -17,11 +17,13 @@
   function FacilitySearch(facilities, uiGmapGoogleMapApi) {
     var vm = this;
     vm.userZip = '90008'; //need to get from user
+    vm.zipcodeSearch = vm.userZip;
     vm.userLatitude = 0;
     vm.userLongitude = 0;
     vm.facilitiesInZip = [];
     vm.getIndex = getIndex;
     vm.getId = getId;
+    vm.searchZip = searchZip;
     vm.map = {
       center: {
         latitude: 0,
@@ -68,46 +70,49 @@
       content: 'test'
     };
 
-    vm.windowShow = false;
+    function searchZip() {
+      vm.userZip = vm.zipcodeSearch;
+      init();
+    }
 
-    vm.windowOnClick = function() {
-      console.log('in window on click');
-      console.log(vm.windowOptions.visible);
-      vm.windowOptions.visible = !vm.windowOptions.visible;
-      vm.windowShow = !vm.windowShow;
-    };
+    // WILL REMOVE AFTER FIXING
+    // vm.windowOnClick = function() {
+    //   console.log('in window on click');
+    //   console.log(vm.windowOptions.visible);
+    //   vm.windowOptions.visible = !vm.windowOptions.visible;
+    //   vm.windowShow = !vm.windowShow;
+    // };
+    //
+    // vm.closeClick = function() {
+    //    vm.windowOptions.visible = false;
+    //    vm.windowShow = false;
+    // };
 
-    vm.closeClick = function() {
-       vm.windowOptions.visible = false;
-       vm.windowShow = false;
-    };
-
-    vm.title = "Window Title!";
-
-    var styleArray = [ //any style array defined in the google documentation you linked
-      {
-        featureType: "all",
-        stylers: [
-          { saturation: -80 }
-        ]
-      },{
-        featureType: "road.arterial",
-        elementType: "geometry",
-        stylers: [
-          { hue: "#00ffee" },
-          { saturation: 50 }
-        ]
-      },{
-        featureType: "poi.business",
-        elementType: "labels",
-        stylers: [
-          { visibility: "off" }
-        ]
-      }
-    ];
-    vm.options = {
-       styles: styleArray
-    };
+    //CODE BELOW TO ADD STYLES TO MAP IF WE CHOOSE TO DO SO
+    // var styleArray = [ //any style array defined in the google documentation you linked
+    //   {
+    //     featureType: "all",
+    //     stylers: [
+    //       { saturation: -80 }
+    //     ]
+    //   },{
+    //     featureType: "road.arterial",
+    //     elementType: "geometry",
+    //     stylers: [
+    //       { hue: "#00ffee" },
+    //       { saturation: 50 }
+    //     ]
+    //   },{
+    //     featureType: "poi.business",
+    //     elementType: "labels",
+    //     stylers: [
+    //       { visibility: "off" }
+    //     ]
+    //   }
+    // ];
+    // vm.options = {
+    //    styles: styleArray
+    // };
 
     uiGmapGoogleMapApi.then(function(maps) {
       init();
@@ -154,10 +159,6 @@
                     latitude: lat,
                     longitude: lng
                 }
-                // ,
-                // options: {
-                //   visible: true
-                // }
               }
             vm.markers.push(marker);
           } else {
@@ -170,9 +171,12 @@
 
     function init() {
       var geocoder = new google.maps.Geocoder();
+      vm.markers = [];
+      vm.facilitiesInZip = [];
       getCoords(geocoder, vm.userZip, false);
       facilities.getByZipcode(vm.userZip).then(function(res) {
         vm.facilitiesInZip = res.data;
+        console.log(res.data);
         for (var facility in vm.facilitiesInZip) {
           var address = vm.facilitiesInZip[facility].facility_address + ', ' + vm.facilitiesInZip[facility].facility_zip;
           getCoords(geocoder, address, true, vm.facilitiesInZip[facility].facility_name, vm.facilitiesInZip[facility].facility_type);

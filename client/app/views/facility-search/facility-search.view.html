@@ -13,8 +13,11 @@
       <div class="col-sm-6">
         <h4><span class="bold">{{FacilitySearch.facilitiesInZip.length}} locations</span> near zipcode: {{FacilitySearch.userZip}}</h4>
       </div>
-      <div class="pull-xs-right">
-        <input type="text" class="form-control" id="zip">
+      <div class="zipcodeSearch input-group">
+        <input type="text" class="form-control" placeholder="Enter 5-digit zipcode" ng-model="FacilitySearch.zipcodeSearch">
+        <span class="input-group-btn">
+          <button class="btn btn-secondary" type="button" ng-click="FacilitySearch.searchZip()">Search</button>
+        </span>
       </div>
     </div>
   </app-section>
@@ -22,18 +25,13 @@
   <app-section class="bg-lighter-gray mapSection">
     <div class="row">
       <div class="col-sm-4 locationList">
-        <!-- <div class="card" ng-repeat="facility in FacilitySearch.facilitiesInZip track by $index" ng-click="FacilitySearch.getIndex($index)" ng-class-even="'evenBackground'" ng-class-odd="'oddBackground'">
-          <p>{{facility.facility_name}}<p>
-          <p>{{facility.facility_type}}<p>
-          <p>{{facility.facility_address}}<p>
-          <p>{{facility.facility_city}},&#32{{facility.facility_state}}&#32{{facility.facility_zip}}<p>
-        </div> -->
         <div class="card-wrapper" ng-repeat="facility in FacilitySearch.facilitiesInZip track by $index" ng-class-even="'evenBackground'" ng-class-odd="'oddBackground'">
           <list-card ng-click="FacilitySearch.getIndex($index)" facility="facility"></list-card>
         </div>
       </div>
       <div class="col-sm-8">
         <ui-gmap-google-map center="FacilitySearch.map.center" zoom="FacilitySearch.map.zoom">
+        <!-- WILL REMOVE CODE BELOW ONCE MARKER WINDOW PLACEMENT ISSUE IS RESOLVED -->
         <!-- <ui-gmap-google-map center="FacilitySearch.map.center" zoom="FacilitySearch.map.zoom" options="FacilitySearch.options"> -->
 
           <!-- Code below to be changed to identify map center -->
