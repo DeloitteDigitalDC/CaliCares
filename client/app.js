@@ -26,6 +26,7 @@ angular
     $locationProvider.html5Mode(true);
 
     $urlRouterProvider.when('', '/'); // redirect to root if the state is ''
+    $urlRouterProvider.when('/my-family', '/my-family/general-info'); // redirect to root if the state is ''
 
     $urlRouterProvider.otherwise('/'); // redirect to root if state is not found
 

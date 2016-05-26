@@ -1,11 +1,13 @@
 .drug-tabs {
+  border-bottom: solid 1px $gray;
+  margin-top: 20px;
   div {
     display: inline-block;
-    margin-right: 15px;
+    margin-right: 30px;
   }
   a {
     font-weight: 500;
-    color: $teal;
+    color: $fontGray;
   }
 
   a.pregnancy{
