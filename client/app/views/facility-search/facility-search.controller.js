@@ -24,6 +24,7 @@
     vm.getIndex = getIndex;
     vm.getId = getId;
     vm.searchZip = searchZip;
+    vm.openMarker = null;
     vm.map = {
       center: {
         latitude: 0,
@@ -32,8 +33,15 @@
       zoom: 13,
       markersEvents: {
           click: function(marker, eventName, model, eventArgs) {
+            vm.map.window.show = false;
+            if(vm.openMarker !== null){
+              vm.map.window.show = false
+            };
+            console.log(vm.markers);
+            // vm.map.window.show = null;
             vm.map.window.model = model;
             vm.map.window.show = true;
+            vm.openMarker = model;
           }
       },
       window: {

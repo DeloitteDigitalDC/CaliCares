@@ -32,6 +32,7 @@
         scope.body = scope.facility.facility_address;
         scope.address2 = addressLine2;
         scope.phone = scope.facility.facility_telephone_number;
+        scope.capacity = scope.facility.facility_capacity;
       }
     }
   }

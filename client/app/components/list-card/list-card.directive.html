@@ -1,7 +1,5 @@
-<app-section class="appSection">
+<!-- <app-section class="appSection">
   <section class="list-card">
-
-
     <div class="row">
       <div class="col-sm-4">
         <h1>{{header}}<h1>
@@ -13,12 +11,36 @@
             <p class="phone">{{phone}}</p>
           </div>
           <div class="col-md-3 capacityDiv">
-            <span class="capacity">0</span>
+            <span class="capacity">{{capacity}}</span>
             <p>capacity</p>
           </div>
         </div>
       </div>
     </div>
+  </section>
+</app-section> -->
 
+<app-section class="appSection">
+  <section class="list-card">
+    <div class="row">
+      <div class="col-xs-8">
+        <p class="title"><span class="bold">{{header}}<span><p>
+      </div>
+      <div class="col-xs-12">
+        <p><span class="bold">{{subheader}}</span></p>
+      </div>
+        <div class="row">
+          <div class="col-md-8">
+            <p>{{body}}</p>
+            <p>{{address2}}</p>
+            <p class="phone">{{phone}}</p>
+          </div>
+          <div class="col-md-3 capacityDiv">
+            <span class="capacity">{{capacity}}</span>
+            <p>capacity</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </app-section>
