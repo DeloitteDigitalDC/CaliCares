@@ -1,0 +1,18 @@
+<div>
+  <section class="inbox-msg">
+    <h3>Event Details</h3>
+    <p><span class="bold">Child: </span>{{messages[0].child}}</p>
+    <p><span class="bold">Date Created: </span>{{messages[0].dateCreated}}</p>
+    <p><span class="bold">Event Type: </span>{{messages[0].eventType}}</p>
+    <p><span class="bold">Event No.: </span>{{messages[0].eventNo}}</p>
+    <p><span class="bold">Caseworker: </span>{{messages[0].caseworker}}</p>
+    <p><span class="bold">Description: </span>{{messages[0].description}}</p>
+    <hr>
+    <h3>Comment History</h3>
+    <div class="comment" ng-repeat="comment in messages[0].comments">
+      <p><span class="bold">{{comment.commentor}}</span> added a comment - at <span class="italics">{{comment.time}}</span></p>
+      <p>{{comment.text}}</p>
+    </div>
+    <button class="rex-button">Add Comment</button>
+  </section>
+</div>
