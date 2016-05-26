@@ -83,6 +83,7 @@ body {
 @import '../app/components/card/card.directive.scss';
 @import '../app/components/drug-card/drug-card.directive.scss';
 @import '../app/components/drug-tabs/drug-tabs.directive.scss';
+@import '../app/components/inbox-msg/inbox-msg.directive.scss';
 @import '../app/components/plus-button/plus-button.directive.scss';
 @import '../app/components/search-input/search-input.directive.scss';
 @import '../app/components/user-icon/user-icon.directive.scss';
@@ -94,6 +95,7 @@ body {
 @import '../app/views/drug-profile/warnings/warnings.style.scss';
 @import '../app/views/facility-search/facility-search.style.scss';
 @import '../app/views/home/home.view.scss';
+@import '../app/views/inbox/inbox.style.scss';
 @import '../app/views/login/login.style.scss';
 @import '../app/views/main/main.view.scss';
 @import '../app/views/my-family/children/children.style.scss';
