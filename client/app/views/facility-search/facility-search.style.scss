@@ -6,6 +6,7 @@
   .locationList{
     height: 400px;
     overflow: scroll;
+    overflow-x: hidden;
   }
 
   ui-gmap-markers{
@@ -21,7 +22,7 @@
 
   .evenBackground{
     background-color: $lightGray;
-    h2{
+    h2, p{
       color: $fontGray;
     }
   }
@@ -29,5 +30,22 @@
   .oddBackground{
     background-color: $gray;
   }
+
+  .mapSection{
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  //need to move this to list-card directive css, wasnt working before
+  list-card:focus{
+    outline: none;
+  }
+
+  .card-wrapper:focus{
+    border-left: 5px solid $blue;
+  }
+
+
 
 }

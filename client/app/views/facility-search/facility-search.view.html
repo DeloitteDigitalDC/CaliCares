@@ -10,11 +10,16 @@
 
   <app-section class="bg-gray">
     <div class="row">
-
+      <div class="col-sm-6">
+        <h4><span class="bold">{{FacilitySearch.facilitiesInZip.length}} locations</span> near zipcode: {{FacilitySearch.userZip}}</h4>
+      </div>
+      <div class="pull-xs-right">
+        <input type="text" class="form-control" id="zip">
+      </div>
     </div>
   </app-section>
 
-  <app-section class="bg-lighter-gray">
+  <app-section class="bg-lighter-gray mapSection">
     <div class="row">
       <div class="col-sm-4 locationList">
         <!-- <div class="card" ng-repeat="facility in FacilitySearch.facilitiesInZip track by $index" ng-click="FacilitySearch.getIndex($index)" ng-class-even="'evenBackground'" ng-class-odd="'oddBackground'">
@@ -23,12 +28,13 @@
           <p>{{facility.facility_address}}<p>
           <p>{{facility.facility_city}},&#32{{facility.facility_state}}&#32{{facility.facility_zip}}<p>
         </div> -->
-        <div ng-repeat="facility in FacilitySearch.facilitiesInZip track by $index" ng-class-even="'evenBackground'" ng-class-odd="'oddBackground'">
+        <div class="card-wrapper" ng-repeat="facility in FacilitySearch.facilitiesInZip track by $index" ng-class-even="'evenBackground'" ng-class-odd="'oddBackground'">
           <list-card ng-click="FacilitySearch.getIndex($index)" facility="facility"></list-card>
         </div>
       </div>
       <div class="col-sm-8">
-        <ui-gmap-google-map center="FacilitySearch.map.center" zoom="FacilitySearch.map.zoom" options="FacilitySearch.options">
+        <ui-gmap-google-map center="FacilitySearch.map.center" zoom="FacilitySearch.map.zoom">
+        <!-- <ui-gmap-google-map center="FacilitySearch.map.center" zoom="FacilitySearch.map.zoom" options="FacilitySearch.options"> -->
 
           <!-- Code below to be changed to identify map center -->
           <!-- <ui-gmap-circle center="FacilitySearch.map.center" radius="FacilitySearch.centerCircle.radius" fill="FacilitySearch.centerCircle.fill" stroke="FacilitySearch.centerCircle.stroke"></ui-gmap-circle> -->
