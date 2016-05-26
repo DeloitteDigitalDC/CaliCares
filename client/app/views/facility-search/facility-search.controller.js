@@ -110,6 +110,7 @@
     };
 
     uiGmapGoogleMapApi.then(function(maps) {
+      debugger;
       init();
     });
 
@@ -142,7 +143,7 @@
             lng = location.lng();
             if (addMarker){
               var marker = {
-                id: String(vm.markers.length),
+                id: String(vm.markers.length + 1),
                 name: facilityName,
                 markerCoords: {
                     latitude: lat,
@@ -159,6 +160,8 @@
             vm.userLongitude = lng;
           }
         })
+
+        console.log(vm.markers);
       };
 
     function init() {
