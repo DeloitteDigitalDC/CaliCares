@@ -16,6 +16,9 @@
 
   function GeneralInfo(user) {
     var vm = this;
+    vm.user = {};
+    vm.certifications = [];
+    vm.services = [];
 
     init();
 
@@ -27,6 +30,14 @@
       user.getDetails().then(function (userData) {
           vm.user = userData.data.data;
           console.log(vm.user);
+
+          _.forEach(vm.user.members, function(member){
+            vm.certifications.push(member.certifications);
+          });
+
+          _.forEach(vm.user.members, function(member){
+            vm.services.push(member.services);
+          });
 
       });
     }

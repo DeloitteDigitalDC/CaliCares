@@ -13,7 +13,7 @@
   .tab-sub-section {
     border-top: solid 1px $gray;
     padding: 20px 0;
-    .row {
+    .col-sm-6 > div, .col-sm-5 > div  {
       margin-bottom: 10px;
     }
   }

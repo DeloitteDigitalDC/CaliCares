@@ -1,91 +1,49 @@
-
 <section class="general-info profile-tab-content">
   <div class="tab-sub-section">
-      <h3>Household Info</h3>
-      <div class="row">
-        <div class="col-sm-6">
-          <b>Address:&nbsp;</b>{{GeneralInfo.user.address}}
-        </div>
-        <div class="col-sm-6">
-          <b>Type of Home:&nbsp;</b>{{GeneralInfo.user.homeType}}
-        </div>
+    <h3>Household Information</h3>
+    <div class="row">
+      <div class="col-sm-6">
+        <div><b>Address:&nbsp;</b>{{GeneralInfo.user.address}}</div>
+        <div><b>Primary Phone:&nbsp;</b>{{GeneralInfo.user.phone1}}</div>
+        <div><b>Primary Email:&nbsp;</b>{{GeneralInfo.user.email1}}</div>
+        <div><b>Alternate Phone:&nbsp;</b>{{GeneralInfo.user.phone2}}</div>
+        <div><b>Alternate Email:&nbsp;</b>{{GeneralInfo.user.email2}}</div>
       </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <b>Head of HouseHold:&nbsp;</b>{{GeneralInfo.user.headHousehold}}
-        </div>
-        <div class="col-sm-6">
-          <b>Provider Number:&nbsp;</b>{{GeneralInfo.user.providerNum}}
-        </div>
+      <div class="col-sm-6">
+        <div> <b>Type of Home:&nbsp;</b>{{GeneralInfo.user.homeType}}</div>
+        <div><b>Provider Number:&nbsp;</b>{{GeneralInfo.user.providerNum}}</div>
+        <div><b>Insurance:&nbsp;</b>{{GeneralInfo.user.insurance}}</div>
       </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <b>Primary Phone:&nbsp;</b>{{GeneralInfo.user.phone1}}
-        </div>
-        <div class="col-sm-6">
-          <b>Backup Phone:&nbsp;</b>{{GeneralInfo.user.phone2}}
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <b>Primary Email:&nbsp;</b>{{GeneralInfo.user.email1}}
-        </div>
-        <div class="col-sm-6">
-          <b>Backup Email:&nbsp;</b>{{GeneralInfo.user.email2}}
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <b>Insurance:&nbsp;</b>{{GeneralInfo.user.insurance}}
-        </div>
-      </div>
+    </div>
   </div>
   <div class="tab-sub-section">
-      <h3>Household Preferences</h3>
-      <div class="row">
-        <div class="col-sm-6">
-          <b>Genders:&nbsp;</b>Boys and Girls
-        </div>
-        <div class="col-sm-6">
-          <b>Unable to accomadate:&nbsp;</b>Wheelchair
-        </div>
+    <h3>Household Preferences</h3>
+    <div class="row">
+      <div class="col-sm-6">
+        <div><b>Genders:&nbsp;</b>{{GeneralInfo.user.prefGender}}</div>
+        <div><b>Age Range:&nbsp;</b>{{GeneralInfo.user.prefAge}}</div>
+        <div><b>Number of Children:&nbsp;</b>{{GeneralInfo.user.prefNumChildren}}</div>
       </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <b>Age Ranges:&nbsp;</b>4-12
-        </div>
-        <div class="col-sm-6">
-          <b>Languages Preferred:&nbsp;</b>English, Spanish
-        </div>
+      <div class="col-sm-6">
+        <div><b>Unable to accomodate:&nbsp;</b>{{GeneralInfo.user.prefUnable}}</div>
+        <div><b>Languages:&nbsp;</b>{{GeneralInfo.user.prefLanguages}}</div>
       </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <b>Number children able to accomadate:&nbsp;</b>3
-        </div>
-      </div>
+    </div>
   </div>
   <div class="tab-sub-section">
-      <h3>Household Services Offered</h3>
-      <ul>
-        <li>
-          Academic Guidance
-        </li>
-        <li>
-          Behavior Management
-        </li>
-      </ul>
+    <h3>Household Services Offered</h3>
+    <ul>
+      <li ng-repeat="service in GeneralInfo.services">
+        {{service}}
+      </li>
+    </ul>
   </div>
   <div class="tab-sub-section">
-      <h3>Household Certificiations Offered</h3>
-      <ul>
-        <li>
-          Academic Guidance
-        </li>
-        <li>
-          Behavior Management
-        </li>
-      </ul>
+    <h3>Household Certificiations Offered</h3>
+    <ul>
+      <li ng-repeat="cert in GeneralInfo.certifications">
+        {{cert}}
+      </li>
+    </ul>
   </div>
-
-
 </section>
