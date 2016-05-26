@@ -1,17 +1,15 @@
-<div>
+<div class="my-family">
   <app-section class="bg-white">
     <div class="row">
       <div class="col-sm-12">
         <h2 class="text-teal button-pad">Your Household Profile</h2>
       </div>
     </div>
+    <drug-tabs drug-name="drugProfile.drugName"></drug-tabs>
   </app-section>
 
-  <app-section class="bg-pills drugs">
-    <div class="row">
-      <div class="col-sm-6 col-md-4" ng-repeat="(key,kid) in MyFamily.kids">
-        <drug-card drug="kid" key="key" tabindex="{{$index+1}}"></drug-card>
-      </div>
-    </div>
+
+  <app-section>
+  <div ui-view></div>
   </app-section>
 </div>

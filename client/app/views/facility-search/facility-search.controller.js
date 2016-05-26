@@ -32,7 +32,6 @@
       zoom: 13,
       markersEvents: {
           click: function(marker, eventName, model, eventArgs) {
-            console.log(model);
             vm.map.window.model = model;
             vm.map.window.show = true;
           }
@@ -176,7 +175,6 @@
       getCoords(geocoder, vm.userZip, false);
       facilities.getByZipcode(vm.userZip).then(function(res) {
         vm.facilitiesInZip = res.data;
-        console.log(res.data);
         for (var facility in vm.facilitiesInZip) {
           var address = vm.facilitiesInZip[facility].facility_address + ', ' + vm.facilitiesInZip[facility].facility_zip;
           getCoords(geocoder, address, true, vm.facilitiesInZip[facility].facility_name, vm.facilitiesInZip[facility].facility_type);
