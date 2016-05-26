@@ -1,5 +1,20 @@
-<app-section>
-  <section class="children">
-    children view
-  </section>
-</app-section>
+<section class="household-members profile-tab-content">
+  <div class="tab-sub-section" ng-repeat="kid in Children.kids">
+    <h3>{{kid.name}}</h3>
+    <div class="row">
+      <div class="col-sm-2">
+        <img src="{{kid.picture}}"></img>
+      </div>
+      <div class="col-sm-5">
+        <div><b>Gender:&nbsp;</b>{{kid.gender}}</div>
+        <div><b>Date of Birth:&nbsp;</b>{{kid.birthday}} (Age {{kid.age}})</div>
+        <div><b>Languages:&nbsp;</b>{{kid.languages}}</div>
+      </div>
+      <div class="col-sm-5">
+        <div> <b>Case Number:&nbsp;</b>{{kid.caseNumber}}</div>
+        <div><b>Caseworker Assigned:&nbsp;</b>{{kid.caseworker}}</div>
+        <div><b>Profile Last Updated:&nbsp;</b>{{kid.profileUpdated}}</div>
+      </div>
+    </div>
+  </div>
+</section>
