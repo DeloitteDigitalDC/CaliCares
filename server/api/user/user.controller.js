@@ -51,7 +51,7 @@ user.getDetails = function(req, res) {
 
 
 /**
- * set the details for the authenticated used;
+ * set the details for the authenticated user;
  *
  * @memberof user.controller
  *
@@ -60,7 +60,26 @@ user.getDetails = function(req, res) {
  */
 user.setDetails = function(req, res) {
 
-  db.run('UPDATE USERS SET PREGNANT = ? WHERE USERNAME = ?', req.body.pregnant, req.params.uid.toLowerCase(), function(err) {
+  db.run('UPDATE USERS SET (address, phone1, phone2, homeType, providerNum, email1, email2, insurance) = (?,?,?,?,?,?,?,?,?) WHERE USERNAME = ?', [req.body.address, req.body.phone1, req.body.phone2, req.body.homeType, req.body.providerNum, req.body.email1, req.body.email2, req.body.insurance], req.params.uid.toLowerCase(), function(err) {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.send('updated user');
+    }
+  });
+};
+
+/**
+ * set the preferences for the authenticated user;
+ *
+ * @memberof user.controller
+ *
+ * @param req
+ * @param res
+ */
+user.setPrefs = function(req, res) {
+
+  db.run('UPDATE USERS SET (prefGender, prefUnable, prefAge, prefLanguages, prefNumChildren) = (?) WHERE USERNAME = ?', req.body.pregnant, req.params.uid.toLowerCase(), function(err) {
     if (err) {
       res.status(500).send(err);
     } else {
