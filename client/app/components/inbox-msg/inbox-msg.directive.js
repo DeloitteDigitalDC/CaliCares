@@ -26,7 +26,6 @@
     };
 
     function link() {
-      console.log(this);
     }
   }
 
