@@ -20,11 +20,14 @@
   }
 
   .evenBackground{
-    background-color: $blue;
+    background-color: $lightGray;
+    h2{
+      color: $fontGray;
+    }
   }
 
   .oddBackground{
-    background-color: $orange;
+    background-color: $gray;
   }
 
 }

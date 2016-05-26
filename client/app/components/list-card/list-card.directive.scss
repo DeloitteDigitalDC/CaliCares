@@ -17,6 +17,10 @@
     font-weight: lighter;
     font-size: 15px;
     margin-bottom: 5px;
+    &.phone{
+      margin-top: 15px;
+      margin-bottom: 0px;
+    }
   }
 
 }
