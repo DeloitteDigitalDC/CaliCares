@@ -24,5 +24,17 @@
     }
   }
 
+  .capacity{
+    font-size: 40px;
+  }
+
+  .capacityDiv{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
 
 }

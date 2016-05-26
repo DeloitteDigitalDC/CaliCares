@@ -1,9 +1,24 @@
 <app-section class="appSection">
   <section class="list-card">
-    <h1>{{header}}<h1>
-    <h2>{{subheader}}</h2>
-    <p>{{body}}</p>
-    <p>{{address2}}</p>
-    <p class="phone">{{phone}}</p>
+
+
+    <div class="row">
+      <div class="col-sm-4">
+        <h1>{{header}}<h1>
+        <h2>{{subheader}}</h2>
+        <div class="row">
+          <div class="col-md-8">
+            <p>{{body}}</p>
+            <p>{{address2}}</p>
+            <p class="phone">{{phone}}</p>
+          </div>
+          <div class="col-md-3 capacityDiv">
+            <span class="capacity">0</span>
+            <p>capacity</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </section>
 </app-section>
