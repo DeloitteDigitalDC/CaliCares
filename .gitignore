@@ -11,3 +11,5 @@ npm-debug.log
 server/auth/sessions/*.json
 server/db/database.sqlite3
 server/settings.json
+doc/client
+doc/server
