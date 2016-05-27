@@ -14,11 +14,19 @@
     .module('rex')
     .controller('HouseholdMembers', HouseholdMembers);
 
-  function HouseholdMembers() {
+  function HouseholdMembers(user) {
     var vm = this;
 
-    vm.foo = [];
+    init();
+
+    /**
+     * @memberof MyFamily
+     */
+    function init() {
+      user.getDetails().then(function (userData) {
+          vm.members = userData.data.data.members;
+      });
+    }
   }
 
 })();
-

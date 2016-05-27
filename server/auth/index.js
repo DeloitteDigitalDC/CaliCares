@@ -89,13 +89,23 @@ module.exports = function(app) {
     checkUserExists(req.body.username).then(function() {
       bcrypt.genSalt(10, function(err, salt) {
         bcrypt.hash(req.body.password, salt, function(err, hash) {
-          db.run('INSERT INTO users (username, password, salt, nickName, gravatarHash, address, zip) VALUES(?, ?, ?, ?, ?, ?, ?)', [req.body.username.toLowerCase(),
+          db.run('INSERT INTO users (username, password, salt, nickName, gravatarHash, address, zip, headHousehold, phone1, phone2, homeType, providerNum, email1, email2, insurance, prefGender, prefUnable, prefAge, prefLanguages, prefNumChildren) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?)', [
+              req.body.username.toLowerCase(),
               hash,
               salt,
               req.body.firstName,
               md5(req.body.username.toLowerCase()),
               '360 Grand Ave, Oakland, CA 94610',
-              '94610'
+              '94610',
+              'Marcus Taylor, Jane Taylor',
+              '123-456-7890',
+              '555-555-5555',
+              'Foster',
+              '1234-5678',
+              req.body.username.toLowerCase(),
+              'myemail@email.com',
+              'USAA',
+              'Boys & Girls', 'Wheelchair', '4-12', 'English, Spanish', '3'
             ],
             function(err) {
               if (err) {
@@ -103,12 +113,15 @@ module.exports = function(app) {
               }
             });
 
-          var stmt = db.prepare("INSERT INTO kids (id, username, name, age, birthday) VALUES (?,?,?,?,?)");
-          for (var i = 0; i < 10; i++) {
-            var birthdayYear = 2014 - i;
-            stmt.run([req.body.id, req.body.username.toLowerCase(), 'Sally Smith', 2 + i, '1/1/' + birthdayYear]);
-          }
+          var stmt = db.prepare("INSERT INTO kids (id, username, name, age, birthday, languages, caseNumber, caseworker, profileUpdated, gender, picture) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+          stmt.run([req.body.id, req.body.username.toLowerCase(), 'Thomas Wooster', 6, '5/15/2010', 'English, Spanish', 'S1234321345', 'John Smith', '04/15/2016', 'Male', '../images/boy.png']);
+          stmt.run([req.body.id, req.body.username.toLowerCase(), 'Jaquelyn Thurman', 4, '1/27/2012', 'English', 'S6354123987', 'Sarah White', '02/24/2016', 'Female', '../images/girl.png']);
           stmt.finalize();
+
+          var stmt2 = db.prepare("INSERT INTO houseMembers (id, username, name, age, birthday, languages, serviceStartDate, gender, mobile, workNum, email, certifications, services) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)");
+          stmt2.run([req.body.id, req.body.username.toLowerCase(), 'Marcus Taylor', 32, '5/16/1984', 'English, Spanish', '01/15/2014', 'Male', '(123)-555-5555', '(987)-555-5555', 'chucktaylor@email.com', 'First-Aid Certification', 'Academic Guidance']);
+          stmt2.run([req.body.id, req.body.username.toLowerCase(), 'Jane Taylor', 41, '4/9/1975', 'English, Spanish', '01/15/2014', 'Female', '(456)-555-5555', '(654)-555-5555', 'janetaylor@email.com', 'Domestic Violence Specialist', 'Behavior Management']);
+          stmt2.finalize();
 
           res.status(201).send('User ' + req.body.username + ' Created');
         });

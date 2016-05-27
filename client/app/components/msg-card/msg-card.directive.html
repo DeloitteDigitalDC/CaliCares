@@ -1,0 +1,15 @@
+<section class="list-card">
+  <div class="row">
+    <div class="col-xs-7 inline">
+      <div class="unread" ng-show="message.unread"></div>
+      <p class="title"><span class="bold">{{message.from}}</span></p>
+    </div>
+    <div class="col-xs-5">
+      <p class="title pull-right">{{message.dateCreated}}</p>
+    </div>
+    <div class="col-xs-12">
+      <p><span class="bold">{{message.child}} - {{message.eventType}}</span></p>
+      <p>{{message.previewMsg}}</p>
+    </div>
+  </div>
+</section>

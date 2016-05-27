@@ -1,5 +1,20 @@
-<app-section>
-  <section class="household-members">
-    householdMembers view
-  </section>
-</app-section>
+<section class="household-members profile-tab-content">
+  <div class="tab-sub-section" ng-repeat="member in HouseholdMembers.members">
+    <h3>{{member.name}} - Head of Household</h3>
+    <div class="row">
+      <div class="col-sm-6">
+        <div><b>Gender:&nbsp;</b>{{member.gender}}</div>
+        <div><b>Date of Birth:&nbsp;</b>{{member.birthday}} (Age {{member.age}})</div>
+        <div><b>Primary Phone:&nbsp;</b>{{member.mobile}}</div>
+        <div><b>Alternate Phone:&nbsp;</b>{{member.workNum}}</div>
+        <div><b>Email:&nbsp;</b>{{member.email}}</div>
+      </div>
+      <div class="col-sm-6">
+        <div> <b>Languages:&nbsp;</b>{{member.languages}}</div>
+        <div><b>Certifications:&nbsp;</b>{{member.certifications}}</div>
+        <div><b>Services:&nbsp;</b>{{member.services}}</div>
+        <div><b>Service Start Date:&nbsp;</b>{{member.serviceStartDate}}</div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -27,12 +27,12 @@ module.exports = {
     var key = process.env.CWS_KEY || settings.CWS_KEY ;
 
     if (!key) {
-      console.log(chalk.magenta('### No API key has been attached. For production please provide and FDA API key. (FDA_KEY=thisisthekeyigotfromfda)'));
+      console.log(chalk.magenta('### No API key has been attached. For production please provide and CHHS API key'));
     }
 
     return key;
   })(),
-  
+
   // url for the fda data
   fdaUrl: 'https://api.fda.gov/',
 
@@ -40,9 +40,9 @@ module.exports = {
   fdaKey: (function () {
     var key = process.env.FDA_KEY || settings.FDA_KEY ;
 
-    if (!key) {
-      console.log(chalk.magenta('### No API key has been attached. For production please provide and FDA API key. (FDA_KEY=thisisthekeyigotfromfda)'));
-    }
+    // if (!key) {
+    //   console.log(chalk.magenta('### No API key has been attached. For production please provide and FDA API key. (FDA_KEY=thisisthekeyigotfromfda)'));
+    // }
 
     return key;
   })(),

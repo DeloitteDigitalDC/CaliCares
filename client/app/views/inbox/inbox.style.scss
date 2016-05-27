@@ -1,0 +1,19 @@
+.bar{
+  background-color: $darkGray;
+
+  p{
+    color: white;
+    transform: translateY(4px);
+  }
+
+  .glyphicon-edit{
+    top: 1px;
+  }
+}
+
+.inbox-view {
+  margin-top: -15px;
+  .list-column{
+    padding-right: 0;
+  }
+}

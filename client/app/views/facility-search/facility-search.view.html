@@ -2,28 +2,55 @@
   <app-section class="bg-white">
     <div class="row">
       <div class="col-sm-12">
-        <h2 class="text-teal button-pad">Facility Search</h2>
+        <h2 class="text-teal button-pad">Search for facilities near you</h2>
+        <p>Finding services for support of your foster and/or adoptive children in California</p>
       </div>
     </div>
   </app-section>
 
-  <app-section class="bg-lighter-gray">
-    <div class="row">
-      <div class="col-sm-4 locationList">
-        <div class="well" ng-repeat="facility in FacilitySearch.facilitiesInZip track by $index" ng-click="FacilitySearch.getIndex($index)">
-          <p>{{facility.facility_name}}<p>
-          <p>{{facility.facility_type}}<p>
-          <p>{{facility.facility_address}}<p>
-          <p>{{facility.facility_city}},&#32{{facility.facility_state}}&#32{{facility.facility_zip}}<p>
-        </div>
+  <app-section class="bg-gray">
+    <div class="subHeader">
+      <div class="col-sm-6">
+        <h4><span class="bold flex">{{FacilitySearch.facilitiesInZip.length}} facilities</span> near zipcode: {{FacilitySearch.userZip}}</h4>
       </div>
-      <div class="col-sm-8">
-        <ui-gmap-google-map center="FacilitySearch.map.center" zoom="FacilitySearch.map.zoom">
-          <!-- Code below to be changed to identify map center -->
-          <!-- <ui-gmap-circle center="FacilitySearch.map.center" radius="FacilitySearch.centerCircle.radius" fill="FacilitySearch.centerCircle.fill" stroke="FacilitySearch.centerCircle.stroke"></ui-gmap-circle> -->
-          <ui-gmap-markers models="FacilitySearch.markers" idkey="FacilitySearch.markers.id" coords="'markerCoords'" click="FacilitySearch.getId"></ui-gmap-markers>
-        </ui-gmap-google-map>
+      <div class="col-sm-6">
+        <div class="pull-right zipcodeSearch">
+          <button type="button" class="rex-button"><span class="glyphicon glyphicon-filter" aria-hidden="true"></span>&#32;Filters</button>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Enter 5-digit zipcode" ng-model="FacilitySearch.zipcodeSearch">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button" ng-click="FacilitySearch.searchZip()">Search</button>
+            </span>
+          </div>
+      </div>
       </div>
     </div>
+  </app-section>
+
+  <app-section class="bg-lighter-gray mapSection">
+      <div class="col-sm-4 card-list">
+        <div class="card-wrapper" ng-repeat="facility in FacilitySearch.facilitiesInZip track by $index" ng-click="FacilitySearch.getIndex($index)">
+          <list-card facility="facility"></list-card>
+        </div>
+      </div>
+      <div class="col-sm-8 right-panel">
+        <ui-gmap-google-map center="FacilitySearch.map.center" zoom="FacilitySearch.map.zoom">
+          <ui-gmap-markers idkey="FacilitySearch.markers.id" models="FacilitySearch.markers" coords="'markerCoords'" events="FacilitySearch.map.markersEvents"></ui-gmap-markers>
+          <ui-gmap-window show="FacilitySearch.map.window.show" coords="FacilitySearch.map.window.model.markerCoords" options="FacilitySearch.map.window.options" closeclick="FacilitySearch.map.window.closeClick()">
+             <div>
+               <div class="list-card list-card-custom">
+                 <p class="title"><span class="bold">{{FacilitySearch.map.window.model.facilityName}}<span><p>
+                 <p><span class="bold">{{FacilitySearch.map.window.model.facilityType}}</span></p>
+                 <p class="body">{{FacilitySearch.map.window.model.facilityAddress}}</p>
+                 <p>{{FacilitySearch.map.window.model.facilityAddress2}}</p>
+                 <p class="phone">{{FacilitySearch.map.window.model.facilityPhone}}</p>
+                 <p>{{FacilitySearch.map.window.model.facilityCapacity}} capacity</p>
+                 <p><span class="bold">More Info...</span></p>
+               </div>
+             </div>
+          </ui-gmap-window>
+
+        </ui-gmap-google-map>
+      </div>
   </app-section>
 </div>
