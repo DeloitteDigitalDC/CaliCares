@@ -17,12 +17,17 @@
   function Inbox() {
     var vm = this;
     vm.selected = 0;
-    
+    vm.newMsg = newMsg;
+
     vm.selectMsg = function(num){
       vm.selected = num;
       vm.msgs[num].unread = false;
     };
-    
+
+    function newMsg() {
+      console.log('test');
+    }
+
     vm.msgs = [
       {
         child: 'Timmy Smith',
@@ -112,8 +117,7 @@
         ]
       }
     ];
-   
+
   }
 
 })();
-
