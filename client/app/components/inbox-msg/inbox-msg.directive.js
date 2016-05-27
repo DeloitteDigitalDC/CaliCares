@@ -25,8 +25,11 @@
         link: link
     };
 
-    function link() {
-     
+    function link(scope) {
+      scope.showHistory = false;
+      scope.toggleHistory = function(){
+        scope.showHistory = !scope.showHistory;
+      }
     }
   }
 

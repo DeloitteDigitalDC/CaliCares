@@ -5,7 +5,7 @@
  *
  * @name Inbox
  *
- * @text
+ * @message
  * Controller for rex
  */
 (function () {
@@ -34,22 +34,22 @@
         unread: true,
         previousMessages:[
           {
-            commentor: 'James Smith',
+            from: 'James Smith',
             time: '7:15am',
             date: 'May 13th',
-            text: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla'
+            message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla'
           },
           {
-            commentor: 'Chuck Taylor',
+            from: 'Chuck Taylor',
             time: '1:10pm',
             date: 'May 16th',
-            text: 'Etiam porta sem malesuada magna mollis euismod.'
+            message: 'Etiam porta sem malesuada magna mollis euismod.'
           },
           {
-            commentor: 'James Smith',
+            from: 'James Smith',
             time: '3:13pm',
             date: 'May 14th',
-            text: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla'
+            message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla'
           }
         ]
       },
@@ -63,22 +63,22 @@
         unread: true,
         previousMessages:[
           {
-            commentor: 'James Smith',
+            from: 'James Smith',
             time: '7:15am',
             date: 'May 13th',
-            text: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla'
+            message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla'
           },
           {
-            commentor: 'Chuck Taylor',
+            from: 'Chuck Taylor',
             time: '1:10pm',
             date: 'May 16th',
-            text: 'Etiam porta sem malesuada magna mollis euismod.'
+            message: 'Etiam porta sem malesuada magna mollis euismod.'
           },
           {
-            commentor: 'James Smith',
+            from: 'James Smith',
             time: '3:13pm',
             date: 'May 14th',
-            text: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla'
+            message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla'
           }
         ]
       },
@@ -92,22 +92,22 @@
         unread: false,
         previousMessages:[
           {
-            commentor: 'James Smith',
+            from: 'James Smith',
             time: '7:15am',
             date: 'May 13th',
-            text: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla'
+            message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla'
           },
           {
-            commentor: 'Chuck Taylor',
+            from: 'Chuck Taylor',
             time: '1:10pm',
             date: 'May 16th',
-            text: 'Etiam porta sem malesuada magna mollis euismod.'
+            message: 'Etiam porta sem malesuada magna mollis euismod.'
           },
           {
-            commentor: 'James Smith',
+            from: 'James Smith',
             time: '3:13pm',
             date: 'May 14th',
-            text: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla'
+            message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla'
           }
         ]
       }
