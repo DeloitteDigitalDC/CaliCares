@@ -7,6 +7,10 @@
     <p ng-bind-html="messages[num].message"></p>
     <p class="convo-history"><span class="bold">Show conversation history </span><i class="glyphicon glyphicon-chevron-down"></i></p>
     <hr>
+    <div ng-repeat="msg in mesages[num].previousMsgs">
+      <p><span class="bold">From: </span>{{msg.from}}</p>
+      <p><span class="bold">Sent: </span>{{msg.dateCreated}}</p>
+      <p ng-bind-html="msg.message"></p>
     </div>
     <button class="rex-button pull-right">Reply</button>
   </section>

@@ -1,0 +1,15 @@
+.list-card{
+  .unread{
+height: 13px;
+    width: 13px;
+    border-radius: 100%;
+    background: $lava;
+    position: relative;
+    top: 3px;
+    margin-left: -18px;
+    margin-right: 5px;
+  }
+  .inline{
+    display: inline-flex
+  }
+}
