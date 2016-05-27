@@ -20,6 +20,7 @@
     
     vm.selectMsg = function(num){
       vm.selected = num;
+      vm.msgs[num].unread = false;
     };
     
     vm.msgs = [
@@ -30,6 +31,7 @@
         from: 'James Smith',
         message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.',
         previewMsg: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, e...',
+        unread: true,
         previousMessages:[
           {
             commentor: 'James Smith',
@@ -58,6 +60,7 @@
         from: 'James Smith',
         message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.',
         previewMsg: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, e...',
+        unread: true,
         previousMessages:[
           {
             commentor: 'James Smith',
@@ -86,6 +89,7 @@
         from: 'James Smith',
         message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.',
         previewMsg: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, e...',
+        unread: false,
         previousMessages:[
           {
             commentor: 'James Smith',
