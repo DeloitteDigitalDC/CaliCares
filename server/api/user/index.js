@@ -23,6 +23,9 @@ module.exports = function(auth) {
 
   router.patch('/:uid/details/', auth.ensureAuthenticated, ctrl.setDetails);
 
+  router.get('/:uid/messages/', auth.ensureAuthenticated, ctrl.getMessages);
+  router.post('/:uid/messages/', auth.ensureAuthenticated, ctrl.addMessage);
+
 
   //TODO: delete router and functions in controller
   router.get('/:uid/cabinet/', auth.ensureAuthenticated, ctrl.getCabinetDrugs);

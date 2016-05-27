@@ -32,4 +32,11 @@ db.run('select * from houseMembers', function(err){
   }
 });
 
+// create the houseMembers table if it doesn't exist
+db.run('select * from messages', function(err){
+  if(err){
+    db.run('CREATE TABLE "messages" ("message_id" INTEGER PRIMARY KEY AUTOINCREMENT, "username" TEXT, "previous_message_id", TEXT, "subject" TEXT, "sender" TEXT, "date" TEXT, "body" TEXT)');
+  }
+});
+
 module.exports = db;

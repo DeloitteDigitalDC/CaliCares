@@ -110,6 +110,44 @@ user.getChildren = function(req, res) {
 };
 
 /**
+ * get messages
+ *
+ * @memberof user.controller
+ *
+ * @param req
+ * @param res
+ *
+ */
+user.getMessages = function(req, res) {
+  db.all('SELECT * FROM messages WHERE username = ?', req.params.uid.toLowerCase(), function(err, rows) {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.send(rows);
+    }
+  });
+};
+
+/**
+ * add a message
+ *
+ * @memberof user.controller
+ *
+ * @param req
+ * @param res
+ *
+ */
+user.addMessage = function(req, res) {
+    db.run('INSERT INTO messages (username, previous_message_id, subject, sender, date, message_body) VALUES (?,?,?,?,?,?)', [req.params.uid.toLowerCase(), req.body.previous_message_id, req.body.subject, req.body.sender, req.body.date, req.body.message_body], function(err) {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.status(201).send('Message ' + req.body.subject + ' Created');
+      }
+    });
+};
+
+/**
  * Add a drug to the users drug cabinet
  *
  * @memberof user.controller

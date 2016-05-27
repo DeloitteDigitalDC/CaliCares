@@ -39,7 +39,9 @@
       addDrug          : addDrug,
       deleteCabinetDrug: deleteCabinetDrug,
       editDrug         : editDrug,
-      getKids: getKids
+      getKids          : getKids
+      getMessages      : getMessages,
+      addMessage       : addMessage
     };
 
     /**
@@ -174,20 +176,6 @@
       return userObj.drugs;
     }
 
-
-    /**
-     * return just the kid data from the cached user object.
-     *
-     * @memberof user
-     */
-    function getKids() {
-      userObj = userObj || {};
-
-      userObj.kids = userObj.kids || [];
-
-      return userObj.kids;
-    }
-
     /**
      * Add a drug to your drug cabinet. Launches a modal.
      *
@@ -276,6 +264,55 @@
 
       return promise;
     }
+
+    /**
+     * return just the kid data from the cached user object.
+     *
+     * @memberof user
+     */
+    function getKids() {
+      userObj = userObj || {};
+
+      userObj.kids = userObj.kids || [];
+
+      return userObj.kids;
+    }
+
+    /**
+     * return messages for the user
+     *
+     * @memberof user
+     */
+    function getMessages() {
+        var deferred = $http.get('/user/' + $cookies.get('uid') + '/messages/');
+
+        deferred.success(function (data) {
+          userObj.messages = data.data;
+        });
+
+        return deferred;
+    }
+
+    /**
+     * Add a message for the given user
+     *
+     * @memberof user
+     */
+    function addMessage(message) {
+        var promise   = $http.post('/user/' + $cookies.get('uid') + '/messages', message);
+        console.info(userObj);
+        userObj.messages = userObj.messages || [];
+
+        promise.success(function () {
+          userObj.messages.push(message);
+
+          $rootScope.loading = false;
+
+        });
+        
+        return promise;
+    }
+
 
     /**
      * Delete a drug from your drug cabinet.
