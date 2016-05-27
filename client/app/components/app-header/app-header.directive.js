@@ -33,7 +33,6 @@
     function link(scope) {
       scope.homeRoute = homeRoute();
       scope.goTo = goTo;
-      scope.authed = false;
 
       /**
        *
@@ -44,11 +43,9 @@
        */
       function homeRoute() {
         if(typeof(scope.user) !== 'undefined' && scope.user.data) {
-          scope.authed = true;
           return 'main.myFamily';
         }
         else {
-          scope.authed = false;
           return 'main.home';
         }
       }

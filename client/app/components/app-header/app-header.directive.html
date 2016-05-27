@@ -1,4 +1,4 @@
-<app-section class="user-header" role="banner" ng-class="{'logged-in': user.data}">
+<app-section ng-hide="!user.data" class="user-header" role="banner" ng-class="{'logged-in': user.data}">
   <section>
     <div class="user">
       <span class="username hidden-xs">Welcome back {{user.data.nickName}}!</span>
