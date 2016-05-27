@@ -7,6 +7,10 @@
  *
  * @description
  * directive for rex
+ *  
+ * @property {Array} messages - a specific message object
+ *
+ * @example <inbox-msg messages="msgs"></inbox-msg>
  */
 (function () {
 
