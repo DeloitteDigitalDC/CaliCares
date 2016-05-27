@@ -7,7 +7,7 @@
  *
  * @description
  * directive for rex
- * 
+ *
  * @property {Array} message - a specific message object
  *
  * @example <msg-card message="msg"></msg-card>
@@ -28,10 +28,9 @@
         link: link
     };
 
-    function link() {
+    function link(scope) {
+      scope.message.from ="test";
     }
   }
 
 })();
-
-

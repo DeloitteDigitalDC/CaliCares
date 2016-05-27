@@ -1,0 +1,21 @@
+<md-dialog class="new-message-modal" aria-label="New Message" ng-cloak>
+  <form>
+    <md-toolbar>
+      <!-- <div class="md-toolbar-tools"> -->
+        <h3>New Message</h3>
+      <!-- </div> -->
+    </md-toolbar>
+    <md-dialog-content>
+      <!-- <div class="md-dialog-content"> -->
+        <h3>Content goes here</h3>
+      <!-- </div> -->
+    </md-dialog-content>
+    <md-dialog-actions>
+      <a href="" ng-click="NewMessage.closeModal()"><i class="fa fa-times-circle"></i><span>&nbsp;Cancel</span></a>
+      <span flex></span>
+        <md-button class="save-button" ng-click="NewMessage.submit()">
+          <i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Send
+        </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
