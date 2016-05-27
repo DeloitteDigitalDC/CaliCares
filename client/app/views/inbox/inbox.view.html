@@ -14,8 +14,8 @@
   </section>
 </app-section>
 <app-section>
-  <section class="inbox">
-    <div class="col-sm-4">
+  <section class="inbox-view">
+    <div class="col-sm-4 list-column">
       <div class="card-wrapper" ng-repeat="msg in inbox.msgs track by $index" ng-class="{'active': inbox.selected == $index}" ng-click="inbox.selectMsg($index)">
         <msg-card message="msg"></msg-card> 
       </div>
