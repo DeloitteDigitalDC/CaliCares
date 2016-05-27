@@ -1,6 +1,6 @@
 .inbox-msg {
   hr{
-    border-top: 5px solid $dark-blue;
+    border-top: 1px solid $dark-blue;
   }
   
   .comment{
@@ -9,5 +9,9 @@
   
   .rex-button{
     width: 200px;
+  }
+  
+  .convo-history{
+    margin-top: 20px;
   }
 }

@@ -8,8 +8,9 @@
 }
 
 .inbox {
-  .msg-column{
-    border-left: 1px $medGray solid;
+  margin-top: -15px;
+  .list-column{
+    padding-right: 0;
   }
 }
 
