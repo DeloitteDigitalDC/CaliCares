@@ -3,11 +3,6 @@
   .angular-google-map-container {
     height: 400px;
   }
-  .locationList{
-    height: 400px;
-    overflow: scroll;
-    overflow-x: hidden;
-  }
 
   ui-gmap-markers{
     &.active {
@@ -20,6 +15,7 @@
     width: 100%;
     height: 100%;
     position: absolute;
+    padding-top: 0;
   }
 
   .zipcodeSearch{

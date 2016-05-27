@@ -16,15 +16,15 @@
 
   function MyFamily(user) {
     var vm = this;
-
-    init();
-
-    /**
-     * @memberof MyFamily
-     */
-    function init() {
-      vm.kids = user.getKids();
-    }
+    // 
+    // init();
+    //
+    // /**
+    //  * @memberof MyFamily
+    //  */
+    // function init() {
+    //   vm.kids = user.getKids();
+    // }
   }
 
 })();

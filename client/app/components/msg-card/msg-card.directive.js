@@ -3,7 +3,7 @@
 /**
  * @ngdoc directive
  *
- * @name inboxMsg
+ * @name msgCard
  *
  * @description
  * directive for rex
@@ -12,21 +12,19 @@
 
   angular
     .module('rex')
-    .directive('inboxMsg', inboxMsg);
+    .directive('msgCard', msgCard);
 
-  function inboxMsg() {
+  function msgCard() {
     return {
         restrict: 'E',
-        templateUrl: 'app/components/inbox-msg/inbox-msg.directive.html',
+        templateUrl: 'app/components/msg-card/msg-card.directive.html',
         scope: {
-          messages: '=',
-          num: '='
+          message: '='
         },
         link: link
     };
 
     function link() {
-     
     }
   }
 
