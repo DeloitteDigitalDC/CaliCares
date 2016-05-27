@@ -7,6 +7,10 @@
  *
  * @description
  * directive for rex
+ * 
+ * @property {Array} message - a specific message object
+ *
+ * @example <msg-card message="msg"></msg-card>
  */
 (function () {
 

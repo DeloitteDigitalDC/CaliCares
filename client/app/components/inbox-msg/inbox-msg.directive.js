@@ -7,6 +7,10 @@
  *
  * @description
  * directive for rex
+ *  
+ * @property {Array} messages - a specific message object
+ *
+ * @example <inbox-msg messages="msgs"></inbox-msg>
  */
 (function () {
 
@@ -25,8 +29,11 @@
         link: link
     };
 
-    function link() {
-     
+    function link(scope) {
+      scope.showHistory = false;
+      scope.toggleHistory = function(){
+        scope.showHistory = !scope.showHistory;
+      }
     }
   }
 
