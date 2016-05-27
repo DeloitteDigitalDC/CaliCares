@@ -1,28 +1,13 @@
 <section class="list-card">
   <div class="row">
-    <div class="col-xs-8">
-      <p class="title"><span class="bold">Event - {{message.eventNo}}</span></p>
+    <div class="col-xs-7">
+      <p class="title"><span class="bold">{{message.from}}</span></p>
     </div>
-    <div class="col-xs-4">
-      <p class="title">{{message.dateCreated}}</p>
+    <div class="col-xs-5">
+      <p class="title pull-right">{{message.dateCreated}}</p>
     </div>
     <div class="col-xs-12">
       <p><span class="bold">{{message.child}} - {{message.eventType}}</span></p>
-      <p>{{message.description}}</p>
+      <p>{{message.previewMsg}}</p>
     </div>
   </div>
-</section>
-<!--<section class="msg-card">
-  <div class="row">
-    <div class="col-xs-8">
-      <p class="event-name"><span class="bold">Event - {{message.eventNo}}</span></p>
-    </div>
-    <div class="col-xs-4">
-      <p class="date">{{message.dateCreated}}</p>
-    </div>
-    <div class="col-xs-12">
-      <p class="child"><span class="bold">{{message.child}} - {{message.eventType}}</span></p>
-      <p class="description">{{message.description}}</p>
-    </div>
-  </div>
-</section>-->
