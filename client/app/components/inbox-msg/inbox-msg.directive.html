@@ -1,18 +1,18 @@
 <div>
   <section class="inbox-msg">
-    <h3>Event Details</h3>
-    <p><span class="bold">Child: </span>{{messages[num].child}}</p>
-    <p><span class="bold">Date Created: </span>{{messages[num].dateCreated}}</p>
-    <p><span class="bold">Event Type: </span>{{messages[num].eventType}}</p>
-    <p><span class="bold">Event No.: </span>{{messages[num].eventNo}}</p>
-    <p><span class="bold">Caseworker: </span>{{messages[num].caseworker}}</p>
-    <p><span class="bold">Description: </span>{{messages[num].description}}</p>
+    <h3>{{messages[num].child}} - {{messages[num].eventType}}</h3>
+    <p><span class="bold">From: </span>{{messages[num].from}}</p>
+    <p><span class="bold">Sent: </span>{{messages[num].dateCreated}}</p>
     <hr>
-    <h3>Comment History</h3>
-    <div class="comment" ng-repeat="comment in messages[num].comments">
-      <p><span class="bold">{{comment.commentor}}</span> added a comment - at <span class="italics">{{comment.time}}</span></p>
-      <p>{{comment.text}}</p>
+    <p ng-bind-html="messages[num].message"></p>
+    <p class="convo-history" ng-click="toggleHistory()"><span class="bold">Show conversation history </span><i class="glyphicon" ng-class="{'glyphicon-chevron-up': showHistory, 'glyphicon-chevron-down': !showHistory}"></i></p>
+    <hr class="subtle">
+    <div ng-repeat="msg in messages[num].previousMessages" ng-show="showHistory">
+      <p><span class="bold">From: </span>{{msg.from}}</p>
+      <p><span class="bold">Sent: </span>{{msg.date}} at {{msg.time}}</p>
+      <p ng-bind-html="msg.message"></p>
+      <hr class="subtle">
     </div>
-    <button class="rex-button">Add Comment</button>
+    <button class="rex-button pull-right">Reply</button>
   </section>
 </div>
