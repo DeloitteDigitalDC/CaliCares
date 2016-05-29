@@ -18,4 +18,20 @@
     margin-top: 20px;
     outline: none;
   }
+  
+  .reply-form{
+    textarea{
+      width: 100%;
+      min-height: 125px;
+      margin-bottom: 20px;
+    }
+    .cancel{
+      border: none;
+      background: transparent;
+      min-width: 125px;
+    }
+    .send{
+      max-width: 125px;
+    }
+  }
 }

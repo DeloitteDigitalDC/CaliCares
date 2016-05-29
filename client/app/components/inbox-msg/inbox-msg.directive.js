@@ -6,7 +6,7 @@
  * @name inboxMsg
  *
  * @description
- * directive for rex
+ * directive for viewing a message
  *  
  * @property {Array} messages - a specific message object
  *
@@ -31,8 +31,16 @@
 
     function link(scope) {
       scope.showHistory = false;
+      scope.showReply = false;
+      
       scope.toggleHistory = function(){
         scope.showHistory = !scope.showHistory;
+      }
+      scope.toggleReply = function(){
+        scope.showReply = !scope.showReply;
+      }
+      scope.replyMsg = function(reply){
+        
       }
     }
   }
