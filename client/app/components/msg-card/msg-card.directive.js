@@ -6,9 +6,9 @@
  * @name msgCard
  *
  * @description
- * directive for rex
+ * directive for seeing a card with message details
  * 
- * @property {Array} message - a specific message object
+ * @property {object} message - a specific message object
  *
  * @example <msg-card message="msg"></msg-card>
  */
