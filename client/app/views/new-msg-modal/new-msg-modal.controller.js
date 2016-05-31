@@ -3,7 +3,7 @@
 /**
  * @ngdoc controller
  *
- * @name NewMessageModal
+ * @name NewMsgModal
  *
  * @description
  * Controller for rex
@@ -12,19 +12,21 @@
 
   angular
     .module('rex')
-    .controller('NewMessageModal', NewMessageModal);
+    .controller('NewMsgModal', NewMsgModal);
 
-  function NewMessageModal($mdDialog) {
+  function NewMsgModal($mdDialog) {
     var vm = this;
+
     vm.closeModal = closeModal;
     vm.submit = submit;
+    vm.msg;
 
     function closeModal() {
       $mdDialog.cancel();
     }
 
     function submit() {
-      $mdDialog.hide();
+      $mdDialog.hide(vm.msg);
     }
   }
 

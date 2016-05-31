@@ -14,7 +14,7 @@
     .module('rex')
     .controller('InboxCtrl', Inbox);
 
-  function Inbox($mdDialog) {
+  function Inbox($mdDialog, modals) {
     var vm = this;
     vm.selected = 0;
     vm.newMsg = newMsg;
@@ -25,19 +25,14 @@
     };
 
     function newMsg() {
-      $mdDialog.show({
-          controller: 'NewMessageModal',
-          controllerAs: 'NewMessage',
-          templateUrl: 'app/components/new-message-modal/new-message-modal.view.html',
-          clickOutsideToClose: true
-        })
-        .then(function() {
-          //onsubmit
-          console.log('in submit');
-          // vm.postProposal('Submitted');
-        }, function() {
-          //on cancel
-        });
+      var msg;
+      var modal = modals.newMessage(msg);
+
+      modal.then(function (message) {
+        console.log(message);
+      });
+
+      return modal;
     }
 
     vm.msgs = [
