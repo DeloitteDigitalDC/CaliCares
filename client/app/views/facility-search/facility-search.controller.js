@@ -92,7 +92,8 @@
                 facilityName: facility.facility_name.toLowerCase(),
                 facilityType: facility.facility_type.toLowerCase(),
                 facilityAddress: facility.facility_address.toLowerCase(),
-                facilityAddress2: facility.facility_city.toLowerCase() + ", " + facility.facility_state + " " + facility.facility_zip,
+                // facilityAddress2: facility.facility_city.toLowerCase() + ", " + facility.facility_state + " " + facility.facility_zip,
+                facilityAddress2: facility.facility_state + " " + facility.facility_zip,
                 facilityPhone: facility.facility_telephone_number,
                 facilityCapacity: facility.facility_capacity,
                 markerCoords: {
