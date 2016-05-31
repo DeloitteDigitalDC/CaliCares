@@ -14,13 +14,18 @@
 </app-section>
 <app-section>
   <section class="inbox-view">
-    <div class="col-sm-4 list-column">
+    <div class="col-sm-4 hidden-xs list-column">
       <div class="card-wrapper" ng-repeat="msg in inbox.msgs track by $index" ng-class="{'active': inbox.selected == $index}" ng-click="inbox.selectMsg($index)">
         <msg-card message="msg"></msg-card>
       </div>
     </div>
     <div class="col-sm-8 hidden-xs msg-column">
       <inbox-msg messages="inbox.msgs" num="inbox.selected"></inbox-msg>
+    </div>
+    <div class="col-xs-12 visible-xs">
+      <div class="mobile-message" ng-repeat="msg in inbox.msgs track by $index">
+        <inbox-msg messages="inbox.msgs" num="$index"></inbox-msg>
+      </div>
     </div>
   </section>
 </app-section>
