@@ -14,17 +14,7 @@
     .module('rex')
     .controller('MyFamily', MyFamily);
 
-  function MyFamily(user) {
-    var vm = this;
-    // 
-    // init();
-    //
-    // /**
-    //  * @memberof MyFamily
-    //  */
-    // function init() {
-    //   vm.kids = user.getKids();
-    // }
+  function MyFamily() {
   }
 
 })();

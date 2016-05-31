@@ -14,7 +14,6 @@
   .mapSection{
     width: 100%;
     height: 100%;
-    position: absolute;
     padding-top: 0;
   }
 
@@ -32,19 +31,32 @@
     }
   }
 
-  .input-group{
-    width: 300px;
-  }
-
   .subHeader{
     h4{
-      transform: translateY(18px);
+      transform: translateY(9px);
       color: $evenLighterGray;
     }
   }
 
   .bg-gray{
     background-color: $darkGray;
+  }
+
+
+}
+
+@media #{$lessThanSmall}  {
+  .facility-search {
+    .card-list {
+      padding-right: 15px;
+    }
+    .right-panel {
+      padding-left: 15px;
+    }
+
+    .subHeader h4 {
+      transform: translateY(0);
+    }
   }
 
 

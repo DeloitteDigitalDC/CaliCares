@@ -18,8 +18,22 @@
     return {
       addDrug   : addDrug,
       removeDrug: removeDrug,
-      editDrug  : editDrug
+      editDrug  : editDrug,
+      newMessage : newMessage
     };
+
+    function newMessage(msg) {
+      return $mdDialog.show({
+        controller  : 'NewMsgModal',
+        controllerAs: 'NewMsg',
+        templateUrl : 'app/views/new-msg-modal/new-msg-modal.view.html',
+        resolve     : {
+          msgToAdd: function () {
+            return msg;
+          }
+        }
+      });
+    }
 
     /**
      * add drug modal
@@ -83,4 +97,3 @@
   }
 
 })();
-
