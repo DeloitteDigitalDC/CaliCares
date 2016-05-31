@@ -37,7 +37,7 @@
         vm.loading = true;
 
         user
-          .createUser(vm.userInfo.username, vm.userInfo.password, vm.userInfo.firstName)
+          .createUser(vm.userInfo)
           .success(function () {
             vm.loading = false;
           })
@@ -49,4 +49,3 @@
   }
 
 })();
-

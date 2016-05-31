@@ -95,11 +95,11 @@
      *
      * @memberof user
      */
-    function createUser(username, password, firstName) {
-      var promise = $http.post('/user/create', {username: username, password: password, firstName: firstName});
+    function createUser(dataObj) {
+      var promise = $http.post('/user/create', dataObj);
 
       promise.success(function () {
-        login(username, password);
+        login(dataObj.username, dataObj.password);
       });
 
       promise.error(function (data, status) {
