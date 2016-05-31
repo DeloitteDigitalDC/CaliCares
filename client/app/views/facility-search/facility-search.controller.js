@@ -122,10 +122,11 @@
       getCoords(geocoder, vm.userZip, false);
       facilities.getByZipcode(vm.userZip).then(function(res) {
         vm.facilitiesInZip = res.data;
-        for (var facility in vm.facilitiesInZip) {
-          var address = vm.facilitiesInZip[facility].facility_address + ', ' + vm.facilitiesInZip[facility].facility_zip;
-          getCoords(geocoder, address, true, vm.facilitiesInZip[facility]);
-        }
+
+        _.forEach(vm.facilitiesInZip, function(facility){
+          var address = facility.facility_address + ', ' + facility.facility_zip;
+          getCoords(geocoder, address, true, facility);
+        })
         configureMap();
       });
     };
