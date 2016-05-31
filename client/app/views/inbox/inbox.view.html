@@ -1,30 +1,34 @@
 <app-section class="bar">
   <section>
-    <div class="col-xs-6 col-sm-2">
-      <p>Sorted by Date</p>
-    </div>
-    <div class="col-xs-6 col-sm-2">
-      <p class="pull-right"> New <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></p>
-    </div>
-    <div class="col-sm-8 hidden-xs">
-      <!--Commented until functionality is added
+    <div class="row">
+      <div class="col-xs-6 col-sm-2">
+        <p>Sorted by Date</p>
+      </div>
+      <div class="col-xs-6 col-sm-2">
+        <p class="pull-right"> New <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></p>
+      </div>
+      <div class="col-sm-8 hidden-xs">
+        <!--Commented until functionality is added
       <input class="pull-right" type="text" placeholder="Search messages"/>-->
+      </div>
     </div>
   </section>
 </app-section>
 <app-section>
   <section class="inbox-view">
-    <div class="col-sm-4 hidden-xs list-column">
-      <div class="card-wrapper" ng-repeat="msg in inbox.msgs track by $index" ng-class="{'active': inbox.selected == $index}" ng-click="inbox.selectMsg($index)">
-        <msg-card message="msg"></msg-card>
+    <div class="row">
+      <div class="col-sm-4 hidden-xs list-column">
+        <div class="card-wrapper" ng-repeat="msg in inbox.msgs track by $index" ng-class="{'active': inbox.selected == $index}" ng-click="inbox.selectMsg($index)">
+          <msg-card message="msg"></msg-card>
+        </div>
       </div>
-    </div>
-    <div class="col-sm-8 hidden-xs msg-column">
-      <inbox-msg messages="inbox.msgs" num="inbox.selected"></inbox-msg>
-    </div>
-    <div class="col-xs-12 visible-xs">
-      <div class="mobile-message" ng-repeat="msg in inbox.msgs track by $index">
-        <inbox-msg messages="inbox.msgs" num="$index"></inbox-msg>
+      <div class="col-sm-8 hidden-xs msg-column">
+        <inbox-msg messages="inbox.msgs" num="inbox.selected"></inbox-msg>
+      </div>
+      <div class="col-xs-12 visible-xs">
+        <div class="mobile-message" ng-repeat="msg in inbox.msgs track by $index">
+          <inbox-msg messages="inbox.msgs" num="$index"></inbox-msg>
+        </div>
       </div>
     </div>
   </section>
