@@ -9,13 +9,13 @@
   </app-section>
 
   <app-section class="bg-gray">
-    <div class="subHeader">
-      <div class="col-sm-6">
+    <div class="subHeader row">
+      <div class="col-xs-6">
         <h4><span class="bold flex">{{FacilitySearch.facilitiesInZip.length}} facilities</span> near zipcode: {{FacilitySearch.userZip}}</h4>
       </div>
-      <div class="col-sm-6">
+      <div class="col-xs-6 col-sm-offset-3 col-sm-3">
         <div class="pull-right zipcodeSearch">
-          <button type="button" class="rex-button"><span class="glyphicon glyphicon-filter" aria-hidden="true"></span>&#32;Filters</button>
+          <!-- <button type="button" class="rex-button"><span class="glyphicon glyphicon-filter" aria-hidden="true"></span>&#32;Filters</button> -->
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Enter 5-digit zipcode" ng-model="FacilitySearch.zipcodeSearch">
             <span class="input-group-btn">
@@ -28,12 +28,8 @@
   </app-section>
 
   <app-section class="bg-lighter-gray mapSection">
-      <div class="col-sm-4 card-list">
-        <div class="card-wrapper" ng-repeat="facility in FacilitySearch.facilitiesInZip track by $index" ng-click="FacilitySearch.getIndex($index)">
-          <list-card facility="facility"></list-card>
-        </div>
-      </div>
-      <div class="col-sm-8 right-panel">
+
+      <div class="col-sm-8 col-sm-push-4 right-panel">
         <ui-gmap-google-map center="FacilitySearch.map.center" zoom="FacilitySearch.map.zoom">
           <ui-gmap-markers idkey="FacilitySearch.markers.id" models="FacilitySearch.markers" coords="'markerCoords'" events="FacilitySearch.map.markersEvents"></ui-gmap-markers>
           <ui-gmap-window show="FacilitySearch.map.window.show" coords="FacilitySearch.map.window.model.markerCoords" options="FacilitySearch.map.window.options" closeclick="FacilitySearch.map.window.closeClick()">
@@ -51,6 +47,11 @@
           </ui-gmap-window>
 
         </ui-gmap-google-map>
+      </div>
+      <div class="col-sm-4 col-sm-pull-8  card-list">
+        <div class="card-wrapper" ng-repeat="facility in FacilitySearch.facilitiesInZip track by $index" ng-click="FacilitySearch.getIndex($index)">
+          <list-card facility="facility"></list-card>
+        </div>
       </div>
   </app-section>
 </div>

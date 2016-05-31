@@ -1,4 +1,4 @@
-<app-section ng-hide="!user.data" class="user-header" role="banner" ng-class="{'logged-in': user.data}">
+<app-section ng-hide="!user.data" class="user-header hidden-xs" role="banner" ng-class="{'logged-in': user.data}">
   <section>
     <div class="user">
       <span class="username hidden-xs">Welcome back {{user.data.nickName}}!</span>
@@ -11,10 +11,6 @@
     <a tabindex="0" class="icon-logo-Rex" ui-sref="{{homeRoute}}" title="ReX" alt="Rex">
       <span class="sr-only">Return to the Main Page</span>
     </a>
-
-    <button class="plus-button" ng-class="{'open': headerOptions.open}" ng-click="goTo()" ng-if="headerOptions.display">
-      <span class="sr-only">{{headerOptions.open ? 'Go Back to the Cabinet' : 'Add Drug to Cabinet'}}</span>
-    </button>
 
     <div class="nav-pages">
       <a class="nav-button" ui-sref="main.myFamily" ui-sref-active="active">
@@ -34,5 +30,9 @@
         <span class="nav-name">Help</span>
       </a> -->
     </div>
+    <md-button class="visible-xs pull-right" ng-click="openLeftMenu()">
+      Open Left Menu
+      <span class="glyphicon glyphicon-menu-hamburger"></span>
+    </md-button>
   </section>
 </app-section>
