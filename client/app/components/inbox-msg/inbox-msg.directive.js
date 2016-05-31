@@ -32,6 +32,7 @@
     function link(scope) {
       scope.showHistory = false;
       scope.showReply = false;
+      
       scope.toggleHistory = function () {
         scope.showHistory = !scope.showHistory;
       };
@@ -54,7 +55,6 @@
         scope.messages[scope.num].message = scope.replyTxt;
 
         user.getDetails().then(function (userData) {
-          console.log(userData);
           scope.messages[scope.num].from = userData.data.data.nickName;
         });
         
