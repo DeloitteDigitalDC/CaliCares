@@ -1,0 +1,28 @@
+<div class="tab-sub-section">
+  <h3>Edit Household Member Information</h3>
+  <form ng-submit="saveChanges()"  name="editHousehold">
+  <div class="row">
+    <div class="col-sm-6">
+      <div><b>Name:&nbsp;</b> <input class="form-control rex-input" ng-model="formData.name" type="text"> </div>
+      <div><b>Gender:&nbsp;</b><input class="form-control rex-input" ng-model="formData.gender" type="text"></div>
+      <div><b>Date of Birth:&nbsp;</b>  <input class="form-control rex-input" ng-model="formData.birthday" type="text"> </div>
+      <div><b>Primary Phone:&nbsp;</b>  <input class="form-control rex-input" ng-model="formData.mobile" type="text"></div>
+      <div><b>Alternate Phone:&nbsp;</b>  <input class="form-control rex-input" ng-model="formData.workNum" type="text"></div>
+    </div>
+    <div class="col-sm-6">
+      <div><b>Email:&nbsp;</b>  <input class="form-control rex-input" ng-model="formData.email" type="text"></div>
+      <div> <b>Languages:&nbsp;</b>  <input class="form-control rex-input" ng-model="formData.languages" type="text"> </div>
+      <div><b>Certifications:&nbsp;</b>  <input class="form-control rex-input" ng-model="formData.certifications" type="text"> </div>
+      <div><b>Services:&nbsp;</b>  <input class="form-control rex-input" ng-model="formData.services" type="text"> </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-offset-6 col-sm-3">
+      <button tabindex="3" type="button" class="btn rex-button" ng-click="memberId = null">Cancel</button>
+    </div>
+    <div class="col-sm-3">
+      <button tabindex="3" type="submit" class="btn rex-button">Save Changes</button>
+    </div>
+  </div>
+</form>
+</div>

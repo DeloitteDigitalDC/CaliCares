@@ -34,7 +34,7 @@ input.ng-invalid-pattern {
 }
 
 .rex-input {
-  padding: 18px 30px;
+  // padding: 18px 30px;
   height: auto;
   font-weight: 300;
 
@@ -85,5 +85,12 @@ input.ng-invalid-pattern {
   &.clear-button {
     background-color: transparent;
     border-color: white;
+  }
+}
+
+.edit-button {
+  cursor: pointer;
+  span {
+    margin-left: 5px;
   }
 }
