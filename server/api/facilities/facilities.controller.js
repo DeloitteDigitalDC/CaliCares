@@ -25,11 +25,15 @@ var facilities = {};
  */
 facilities.getFacilities = function getFacilities(req, res) {
   var qs     = req.query;
-    
+
   qs.api_key = qs.api_key || apiKey;
 
   request(cwsUrl + '?$$app_token=' + qs.api_key, function (err, response, body) {
-    res.send(utils.confirmJSON(body));
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.send(utils.confirmJSON(body));
+    }
   });
 };
 
@@ -47,11 +51,15 @@ facilities.getFacilities = function getFacilities(req, res) {
 facilities.getByZipcode = function getByZipcode(req, res) {
   var qs     = req.query,
       params = req.params;
-    
+
   qs.api_key = qs.api_key || apiKey;
 
   request(cwsUrl + '?facility_zip=' + params.zipcode + '&$$app_token=' + qs.api_key, function (err, response, body) {
-    res.send(utils.confirmJSON(body));
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.send(utils.confirmJSON(body));
+    }
   });
 };
 
