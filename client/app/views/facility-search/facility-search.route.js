@@ -11,7 +11,8 @@
           templateUrl : 'app/views/facility-search/facility-search.view.html',
           controller  : 'FacilitySearch',
           controllerAs: 'FacilitySearch',
-          title       : 'Facility search'
+          title       : 'Facility search',
+          public      : true
         });
     });
 
