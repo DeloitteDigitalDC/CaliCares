@@ -7,7 +7,7 @@
 
   &.alert-danger {
     color: $scarlet;
-    background: rgb(236,202,202);
+    background: lighten($scarlet, 40%);
     border-color: lighten($scarlet, 40%);
   }
 

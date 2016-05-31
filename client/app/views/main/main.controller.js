@@ -14,10 +14,14 @@
     .module('rex')
     .controller('MainCtrl', MainCtrl);
 
-  function MainCtrl(userDetails) {
+  function MainCtrl(userDetails, $mdSidenav) {
     var vm = this;
 
     vm.user = userDetails.data;
+
+    vm.closeMenu = function() {
+      $mdSidenav('left').close();
+    };
   }
 
 })();

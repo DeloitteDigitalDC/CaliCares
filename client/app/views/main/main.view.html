@@ -1,18 +1,18 @@
 <div class="container-fluid">
-  <md-sidenav md-component-id="left" class="md-sidenav-left">
-    <a class="nav-button" ui-sref="main.myFamily" ui-sref-active="active">
+  <md-sidenav md-component-id="left" class="md-sidenav-right">
+    <a class="nav-button" ui-sref="main.myFamily" ui-sref-active="active" ng-click="MainCtrl.closeMenu()">
       <!-- <div class="nav-icon family"></div> -->
       <span class="nav-name">My Profile</span>
     </a>
-    <a class="nav-button" ui-sref="main.inbox" ui-sref-active="active">
+    <a class="nav-button" ui-sref="main.inbox" ui-sref-active="active" ng-click="MainCtrl.closeMenu()">
       <!-- <div class="nav-icon inbox"></div> -->
       <span class="nav-name">Inbox</span>
     </a>
-    <a class="nav-button" ui-sref="main.facilities" ui-sref-active="active">
+    <a class="nav-button" ui-sref="main.facilities" ui-sref-active="active" ng-click="MainCtrl.closeMenu()">
       <!-- <div class="nav-icon facilities"></div> -->
       <span class="nav-name">Facilities Near You</span>
     </a>
-    <a class="nav-button" ui-sref="main.userProfile" ui-sref-active="active">
+    <a class="nav-button" ui-sref="main.userProfile" ui-sref-active="active" ng-click="MainCtrl.closeMenu()">
       <span class="nav-name">Logout</span>
     </a>
   </md-sidenav>
