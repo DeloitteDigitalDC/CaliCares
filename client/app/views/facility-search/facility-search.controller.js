@@ -24,6 +24,7 @@
     vm.getIndex = getIndex;
     vm.searchZip = searchZip;
     vm.markers = [];
+    var googleMaps = {};
     vm.map = {
       center: {
         latitude: 0,
@@ -57,6 +58,7 @@
     }
 
     uiGmapGoogleMapApi.then(function(maps) {
+      googleMaps = maps;
       init();
     });
 
@@ -84,7 +86,8 @@
       geocoder.geocode({
         'address': address
       }, function(results, status) {
-        if (status === google.maps.GeocoderStatus.OK && results.length > 0) {
+        if (status === googleMaps.GeocoderStatus.OK && results.length > 0) {
+        // if (status === google.maps.GeocoderStatus.OK && results.length > 0) {
           var location = results[0].geometry.location,
             lat = location.lat(),
             lng = location.lng();
@@ -117,7 +120,9 @@
     }
 
     function init() {
-      var geocoder = new google.maps.Geocoder();
+      vm.showMap = true;
+      var geocoder = new googleMaps.Geocoder();
+      // var geocoder = new google.maps.Geocoder();
       vm.markers = [];
       vm.facilitiesInZip = [];
       getCoords(geocoder, vm.userZip, false);

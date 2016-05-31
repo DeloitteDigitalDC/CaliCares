@@ -29,7 +29,7 @@
 
   <app-section class="bg-lighter-gray mapSection">
 
-      <div class="col-sm-8 col-sm-push-4 right-panel">
+      <div class="col-sm-8 col-sm-push-4 right-panel" ng-if="FacilitySearch.showMap">
         <ui-gmap-google-map center="FacilitySearch.map.center" zoom="FacilitySearch.map.zoom">
           <ui-gmap-markers idkey="FacilitySearch.markers.id" models="FacilitySearch.markers" coords="'markerCoords'" events="FacilitySearch.map.markersEvents"></ui-gmap-markers>
           <ui-gmap-window show="FacilitySearch.map.window.show" coords="FacilitySearch.map.window.model.markerCoords" options="FacilitySearch.map.window.options" closeclick="FacilitySearch.map.window.closeClick()">
