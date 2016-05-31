@@ -1,0 +1,33 @@
+.new-msg-modal {
+  width: 800px;
+  h1{
+    font-size: 30px;
+    color: $darkGray;
+  }
+
+  md-toolbar{
+    background: none;
+  }
+
+  .row{
+    padding-top: 20px;
+  }
+
+  md-dialog-actions{
+    order: 1;
+  }
+
+  .md-dialog-actions{
+    float:right;
+    margin-right: 17px;
+  }
+
+  md-dialog-content{
+    padding-top: 10px;
+    padding-bottom: 0px;
+  }
+
+  input, textarea{
+    margin-bottom: 20px;
+  }
+}
