@@ -32,7 +32,6 @@
     function link(scope) {
       scope.showHistory = false;
       scope.showReply = false;
-      scope.replyTxt = 'test';
       scope.toggleHistory = function () {
         scope.showHistory = !scope.showHistory;
       };
