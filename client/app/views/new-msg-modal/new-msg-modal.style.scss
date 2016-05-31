@@ -12,4 +12,22 @@
   .row{
     padding-top: 20px;
   }
+
+  md-dialog-actions{
+    order: 1;
+  }
+
+  .md-dialog-actions{
+    float:right;
+    margin-right: 17px;
+  }
+
+  md-dialog-content{
+    padding-top: 10px;
+    padding-bottom: 0px;
+  }
+
+  input, textarea{
+    margin-bottom: 20px;
+  }
 }

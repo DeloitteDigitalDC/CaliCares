@@ -20,11 +20,13 @@
       </div>
     </md-dialog-content>
     <md-dialog-actions>
-      <a href="" ng-click="NewMsg.closeModal()"><i class="fa fa-times-circle"></i><span>&nbsp;Cancel</span></a>
-      <span flex></span>
-        <md-button class="save-button" ng-click="NewMsg.submit()">
-          <i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Send
-        </md-button>
+      <div class="md-dialog-actions">
+        <a href="" ng-click="NewMsg.closeModal()"><i class="fa fa-times-circle"></i><span>&nbsp;Cancel</span></a>
+        <span flex></span>
+          <md-button class="save-button" ng-click="NewMsg.submit()">
+            <i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Send
+          </md-button>
+      </div>
     </md-dialog-actions>
   </form>
 </md-dialog>
