@@ -38,7 +38,7 @@
 
   .subHeader{
     h4{
-      transform: translateY(18px);
+      transform: translateY(9px);
       color: $evenLighterGray;
     }
   }
@@ -59,9 +59,9 @@
       padding-left: 15px;
     }
 
-    // .subHeader h4 {
-    //   transform: translateY(0);
-    // }
+    .subHeader h4 {
+      transform: translateY(0);
+    }
   }
 
 
