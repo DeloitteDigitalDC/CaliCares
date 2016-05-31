@@ -31,10 +31,10 @@
       },
       zoom: 12,
       markersEvents: {
-          click: function(marker, eventName, model, eventArgs) {
-            vm.map.window.model = model;
-            vm.map.window.show = true;
-          }
+        click: function(marker, eventName, model) {
+          vm.map.window.model = model;
+          vm.map.window.show = true;
+        }
       },
       window: {
         marker: {},
@@ -64,8 +64,8 @@
     function getIndex(index) {
       var name = vm.facilitiesInZip[index].facility_name.toLowerCase();
       var type = vm.facilitiesInZip[index].facility_type.toLowerCase();
-      for (var marker in vm.markers){
-        if ((vm.markers[marker].facilityName === name) && (vm.markers[marker].facilityType === type)){
+      for (var marker in vm.markers) {
+        if ((vm.markers[marker].facilityName === name) && (vm.markers[marker].facilityType === type)) {
           vm.map.window.model = vm.markers[marker];
           vm.map.window.show = true;
           break;
@@ -80,35 +80,43 @@
     }
 
     //gets coordinates for a given address and adds markers to map
-    function getCoords(geocoder, address, addMarker, facility){
-      geocoder.geocode( { 'address': address }, function(results, status) {
-          if (status == google.maps.GeocoderStatus.OK && results.length > 0) {
-            var location = results[0].geometry.location,
+    function getCoords(geocoder, address, addMarker, facility) {
+      geocoder.geocode({
+        'address': address
+      }, function(results, status) {
+        if (status === google.maps.GeocoderStatus.OK && results.length > 0) {
+          var location = results[0].geometry.location,
             lat = location.lat(),
             lng = location.lng();
-            if (addMarker){
+          if (addMarker) {
+            try {
+              debugger;
               var marker = {
                 id: String(vm.markers.length),
                 facilityName: facility.facility_name.toLowerCase(),
                 facilityType: facility.facility_type.toLowerCase(),
                 facilityAddress: facility.facility_address.toLowerCase(),
-                facilityAddress2: facility.facility_city.toLowerCase() + ", " + facility.facility_state + " " + facility.facility_zip,
-                facilityAddress2: facility.facility_state + " " + facility.facility_zip,
+                // facilityAddress2: facility.facility_city.toLowerCase() + ", " + facility.facility_state + " " + facility.facility_zip,
+                facilityAddress2: facility.facility_state + ' ' + facility.facility_zip,
                 facilityPhone: facility.facility_telephone_number,
                 facilityCapacity: facility.facility_capacity,
                 markerCoords: {
-                    latitude: lat,
-                    longitude: lng
+                  latitude: lat,
+                  longitude: lng
                 }
-              }
-            vm.markers.push(marker);
+              };
+              vm.markers.push(marker);
+            } catch (err) {
+              console.log(err);
+            }
+
           } else {
             vm.userLatitude = lat;
             vm.userLongitude = lng;
           }
         }
-        })
-      };
+      });
+    }
 
     function init() {
       var geocoder = new google.maps.Geocoder();
@@ -117,13 +125,14 @@
       getCoords(geocoder, vm.userZip, false);
       facilities.getByZipcode(vm.userZip).then(function(res) {
         vm.facilitiesInZip = res.data;
-        for (var facility in vm.facilitiesInZip) {
-          var address = vm.facilitiesInZip[facility].facility_address + ', ' + vm.facilitiesInZip[facility].facility_zip;
-          getCoords(geocoder, address, true, vm.facilitiesInZip[facility]);
-        }
+
+        _.forEach(vm.facilitiesInZip, function(facility) {
+          var address = facility.facility_address + ', ' + facility.facility_zip;
+          getCoords(geocoder, address, true, facility);
+        });
         configureMap();
       });
-    };
+    }
 
   }
 

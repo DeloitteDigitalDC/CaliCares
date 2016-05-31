@@ -104,7 +104,7 @@
 
       promise.error(function (data, status) {
         if (status === 400) {
-          notify.showAlert('Username already exists', 'danger');
+          notify.showAlert('Email address is already in use', 'danger');
         }
       });
 
