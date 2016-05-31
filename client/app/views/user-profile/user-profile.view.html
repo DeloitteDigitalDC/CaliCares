@@ -1,21 +1,12 @@
 <section class="user-profile profile-shared">
-  <app-section class="bg-white page-top">
-    <!-- <h1>My Profile</h1> -->
-  </app-section>
-
-  <hr class="standard">
-
-  <app-section class="bg-pills">
-    <card-fade class="overlap clearfix">
-      <rex-icon hash="MainCtrl.user.data.gravatarHash" size="175"></rex-icon>
-
-      <div class="my-profile">
-        <h2>{{UserProfile.userDetails.nickName}}</h2>
-
-        <p>{{UserProfile.userDetails.email}}</p>
-
-        <md-button class="md-raised md-warn" ng-click="UserProfile.logout()">Logout</md-button>
-      </div>
-    </card-fade>
+  <!-- <app-section class="bg-white page-top">
+  </app-section> -->
+  <app-section>
+    <rex-icon hash="MainCtrl.user.data.gravatarHash" size="150"></rex-icon>
+    <div class="my-profile">
+      <h2>{{UserProfile.userDetails.nickName}}</h2>
+      <p>{{UserProfile.userDetails.email}}</p>
+      <button type="button" class="btn rex-button" ng-click="UserProfile.logout()">Logout</button>
+    </div>
   </app-section>
 </section>

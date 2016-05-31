@@ -17,25 +17,25 @@
   function Inbox() {
     var vm = this;
     vm.selected = 0;
-    
+
     vm.selectMsg = function(num){
       vm.selected = num;
       vm.msgs[num].unread = false;
     };
-    
+
     vm.msgs = [
       {
         child: 'Timmy Smith',
         dateCreated: '05/19/2016',
         time: '7:10am',
         eventType: 'Emotional outburst',
-        from: 'James Smith',
+        from: 'James Smith (Caseworker)',
         message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.',
         previewMsg: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, e...',
         unread: true,
         previousMessages:[
           {
-            from: 'James Smith',
+            from: 'James Smith (Caseworker)',
             time: '7:15am',
             date: 'May 13th',
             message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla'
@@ -47,7 +47,7 @@
             message: 'Etiam porta sem malesuada magna mollis euismod.'
           },
           {
-            from: 'James Smith',
+            from: 'James Smith (Caseworker)',
             time: '3:13pm',
             date: 'May 14th',
             message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla'
@@ -58,13 +58,13 @@
         child: 'Timmy Smith',
         dateCreated: '05/19/2016',
         eventType: 'Emotional outburst',
-        from: 'James Smith',
+        from: 'James Smith (Caseworker)',
         message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.',
         previewMsg: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, e...',
         unread: true,
         previousMessages:[
           {
-            from: 'James Smith',
+            from: 'James Smith (Caseworker)',
             time: '7:15am',
             date: 'May 13th',
             message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla'
@@ -76,7 +76,7 @@
             message: 'Etiam porta sem malesuada magna mollis euismod.'
           },
           {
-            from: 'James Smith',
+            from: 'James Smith (Caseworker)',
             time: '3:13pm',
             date: 'May 14th',
             message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla'
@@ -87,13 +87,13 @@
         child: 'Timmy Smith',
         dateCreated: '05/19/2016',
         eventType: 'Emotional outburst',
-        from: 'James Smith',
+        from: 'James Smith (Caseworker)',
         message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.',
         previewMsg: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, e...',
         unread: false,
         previousMessages:[
           {
-            from: 'James Smith',
+            from: 'James Smith (Caseworker)',
             time: '7:15am',
             date: 'May 13th',
             message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla'
@@ -105,7 +105,7 @@
             message: 'Etiam porta sem malesuada magna mollis euismod.'
           },
           {
-            from: 'James Smith',
+            from: 'James Smith (Caseworker)',
             time: '3:13pm',
             date: 'May 14th',
             message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla'
@@ -113,8 +113,7 @@
         ]
       }
     ];
-   
+
   }
 
 })();
-
