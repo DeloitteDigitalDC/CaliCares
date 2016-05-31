@@ -1,12 +1,17 @@
 <section class="user-profile profile-shared">
-  <!-- <app-section class="bg-white page-top">
+  <!--
+ <app-section class="bg-white page-top">
+  <h1>My Profile</h1>
   </app-section> -->
-  <app-section>
-    <rex-icon hash="MainCtrl.user.data.gravatarHash" size="150"></rex-icon>
-    <div class="my-profile">
-      <h2>{{UserProfile.userDetails.nickName}}</h2>
-      <p>{{UserProfile.userDetails.email}}</p>
-      <button type="button" class="btn rex-button" ng-click="UserProfile.logout()">Logout</button>
-    </div>
+
+  <app-section class="bg-white">
+
+      <div class="my-profile">
+        <h2 class="text-teal button-pad">{{UserProfile.userDetails.nickName}}</h2>
+        <p>{{UserProfile.userDetails.email}}</p>
+
+        <button class="btn rex-button" ng-click="UserProfile.logout()">Logout</button>
+      </div>
+
   </app-section>
 </section>
