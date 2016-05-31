@@ -23,7 +23,7 @@ var appConfig = {
   }]
 };
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
 
@@ -86,7 +86,7 @@ module.exports = function (grunt) {
       proxies: appConfig.proxy ? appConfig.proxyConfig : [],
       livereload: {
         options: {
-          middleware: function (connect) {
+          middleware: function(connect) {
             var middleware = [
               connect.static('.tmp'),
               connect().use('/bower_components', connect.static('./bower_components')),
@@ -94,7 +94,7 @@ module.exports = function (grunt) {
               connect().use(require('./server/app.js')) // custom middleware
             ];
 
-            if(appConfig.proxy) {
+            if (appConfig.proxy) {
               middleware.push(require('grunt-connect-proxy/lib/utils').proxyRequest);
             }
 
@@ -105,7 +105,7 @@ module.exports = function (grunt) {
       test: {
         options: {
           port: 9001,
-          middleware: function (connect) {
+          middleware: function(connect) {
             return [
               connect.static('.tmp'),
               connect.static(appConfig.app)
@@ -149,8 +149,8 @@ module.exports = function (grunt) {
      * @see {@link http://usejsdoc.org}
      * @see {@link https://github.com/allenhwkim/angular-jsdoc}
      */
-    jsdoc : {
-      client : {
+    jsdoc: {
+      client: {
         src: [
           '<%= appSettings.app %>/{,*/}*.js',
           '<%= appSettings.app %>/app/components**/{,*/}*.js',
@@ -163,7 +163,7 @@ module.exports = function (grunt) {
           template: 'doc/template'
         }
       },
-      server : {
+      server: {
         src: [
           'server/**/**/*.js'
         ],
@@ -215,8 +215,15 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         src: ['<%= appSettings.app %>/index.html'],
-        ignorePath:  /\.\.\//,
-        exclude: [ /jquery/, 'bower_components/bootstrap/dist/js/bootstrap.js']
+        ignorePath: /\.\.\//,
+        exclude: [/jquery/,
+          'bower_components/bootstrap/dist/js/bootstrap.js',
+          'bower_components/markerclustererplus/src/markerclusterer.js',
+          'bower_components/google-maps-utility-library-v3-markerwithlabel/dist/markerwithlabel.js',
+          'bower_components/google-maps-utility-library-v3-infobox/dist/infobox.js',
+          'bower_components/google-maps-utility-library-v3-keydragzoom/dist/keydragzoom.js',
+          'bower_components/js-rich-marker/src/richmarker.js'
+        ]
       },
       sass: {
         src: ['<%= appSettings.app %>/styles/*.scss', '<%= appSettings.app %>/app/views/**/*.scss'],
@@ -281,7 +288,7 @@ module.exports = function (grunt) {
       },
       dist: {
         files: {
-          '.tmp/styles/app.css' : '<%= appSettings.app %>/styles/app.scss'
+          '.tmp/styles/app.css': '<%= appSettings.app %>/styles/app.scss'
         }
       }
     },
@@ -331,7 +338,7 @@ module.exports = function (grunt) {
       html: ['<%= appSettings.dist %>/{,*/}*.html'],
       css: ['<%= appSettings.dist %>/styles/{,*/}*.css'],
       options: {
-        assetsDirs: ['<%= appSettings.dist %>','<%= appSettings.dist %>/images']
+        assetsDirs: ['<%= appSettings.dist %>', '<%= appSettings.dist %>/images']
       }
     },
 
@@ -471,7 +478,7 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask('serve', 'Compile then start a connect web server', function () {
+  grunt.registerTask('serve', 'Compile then start a connect web server', function() {
     var tasks = [
       'clean:server',
       'wiredep',
@@ -483,7 +490,7 @@ module.exports = function (grunt) {
       'watch'
     ];
 
-    if(appConfig.proxy) {
+    if (appConfig.proxy) {
       tasks.unshift('configureProxies:server');
     }
 
