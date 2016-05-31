@@ -87,6 +87,25 @@ user.setPrefs = function(req, res) {
   });
 };
 
+/**
+ * set the householdMembers for the authenticated user;
+ *
+ * @memberof user.controller
+ *
+ * @param req
+ * @param res
+ */
+user.setHouseholdMembers = function(req, res) {
+
+  db.run('UPDATE houseMembers SET name = ?, birthday = ?, languages = ?, gender = ?, mobile = ?, workNum = ?, email =?, certifications = ?, services = ? WHERE USERNAME = ? AND member_id = ?', req.body.name, req.body.birthday, req.body.languages, req.body.gender, req.body.mobile, req.body.workNum, req.body.email, req.body.certifications, req.body.services, req.params.uid.toLowerCase(), req.body.member_id, function(err) {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.send('updated user');
+    }
+  });
+};
+
 
 /**
  * get cabinet drugs

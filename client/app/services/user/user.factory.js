@@ -40,7 +40,8 @@
       deleteCabinetDrug: deleteCabinetDrug,
       editDrug         : editDrug,
       getKids: getKids,
-      setPrefs: setPrefs
+      setPrefs: setPrefs,
+      setMember: setMember
     };
 
     /**
@@ -169,6 +170,11 @@
      */
     function setPrefs(details) {
       var deferred = $http.patch('/user/' + $cookies.get('uid') + '/prefs/', details);
+      return deferred;
+    }
+
+    function setMember(details) {
+      var deferred = $http.patch('/user/' + $cookies.get('uid') + '/houseHoldMembers/', details);
       return deferred;
     }
 
