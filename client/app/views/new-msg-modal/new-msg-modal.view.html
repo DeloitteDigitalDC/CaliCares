@@ -9,7 +9,7 @@
       <div class="md-dialog-content">
         <div class="row">
           <label for="to">To</label>
-          <input type="text" class="form-control" id="to" ng-model="NewMsg.msg.to"></input>
+          <input type="text" class="form-control" id="to" ng-model="NewMsg.msg.from" required></input>
         </div>
         <div class="row">
           <label for="subject">Subject</label>
@@ -17,7 +17,7 @@
         </div>
         <div class="row">
           <label for="message">Message</label>
-          <textarea type="textarea" class="form-control" id="message" ng-model="NewMsg.msg.messageBody"></textarea>
+          <textarea type="textarea" class="form-control" id="message" ng-model="NewMsg.msg.message"></textarea>
         </div>
       </div>
     </md-dialog-content>

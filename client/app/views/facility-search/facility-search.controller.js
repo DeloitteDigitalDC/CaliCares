@@ -22,14 +22,14 @@
     vm.userLongitude = 0;
     vm.facilitiesInZip = [];
     vm.getIndex = getIndex;
-    vm.getId = getId;
     vm.searchZip = searchZip;
+    vm.markers = [];
     vm.map = {
       center: {
         latitude: 0,
         longitude: 0
       },
-      zoom: 13,
+      zoom: 12,
       markersEvents: {
           click: function(marker, eventName, model, eventArgs) {
             vm.map.window.model = model;
@@ -42,31 +42,13 @@
         closeClick: function() {
           this.show = false;
         },
-        options: {}
+        options: {
+          pixelOffset: {
+            width: 0,
+            height: -37
+          }
+        }
       }
-    };
-    vm.markers = [];
-    // To do: Code below to show center of map
-    // vm.centerCircle = {
-    //   radius: 10,
-    //   stroke: {
-    //       color: '#08B21F',
-    //       weight: 2,
-    //       opacity: 1
-    //   },
-    //   fill: {
-    //       color: '#08B21F',
-    //       opacity: 0.5
-    //   },
-    // };
-
-    vm.markerOptions = {
-      visible: true
-    };
-
-    vm.windowOptions = {
-      visible: false,
-      content: 'test'
     };
 
     function searchZip() {
@@ -74,66 +56,21 @@
       init();
     }
 
-    // WILL REMOVE AFTER FIXING
-    // vm.windowOnClick = function() {
-    //   console.log('in window on click');
-    //   console.log(vm.windowOptions.visible);
-    //   vm.windowOptions.visible = !vm.windowOptions.visible;
-    //   vm.windowShow = !vm.windowShow;
-    // };
-    //
-    // vm.closeClick = function() {
-    //    vm.windowOptions.visible = false;
-    //    vm.windowShow = false;
-    // };
-
-    //CODE BELOW TO ADD STYLES TO MAP IF WE CHOOSE TO DO SO
-    // var styleArray = [ //any style array defined in the google documentation you linked
-    //   {
-    //     featureType: "all",
-    //     stylers: [
-    //       { saturation: -80 }
-    //     ]
-    //   },{
-    //     featureType: "road.arterial",
-    //     elementType: "geometry",
-    //     stylers: [
-    //       { hue: "#00ffee" },
-    //       { saturation: 50 }
-    //     ]
-    //   },{
-    //     featureType: "poi.business",
-    //     elementType: "labels",
-    //     stylers: [
-    //       { visibility: "off" }
-    //     ]
-    //   }
-    // ];
-    // vm.options = {
-    //    styles: styleArray
-    // };
-
     uiGmapGoogleMapApi.then(function(maps) {
       init();
     });
 
     //opens marker window if location is selected from list
     function getIndex(index) {
-      var name = vm.facilitiesInZip[index].facility_name;
-      var type = vm.facilitiesInZip[index].facility_type;
+      var name = vm.facilitiesInZip[index].facility_name.toLowerCase();
+      var type = vm.facilitiesInZip[index].facility_type.toLowerCase();
       for (var marker in vm.markers){
-        if ((vm.markers[marker].name === name) && (vm.markers[marker].type === type)){
+        if ((vm.markers[marker].facilityName === name) && (vm.markers[marker].facilityType === type)){
           vm.map.window.model = vm.markers[marker];
           vm.map.window.show = true;
           break;
         }
       }
-    }
-
-    function getId(marker, eventName, model, eventArgs) {
-      //in progress
-      console.log(marker);
-      console.log(model);
     }
 
     //sets correct map center based on user zipcode
@@ -143,7 +80,7 @@
     }
 
     //gets coordinates for a given address and adds markers to map
-    function getCoords(geocoder, address, addMarker, facilityName, facilityType){
+    function getCoords(geocoder, address, addMarker, facility){
       geocoder.geocode( { 'address': address }, function(results, status) {
           if (status == google.maps.GeocoderStatus.OK && results.length > 0) {
             var location = results[0].geometry.location,
@@ -152,8 +89,13 @@
             if (addMarker){
               var marker = {
                 id: String(vm.markers.length),
-                name: facilityName,
-                type: facilityType,
+                facilityName: facility.facility_name.toLowerCase(),
+                facilityType: facility.facility_type.toLowerCase(),
+                facilityAddress: facility.facility_address.toLowerCase(),
+                facilityAddress2: facility.facility_city.toLowerCase() + ", " + facility.facility_state + " " + facility.facility_zip,
+                facilityAddress2: facility.facility_state + " " + facility.facility_zip,
+                facilityPhone: facility.facility_telephone_number,
+                facilityCapacity: facility.facility_capacity,
                 markerCoords: {
                     latitude: lat,
                     longitude: lng
@@ -177,7 +119,7 @@
         vm.facilitiesInZip = res.data;
         for (var facility in vm.facilitiesInZip) {
           var address = vm.facilitiesInZip[facility].facility_address + ', ' + vm.facilitiesInZip[facility].facility_zip;
-          getCoords(geocoder, address, true, vm.facilitiesInZip[facility].facility_name, vm.facilitiesInZip[facility].facility_type);
+          getCoords(geocoder, address, true, vm.facilitiesInZip[facility]);
         }
         configureMap();
       });

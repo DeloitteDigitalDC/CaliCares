@@ -1,14 +1,39 @@
 .list-card {
   color: $darkGray;
   padding: 10px 27px 10px 27px;
-  
+
   .title{
     color: $dark-blue;
   }
 }
 
+.list-card-custom{
+    .capacity{
+      font-size: 40px;
+      color: $darkGray;
+      margin-top: 7px;
+    }
+
+    .capacityDiv{
+      display: flex;
+      margin: auto;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    p{
+      text-transform: capitalize;
+    }
+
+    .body{
+      margin-bottom: 0;
+    }
+}
+
 .card-wrapper{
-  background-color: $medGray; //To be updated with proper color
+  background-color: $evenLighterGray;
+  border-bottom: 1px solid $darkGray;
 }
 
 .card-wrapper:focus{
@@ -18,4 +43,15 @@
   section.container{
     padding-left: 11px;
   }
+}
+
+.card-list{
+  height: 400px;
+  overflow: scroll;
+  overflow-x: hidden;
+  padding-right: 0;
+}
+
+.right-panel{
+  padding-left: 0;
 }

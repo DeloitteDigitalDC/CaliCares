@@ -13,13 +13,13 @@
  *
  * @example <app-header user="main.user" headerOptions="main.headerOptions"></app-header>
  */
-(function () {
+(function() {
 
   angular
     .module('rex')
     .directive('appHeader', appHeader);
 
-  function appHeader($state) {
+  function appHeader($state, $mdSidenav) {
     return {
       restrict: 'EA',
       templateUrl: 'app/components/app-header/app-header.directive.html',
@@ -42,10 +42,9 @@
        * @returns {String} route name for use in ui-sref directive
        */
       function homeRoute() {
-        if(typeof(scope.user) !== 'undefined' && scope.user.data) {
+        if (typeof(scope.user) !== 'undefined' && scope.user.data) {
           return 'main.myFamily';
-        }
-        else {
+        } else {
           return 'main.home';
         }
       }
@@ -58,6 +57,11 @@
       function goTo() {
         $state.go(scope.headerOptions.link);
       }
+
+
+      scope.openLeftMenu = function() {
+        $mdSidenav('left').toggle();
+      };
     }
   }
 

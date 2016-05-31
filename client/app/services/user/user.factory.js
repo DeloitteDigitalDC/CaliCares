@@ -39,7 +39,9 @@
       addDrug          : addDrug,
       deleteCabinetDrug: deleteCabinetDrug,
       editDrug         : editDrug,
-      getKids: getKids
+      getKids: getKids,
+      setPrefs: setPrefs,
+      setMember: setMember
     };
 
     /**
@@ -153,11 +155,26 @@
      */
     function setDetails(details) {
       var deferred = $http.patch('/user/' + $cookies.get('uid') + '/details/', details);
+      return deferred;
+    }
 
-      deferred.success(function () {
-        _.extend(userObj.pregnant, details.pregnant); // attach the new data to the userObj
-      });
+    /**
+     * set details for a given user
+     *
+     * @memberof user
+     *
+     * @example
+     * user.setDetails().then(function (data) {
+     *   console.log(data);
+     * })
+     */
+    function setPrefs(details) {
+      var deferred = $http.patch('/user/' + $cookies.get('uid') + '/prefs/', details);
+      return deferred;
+    }
 
+    function setMember(details) {
+      var deferred = $http.patch('/user/' + $cookies.get('uid') + '/houseHoldMembers/', details);
       return deferred;
     }
 

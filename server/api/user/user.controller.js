@@ -51,7 +51,7 @@ user.getDetails = function(req, res) {
 
 
 /**
- * set the details for the authenticated used;
+ * set the details for the authenticated user;
  *
  * @memberof user.controller
  *
@@ -59,8 +59,45 @@ user.getDetails = function(req, res) {
  * @param res
  */
 user.setDetails = function(req, res) {
+  db.run('UPDATE USERS SET address = ?, phone1 = ?, phone2 = ?, homeType = ?, providerNum = ?, email1 = ?, email2 = ?, insurance = ? WHERE USERNAME = ?', req.body.address, req.body.phone1, req.body.phone2, req.body.homeType, req.body.providerNum, req.body.email1, req.body.email2, req.body.insurance, req.params.uid.toLowerCase(), function (err) {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.send('updated user');
+    }
+  });
+};
 
-  db.run('UPDATE USERS SET PREGNANT = ? WHERE USERNAME = ?', req.body.pregnant, req.params.uid.toLowerCase(), function(err) {
+/**
+ * set the preferences for the authenticated user;
+ *
+ * @memberof user.controller
+ *
+ * @param req
+ * @param res
+ */
+user.setPrefs = function(req, res) {
+
+  db.run('UPDATE USERS SET prefGender = ?, prefUnable = ?, prefAge = ?, prefLanguages = ?, prefNumChildren = ? WHERE USERNAME = ?', req.body.prefGender, req.body.prefUnable, req.body.prefAge, req.body.prefLanguages, req.body.prefNumChildren, req.params.uid.toLowerCase(), function(err) {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.send('updated user');
+    }
+  });
+};
+
+/**
+ * set the householdMembers for the authenticated user;
+ *
+ * @memberof user.controller
+ *
+ * @param req
+ * @param res
+ */
+user.setHouseholdMembers = function(req, res) {
+
+  db.run('UPDATE houseMembers SET name = ?, birthday = ?, languages = ?, gender = ?, mobile = ?, workNum = ?, email =?, certifications = ?, services = ? WHERE USERNAME = ? AND member_id = ?', req.body.name, req.body.birthday, req.body.languages, req.body.gender, req.body.mobile, req.body.workNum, req.body.email, req.body.certifications, req.body.services, req.params.uid.toLowerCase(), req.body.member_id, function(err) {
     if (err) {
       res.status(500).send(err);
     } else {

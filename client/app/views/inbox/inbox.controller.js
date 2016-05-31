@@ -29,7 +29,14 @@
       var modal = modals.newMessage(msg);
 
       modal.then(function (message) {
-        console.log(message);
+        message.child = 'Timmy Smith';
+        message.dateCreated = '05/19/2016';
+        message.time = '7:10am';
+        if (message.message){
+          message.previewMsg = message.message.slice(0, 65) + "...";
+        }
+        message.unread = false;
+        vm.msgs.unshift(message);
       });
 
       return modal;
@@ -39,7 +46,9 @@
       {
         child: 'Timmy Smith',
         dateCreated: '05/19/2016',
+        time: '7:10am',
         eventType: 'Emotional outburst',
+        subject: 'Timmy Smith - Emotional outburst',
         from: 'James Smith',
         message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.',
         previewMsg: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, e...',
@@ -69,6 +78,7 @@
         child: 'Timmy Smith',
         dateCreated: '05/19/2016',
         eventType: 'Emotional outburst',
+        subject: 'Timmy Smith - Emotional outburst',
         from: 'James Smith',
         message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.',
         previewMsg: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, e...',
@@ -98,6 +108,7 @@
         child: 'Timmy Smith',
         dateCreated: '05/19/2016',
         eventType: 'Emotional outburst',
+        subject: 'Timmy Smith - Emotional outburst',
         from: 'James Smith',
         message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.',
         previewMsg: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, e...',
