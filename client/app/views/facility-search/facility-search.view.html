@@ -27,8 +27,8 @@
     </div>
   </app-section>
 
-  <app-section class="bg-lighter-gray mapSection">
-
+  <app-section class="mapSection">
+    <div class="row">
       <div class="col-sm-8 col-sm-push-4 right-panel">
         <ui-gmap-google-map center="FacilitySearch.map.center" zoom="FacilitySearch.map.zoom">
           <ui-gmap-markers idkey="FacilitySearch.markers.id" models="FacilitySearch.markers" coords="'markerCoords'" events="FacilitySearch.map.markersEvents"></ui-gmap-markers>
@@ -53,5 +53,6 @@
           <list-card facility="facility"></list-card>
         </div>
       </div>
+    </div>
   </app-section>
 </div>
