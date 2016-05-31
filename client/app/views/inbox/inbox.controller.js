@@ -44,93 +44,57 @@
 
     vm.msgs = [
       {
-        child: 'Timmy Smith',
+        child: 'Thomas Wooster',
         dateCreated: '05/19/2016',
         time: '7:10am',
-        eventType: 'Emotional outburst',
-        subject: 'Timmy Smith - Emotional outburst',
+        eventType: 'Difficulty at school',
+        subject: 'Thomas Wooster - Difficulty at school',
         from: 'James Smith',
-        message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.',
-        previewMsg: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, e...',
+        message: 'Thank you for letting me know that Thomas is having difficulty at school. I recommend that you enroll Thomas in an after school tutoring program for one on one support with his homework. Use the CaliCares Facilities Near You tool to find a tutoring facility near you.',
+        previewMsg: 'Thank you for letting me know that Thomas is having diffic...',
         unread: true,
         previousMessages:[
           {
-            from: 'James Smith',
+            from: 'Marcus Taylor',
             time: '7:15am',
-            date: 'May 13th',
-            message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla'
-          },
-          {
-            from: 'Chuck Taylor',
-            time: '1:10pm',
-            date: 'May 16th',
-            message: 'Etiam porta sem malesuada magna mollis euismod.'
-          },
-          {
-            from: 'James Smith',
-            time: '3:13pm',
-            date: 'May 14th',
-            message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla'
+            date: '05/13/2016',
+            message: 'I am concerned about Thomas and his performance at school. His teacher said that he is not completing homework assignments and falling behind in his core subjects. How should I address this?'
           }
         ]
       },
       {
-        child: 'Timmy Smith',
+        child: 'Jacquelyn Wooster',
         dateCreated: '05/19/2016',
-        eventType: 'Emotional outburst',
-        subject: 'Timmy Smith - Emotional outburst',
+        eventType: 'Concerns of depression',
+        subject: 'Jacquelyn Wooster - Concerns of depression',
         from: 'James Smith',
-        message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.',
-        previewMsg: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, e...',
+        message: 'Thank you for reaching out. It may be helpful for Jacquelyn to speak with a counselor about her feelings. Use the CaliCares Facilities Near You tool to find a counseling facility near you.',
+        previewMsg: 'Thank you for reaching out. It may be helpful for Jacquelyn to...',
         unread: true,
         previousMessages:[
           {
-            from: 'James Smith',
+            from: 'Marcus Taylor',
             time: '7:15am',
-            date: 'May 13th',
-            message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla'
-          },
-          {
-            from: 'Chuck Taylor',
-            time: '1:10pm',
-            date: 'May 16th',
-            message: 'Etiam porta sem malesuada magna mollis euismod.'
-          },
-          {
-            from: 'James Smith',
-            time: '3:13pm',
-            date: 'May 14th',
-            message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla'
+            date: '05/13/2016',
+            message: 'Jacquelyn has been very sad lately and I am worried that she might be feeling depressed. Do you have suggestions for how I can help?'
           }
         ]
       },
       {
-        child: 'Timmy Smith',
+        child: 'Thomas Wooster',
         dateCreated: '05/19/2016',
-        eventType: 'Emotional outburst',
-        subject: 'Timmy Smith - Emotional outburst',
+        eventType: 'Thank you',
+        subject: 'Thank you',
         from: 'James Smith',
-        message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.',
-        previewMsg: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, e...',
+        message: 'My pleasure. Feel free to reach out with questions at any time.',
+        previewMsg: 'My pleasure. Feel free to reach out with questions at any...',
         unread: false,
         previousMessages:[
           {
-            from: 'James Smith',
+            from: 'Marcus Taylor',
             time: '7:15am',
-            date: 'May 13th',
-            message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla'
-          },
-          {
-            from: 'Chuck Taylor',
-            time: '1:10pm',
-            date: 'May 16th',
-            message: 'Etiam porta sem malesuada magna mollis euismod.'
-          },
-          {
-            from: 'James Smith',
-            time: '3:13pm',
-            date: 'May 14th',
-            message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla'
+            date: '05/13/2016',
+            message: 'Thank you for your help and guidance with Thomas. I appreciate you taking the time to answer my questions.'
           }
         ]
       }

@@ -7,18 +7,16 @@
     </md-toolbar>
     <md-dialog-content>
       <div class="md-dialog-content">
-        <div class="row">
-          <label for="to">To</label>
-          <input type="text" class="form-control" id="to" ng-model="NewMsg.msg.from" required></input>
-        </div>
-        <div class="row">
-          <label for="subject">Subject</label>
-          <input type="text" class="form-control" id="subject" ng-model="NewMsg.msg.subject"></input>
-        </div>
-        <div class="row">
-          <label for="message">Message</label>
-          <textarea type="textarea" class="form-control" id="message" ng-model="NewMsg.msg.message"></textarea>
-        </div>
+
+        <label for="to">To</label>
+        <input type="text" class="form-control rex-input" id="to" ng-model="NewMsg.msg.from"></input>
+
+        <label for="subject">Subject</label>
+        <input type="text" class="form-control rex-input" id="subject" ng-model="NewMsg.msg.subject"></input>
+
+        <label for="message">Message</label>
+        <textarea type="textarea" class="form-control rex-input" rows="8" id="message" ng-model="NewMsg.msg.message"></textarea>
+
       </div>
     </md-dialog-content>
     <md-dialog-actions>
