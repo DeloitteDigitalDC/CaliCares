@@ -59,8 +59,7 @@ user.getDetails = function(req, res) {
  * @param res
  */
 user.setDetails = function(req, res) {
-
-  db.run('UPDATE USERS SET (address, phone1, phone2, homeType, providerNum, email1, email2, insurance) = (?,?,?,?,?,?,?,?,?) WHERE USERNAME = ?', [req.body.address, req.body.phone1, req.body.phone2, req.body.homeType, req.body.providerNum, req.body.email1, req.body.email2, req.body.insurance], req.params.uid.toLowerCase(), function(err) {
+  db.run('UPDATE USERS SET address = ?, phone1 = ?, phone2 = ?, homeType = ?, providerNum = ?, email1 = ?, email2 = ?, insurance = ? WHERE USERNAME = ?', req.body.address, req.body.phone1, req.body.phone2, req.body.homeType, req.body.providerNum, req.body.email1, req.body.email2, req.body.insurance, req.params.uid.toLowerCase(), function (err) {
     if (err) {
       res.status(500).send(err);
     } else {
@@ -79,7 +78,7 @@ user.setDetails = function(req, res) {
  */
 user.setPrefs = function(req, res) {
 
-  db.run('UPDATE USERS SET (prefGender, prefUnable, prefAge, prefLanguages, prefNumChildren) = (?) WHERE USERNAME = ?', req.body.pregnant, req.params.uid.toLowerCase(), function(err) {
+  db.run('UPDATE USERS SET prefGender = ?, prefUnable = ?, prefAge = ?, prefLanguages = ?, prefNumChildren = ? WHERE USERNAME = ?', req.body.prefGender, req.body.prefUnable, req.body.prefAge, req.body.prefLanguages, req.body.prefNumChildren, req.params.uid.toLowerCase(), function(err) {
     if (err) {
       res.status(500).send(err);
     } else {

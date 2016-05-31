@@ -1,13 +1,16 @@
-<section class="general-info profile-tab-content">
-  <edit-general form-data="GeneralInfo.user"></edit-general>
+<section class="general-info profile-tab-content" ng-show="GeneralInfo.showEditGeneral">
+  <edit-general form-data="GeneralInfo.user" show-state="GeneralInfo.showEditGeneral"></edit-general>
+</section>
+<section class="general-info profile-tab-content" ng-show="GeneralInfo.showEditPrefs">
+  <edit-preferences form-data="GeneralInfo.user" show-state="GeneralInfo.showEditPrefs"></edit-preferences>
+</section>
+<section class="general-info profile-tab-content" ng-hide="GeneralInfo.showEditGeneral || GeneralInfo.showEditPrefs">
   <div class="tab-sub-section">
+    <button type="button" class="edit-button pull-right" ng-click="GeneralInfo.showEditGeneral = true">Edit</button>
     <h3>Household Information</h3>
-
     <div class="row">
       <div class="col-sm-6">
         <div><b>Address:&nbsp;</b>{{GeneralInfo.user.address}}</div>
-
-
         <div><b>Primary Phone:&nbsp;</b>{{GeneralInfo.user.phone1}}</div>
         <div><b>Primary Email:&nbsp;</b>{{GeneralInfo.user.email1}}</div>
         <div><b>Alternate Phone:&nbsp;</b>{{GeneralInfo.user.phone2}}</div>
@@ -21,6 +24,7 @@
     </div>
   </div>
   <div class="tab-sub-section">
+    <button type="button" class="edit-button pull-right" ng-click="GeneralInfo.showEditPrefs = true">Edit</button>
     <h3>Household Preferences</h3>
     <div class="row">
       <div class="col-sm-6">

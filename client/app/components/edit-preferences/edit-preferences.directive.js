@@ -3,7 +3,7 @@
 /**
  * @ngdoc directive
  *
- * @name editGeneral
+ * @name editPreferences
  *
  * @description
  * directive for rex
@@ -12,22 +12,22 @@
 
   angular
     .module('rex')
-    .directive('editGeneral', editGeneral);
+    .directive('editPreferences', editPreferences);
 
-  function editGeneral(user) {
+  function editPreferences(user) {
     return {
         restrict: 'E',
-        templateUrl: 'app/components/edit-general/edit-general.directive.html',
+        templateUrl: 'app/components/edit-preferences/edit-preferences.directive.html',
         scope: {
-          formData : '=',
-          showState : '='
+            formData : '=',
+            showState : '='
         },
         link: link
     };
 
     function link(scope) {
       scope.saveChanges = function(){
-        user.setDetails(scope.formData).then(function(){
+        user.setPrefs(scope.formData).then(function(){
           scope.showState = false;
         });
       };

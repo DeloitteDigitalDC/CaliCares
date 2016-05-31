@@ -1,0 +1,29 @@
+<div class="tab-sub-section">
+  <h3>Edit Preference Information</h3>
+<form ng-submit="saveChanges()" name="editPrefs">
+  <div class="row">
+    <div class="col-sm-6">
+      <div><b>Genders:&nbsp;</b><input class="form-control rex-input" ng-model="formData.prefGender" type="text"> </div>
+
+      <div><b>Age Range:&nbsp;</b><input class="form-control rex-input" ng-model="formData.prefAge" type="text"></div>
+
+      <div><b>Number of Children:&nbsp;</b>  <input class="form-control rex-input" ng-model="formData.prefNumChildren" type="text"> </div>
+
+
+    </div>
+    <div class="col-sm-6">
+      <div> <b>Unable to accomodate:&nbsp;</b>  <input class="form-control rex-input" ng-model="formData.prefUnable" type="text"> </div>
+      <div><b>Languages:&nbsp;</b>  <input class="form-control rex-input" ng-model="formData.prefLanguages" type="text"> </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-offset-6 col-sm-3">
+      <button tabindex="3" type="button" class="btn rex-button" ng-click="showState = false">Cancel</button>
+    </div>
+    <div class="col-sm-3">
+      <button tabindex="3" type="submit" class="btn rex-button">Save Changes</button>
+    </div>
+  </div>
+</form>
+</div>
