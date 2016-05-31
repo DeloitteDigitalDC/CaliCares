@@ -138,7 +138,7 @@ user.getMessages = function(req, res) {
  *
  */
 user.addMessage = function(req, res) {
-    db.run('INSERT INTO messages (username, previous_message_id, subject, sender, date, message_body) VALUES (?,?,?,?,?,?)', [req.params.uid.toLowerCase(), req.body.previous_message_id, req.body.subject, req.body.sender, req.body.date, req.body.message_body], function(err) {
+    db.run('INSERT INTO messages (username, previous_message_id, subject, sender, date, message_body, unread) VALUES (?,?,?,?,?,?,?)', [req.params.uid.toLowerCase(), req.body.previous_message_id, req.body.subject, req.body.sender, req.body.date, req.body.message_body, req.body.unread], function(err) {
       if (err) {
         res.status(500).send(err);
       } else {

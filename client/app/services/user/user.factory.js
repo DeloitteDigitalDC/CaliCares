@@ -39,7 +39,7 @@
       addDrug          : addDrug,
       deleteCabinetDrug: deleteCabinetDrug,
       editDrug         : editDrug,
-      getKids          : getKids
+      getKids          : getKids,
       getMessages      : getMessages,
       addMessage       : addMessage
     };
@@ -287,7 +287,7 @@
         var deferred = $http.get('/user/' + $cookies.get('uid') + '/messages/');
 
         deferred.success(function (data) {
-          userObj.messages = data.data;
+          userObj.messages = data.data || [];
         });
 
         return deferred;
@@ -309,7 +309,7 @@
           $rootScope.loading = false;
 
         });
-        
+
         return promise;
     }
 
