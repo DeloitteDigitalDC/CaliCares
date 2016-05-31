@@ -87,3 +87,10 @@ input.ng-invalid-pattern {
     border-color: white;
   }
 }
+
+.edit-button {
+  cursor: pointer;
+  span {
+    margin-left: 5px;
+  }
+}

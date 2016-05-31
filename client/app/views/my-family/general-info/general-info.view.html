@@ -6,7 +6,7 @@
 </section>
 <section class="general-info profile-tab-content" ng-hide="GeneralInfo.showEditGeneral || GeneralInfo.showEditPrefs">
   <div class="tab-sub-section">
-    <button type="button" class="edit-button pull-right" ng-click="GeneralInfo.showEditGeneral = true">Edit</button>
+    <a class="edit-button pull-right" ng-click="GeneralInfo.showEditGeneral = true">Edit<span class="glyphicon glyphicon-pencil"></span></a>
     <h3>Household Information</h3>
     <div class="row">
       <div class="col-sm-6">
@@ -24,7 +24,7 @@
     </div>
   </div>
   <div class="tab-sub-section">
-    <button type="button" class="edit-button pull-right" ng-click="GeneralInfo.showEditPrefs = true">Edit</button>
+    <a class="edit-button pull-right" ng-click="GeneralInfo.showEditPrefs = true">Edit<span class="glyphicon glyphicon-pencil"></span></a>
     <h3>Household Preferences</h3>
     <div class="row">
       <div class="col-sm-6">
