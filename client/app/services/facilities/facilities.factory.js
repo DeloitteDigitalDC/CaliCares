@@ -19,7 +19,7 @@
       getFacilities  : getFacilities,
       getByZipcode : getByZipcode
     };
-    
+
     /**
      * gets facilities from api
      *
@@ -28,11 +28,21 @@
      * @param {String} zipcode - the zipcode to search by
      */
     function getFacilities() {
-      var promise = $http.get('/facilities');
-      
+      // var promise = $http.get('/facilities');
+      var testUrl = 'https://chhs.data.ca.gov/resource/mffa-c6z5.json';
+
+        var promise = $http({
+          method : 'GET',
+          url : testUrl,
+          withCredentials: false,
+          data : {
+            '$$app_token' : 'zC6SsnoTAxEM7lLyElte6Gbxc'
+          }
+        })
+
       return promise;
     }
-    
+
     /**
      * gets facilities from api of a certain zipcode
      *
@@ -41,11 +51,21 @@
      * @param {String} zipcode - the zipcode to search by
      */
     function getByZipcode(zipcode) {
-      var promise = $http.get('/facilities/' + zipcode);
-      
+      // var promise = $http.get('/facilities/' + zipcode);
+      var testUrl = 'https://chhs.data.ca.gov/resource/mffa-c6z5.json';
+
+      var promise = $http({
+        method : 'GET',
+        url : testUrl,
+        withCredentials: false,
+        data : {
+          '$$app_token' : 'zC6SsnoTAxEM7lLyElte6Gbxc',
+          'facility_zip' : '90008'
+        }
+      })
+
       return promise;
     }
   }
 
 })();
-

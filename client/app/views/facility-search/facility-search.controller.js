@@ -57,6 +57,7 @@
     }
 
     uiGmapGoogleMapApi.then(function(maps) {
+      debugger;
       init();
     });
 
@@ -87,20 +88,25 @@
             lat = location.lat(),
             lng = location.lng();
             if (addMarker){
-              var marker = {
-                id: String(vm.markers.length),
-                facilityName: facility.facility_name.toLowerCase(),
-                facilityType: facility.facility_type.toLowerCase(),
-                facilityAddress: facility.facility_address.toLowerCase(),
-                facilityAddress2: facility.facility_city.toLowerCase() + ", " + facility.facility_state + " " + facility.facility_zip,
-                facilityPhone: facility.facility_telephone_number,
-                facilityCapacity: facility.facility_capacity,
-                markerCoords: {
-                    latitude: lat,
-                    longitude: lng
+              try {
+                var marker = {
+                  id: String(vm.markers.length),
+                  facilityName: facility.facility_name.toLowerCase(),
+                  facilityType: facility.facility_type.toLowerCase(),
+                  facilityAddress: facility.facility_address.toLowerCase(),
+                  facilityAddress2: facility.facility_city.toLowerCase() + ", " + facility.facility_state + " " + facility.facility_zip,
+                  facilityPhone: facility.facility_telephone_number,
+                  facilityCapacity: facility.facility_capacity,
+                  markerCoords: {
+                      latitude: lat,
+                      longitude: lng
+                  }
                 }
+              vm.markers.push(marker);
+              } catch(err) {
+                console.log(err);
               }
-            vm.markers.push(marker);
+
           } else {
             vm.userLatitude = lat;
             vm.userLongitude = lng;
