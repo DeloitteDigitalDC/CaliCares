@@ -13,6 +13,13 @@
       <p ng-bind-html="msg.message"></p>
       <hr class="subtle">
     </div>
-    <button class="rex-button pull-right">Reply</button>
+    <button class="rex-button pull-right" ng-click="toggleReply()" ng-show="!showReply">Reply</button>
+    <div class="reply-form" ng-show="showReply">
+      <textarea placeholder="Begin typing message here..." ng-model="replyTxt"></textarea>
+      <div class="button-group pull-right">
+        <button class="cancel" ng-click="toggleReply()">Cancel</button>
+        <button class="send rex-button" ng-click="replyMsg()">Send</button>
+      </div>
+    </div>
   </section>
 </div>

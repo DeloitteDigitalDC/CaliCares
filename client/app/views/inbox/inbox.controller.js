@@ -27,6 +27,7 @@
       {
         child: 'Timmy Smith',
         dateCreated: '05/19/2016',
+        time: '7:10am',
         eventType: 'Emotional outburst',
         from: 'James Smith',
         message: 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod.',
