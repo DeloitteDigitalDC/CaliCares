@@ -2,7 +2,7 @@
   <div ng-repeat="member in HouseholdMembers.members">
   <edit-household-members ng-show="HouseholdMembers.memberId === member.member_id" form-data="member" member-id="HouseholdMembers.memberId"></edit-household-members>
   <div class="tab-sub-section" ng-hide="HouseholdMembers.memberId">
-    <a class="edit-button pull-right" ng-click="HouseholdMembers.memberId = member.member_id">Edit<span class="glyphicon glyphicon-pencil"></span></a>
+    <a class="edit-button pull-right" ng-click="HouseholdMembers.memberId = member.member_id"><span class="edit-button-text">Edit</span><span class="glyphicon glyphicon-pencil"></span></a>
 
     <h3>{{member.name}} - Head of Household</h3>
     <div class="row">
