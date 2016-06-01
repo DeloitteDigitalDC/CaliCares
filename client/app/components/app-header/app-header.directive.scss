@@ -123,12 +123,29 @@ app-header {
   .app-header {
     height: 50px;
     .icon-logo-Rex {
+      background: url('../images/CWDS-Icon.png') no-repeat;
+      width: 150px;
       margin-top: -45px;
-      margin-left: -120px;
+      margin-left: -55px;
       transform: scale(.35);
     }
+    button{
+      margin-left: 0px;
+      min-width: initial;
+      height: 38px;
+      width: 37px;
+      margin-right: 0px;
+      padding-right: 0px;
+    }
+    .nav-wrapper{
+      display: flex;
+    }
+    h2{
+      padding-left: 45px;
+      margin: 0 auto;
+      text-align: center;
+    }
   }
-
   .app-header.logged-in .nav-pages {
     display: none;
   }

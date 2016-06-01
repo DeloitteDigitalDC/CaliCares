@@ -11,28 +11,30 @@
     <a tabindex="0" class="icon-logo-Rex" ui-sref="{{homeRoute}}" title="ReX" alt="Rex">
       <span class="sr-only">Return to the Main Page</span>
     </a>
-
-    <div class="nav-pages">
-      <a class="nav-button" ui-sref="main.myFamily" ui-sref-active="active">
-        <div class="nav-icon family"></div>
-        <span class="nav-name">My Profile</span>
-      </a>
-      <a class="nav-button" ui-sref="main.inbox" ui-sref-active="active">
-        <div class="nav-icon inbox"></div>
-        <span class="nav-name">Inbox</span>
-      </a>
-      <a class="nav-button" ui-sref="main.facilities" ui-sref-active="active">
-        <div class="nav-icon facilities"></div>
-        <span class="nav-name">Facilities Near You</span>
-      </a>
-      <!-- <a class="nav-button" ui-sref="main.help" ui-sref-active="active">
-        <div class="nav-icon help"></div>
-        <span class="nav-name">Help</span>
-      </a> -->
+    <div class="nav-wrapper">
+      <h2 class="text-teal button-pad visible-xs">{{mobileNavHeader}}</h2>
+      <div class="nav-pages">
+        <a class="nav-button" ui-sref="main.myFamily" ui-sref-active="active">
+          <div class="nav-icon family"></div>
+          <span class="nav-name">My Profile</span>
+        </a>
+        <a class="nav-button" ui-sref="main.inbox" ui-sref-active="active">
+          <div class="nav-icon inbox"></div>
+          <span class="nav-name">Inbox</span>
+        </a>
+        <a class="nav-button" ui-sref="main.facilities" ui-sref-active="active">
+          <div class="nav-icon facilities"></div>
+          <span class="nav-name">Facilities Near You</span>
+        </a>
+        <!-- <a class="nav-button" ui-sref="main.help" ui-sref-active="active">
+          <div class="nav-icon help"></div>
+          <span class="nav-name">Help</span>
+        </a> -->
+      </div>
+      <md-button ng-hide="!user.data" class="visible-xs pull-right" ng-click="openLeftMenu()" aria-label="Open Menu">
+        <div class="icon-hamburger-menu"></div>
+        <!-- <span class="glyphicon glyphicon-menu-hamburger"></span> -->
+      </md-button>
     </div>
-    <md-button class="visible-xs pull-right" ng-click="openLeftMenu()">
-      Open Left Menu
-      <span class="glyphicon glyphicon-menu-hamburger"></span>
-    </md-button>
   </section>
 </app-section>
