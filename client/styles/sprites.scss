@@ -128,6 +128,13 @@ img.icon {
   display: inline-block;
 }
 
+.icon-hamburger-menu{
+  background: url('../images/hamburger.svg') no-repeat;
+  width: 30px;
+  height: 19px;
+  transform: scale(1.6);
+}
+
 .red-bottle {
   background-image : url('../images/ic_pillbottle-darkred.svg');
   background-repeat: no-repeat;
