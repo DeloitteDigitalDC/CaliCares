@@ -16,7 +16,7 @@
 
   function FacilitySearch(facilities, uiGmapGoogleMapApi) {
     var vm = this;
-    vm.userZip = '90008'; //need to get from user
+    vm.userZip = '94610';
     vm.zipcodeSearch = vm.userZip;
     vm.userLatitude = 0;
     vm.userLongitude = 0;
@@ -30,7 +30,7 @@
         latitude: 0,
         longitude: 0
       },
-      zoom: 12,
+      zoom: 13,
       markersEvents: {
         click: function(marker, eventName, model) {
           vm.map.window.model = model;
