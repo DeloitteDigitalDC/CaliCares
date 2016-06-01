@@ -1,12 +1,12 @@
 // Main.scss
 
 md-sidenav {
-  background: $lightGray;
+  background: $darkGray;
   a {
     display: block;
     padding: 25px 0 25px 0;
     margin: 0 20px 0 20px;
-    border-top: 1px solid $darkGray;
+    border-top: 1px solid $medGray;
   }
   .removeIcon{
     height: 50px;
@@ -21,10 +21,6 @@ md-sidenav {
   }
   .profile{
     border: none;
-  }
-  .logout{
-    font-weight: bold;
-    color: $darkGray;
   }
 
 }
