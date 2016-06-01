@@ -28,7 +28,7 @@
           time: '7:10am',
           eventType: 'Difficulty at school',
           subject: 'Thomas Wooster - Difficulty at school',
-          from: 'James Smith',
+          from: 'James Smith (Caseworker)',
           to: vm.user,
           message: 'Thank you for letting me know that Thomas is having difficulty at school. I recommend that you enroll Thomas in an after school tutoring program for one on one support with his homework. Use the CaliCares Facilities Near You tool to find a tutoring facility near you.',
           previewMsg: 'Thank you for letting me know that Thomas is having diffic...',
@@ -36,7 +36,7 @@
           previousMessages: [
             {
               from: vm.user,
-              to: 'James Smith',
+              to: 'James Smith (Caseworker)',
               time: '7:15am',
               date: '05/13/2016',
               message: 'I am concerned about Thomas and his performance at school. His teacher said that he is not completing homework assignments and falling behind in his core subjects. How should I address this?'
@@ -48,7 +48,7 @@
           dateCreated: '05/19/2016',
           eventType: 'Concerns of depression',
           subject: 'Jacquelyn Wooster - Concerns of depression',
-          from: 'James Smith',
+          from: 'James Smith (Caseworker)',
           to: vm.user,
           message: 'Thank you for reaching out. It may be helpful for Jacquelyn to speak with a counselor about her feelings. Use the CaliCares Facilities Near You tool to find a counseling facility near you.',
           previewMsg: 'Thank you for reaching out. It may be helpful for Jacquelyn to...',
@@ -56,7 +56,7 @@
           previousMessages: [
             {
               from: vm.user,
-              to: 'James Smith',
+              to: 'James Smith (Caseworker)',
               time: '7:15am',
               date: '05/13/2016',
               message: 'Jacquelyn has been very sad lately and I am worried that she might be feeling depressed. Do you have suggestions for how I can help?'
@@ -68,7 +68,7 @@
           dateCreated: '05/19/2016',
           eventType: 'Thank you',
           subject: 'Thank you',
-          from: 'James Smith',
+          from: 'James Smith (Caseworker)',
           to: vm.user,
           message: 'My pleasure. Feel free to reach out with questions at any time.',
           previewMsg: 'My pleasure. Feel free to reach out with questions at any...',
@@ -76,7 +76,7 @@
           previousMessages: [
             {
               from: vm.user,
-              to: 'James Smith',
+              to: 'James Smith (Caseworker)',
               time: '7:15am',
               date: '05/13/2016',
               message: 'Thank you for your help and guidance with Thomas. I appreciate you taking the time to answer my questions.'
