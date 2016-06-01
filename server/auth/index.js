@@ -119,8 +119,8 @@ module.exports = function(app) {
           stmt.finalize();
 
           var stmt2 = db.prepare('INSERT INTO houseMembers (id, username, name, age, birthday, languages, serviceStartDate, gender, mobile, workNum, email, certifications, services) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)');
-          stmt2.run([req.body.id, req.body.username.toLowerCase(), 'Marcus Taylor', 32, '5/16/1984', 'English, Spanish', '01/15/2014', 'Male', '(123)-555-5555', '(987)-555-5555', 'chucktaylor@email.com', 'First-Aid Certification', 'Academic Guidance']);
-          stmt2.run([req.body.id, req.body.username.toLowerCase(), 'Jane Taylor', 41, '4/9/1975', 'English, Spanish', '01/15/2014', 'Female', '(456)-555-5555', '(654)-555-5555', 'janetaylor@email.com', 'Domestic Violence Specialist', 'Behavior Management']);
+          stmt2.run([req.body.id, req.body.username.toLowerCase(), req.body.firstName +' '+ req.body.lastName, 32, '5/16/1984', 'English, Spanish', '01/15/2014', 'Not Specified', '(123)-555-5555', '(987)-555-5555', 'chucktaylor@email.com', 'First-Aid Certification', 'Academic Guidance']);
+          stmt2.run([req.body.id, req.body.username.toLowerCase(), 'Jane '+req.body.lastName, 41, '4/9/1975', 'English, Spanish', '01/15/2014', 'Female', '(456)-555-5555', '(654)-555-5555', 'janetaylor@email.com', 'Domestic Violence Specialist', 'Behavior Management']);
           stmt2.finalize();
 
           res.status(201).send('User ' + req.body.username + ' Created');
