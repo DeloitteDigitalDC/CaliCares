@@ -137,8 +137,15 @@ app-header {
       margin-right: 0px;
       padding-right: 0px;
     }
+    // .nav-wrapper{
+    //   display: flex;
+    // }
+    h2{
+      padding-left: 45px;
+      margin: 0 auto;
+      text-align: center;
+    }
   }
-
   .app-header.logged-in .nav-pages {
     display: none;
   }

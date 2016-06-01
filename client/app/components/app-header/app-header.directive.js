@@ -19,7 +19,7 @@
     .module('rex')
     .directive('appHeader', appHeader);
 
-  function appHeader($state, $mdSidenav) {
+  function appHeader($state, $mdSidenav, $location) {
     return {
       restrict: 'EA',
       templateUrl: 'app/components/app-header/app-header.directive.html',
@@ -31,6 +31,10 @@
     };
 
     function link(scope) {
+      scope.location = $location.path();
+      scope.$on('$locationChangeSuccess', function(){
+        scope.location = $location.path();
+      });
       scope.homeRoute = homeRoute();
       scope.goTo = goTo;
 
