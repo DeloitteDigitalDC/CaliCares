@@ -31,9 +31,9 @@
     };
 
     function link(scope) {
-      scope.location = $location.path();
+      getCurrLocation();
       scope.$on('$locationChangeSuccess', function(){
-        scope.location = $location.path();
+        getCurrLocation();
       });
       scope.homeRoute = homeRoute();
       scope.goTo = goTo;
@@ -60,6 +60,19 @@
        */
       function goTo() {
         $state.go(scope.headerOptions.link);
+      }
+
+      function getCurrLocation(){
+        var location = $location.path();
+        if (location.indexOf('my-family')!==-1){
+          scope.mobileNavHeader = 'Profile';
+        } else if (location.indexOf('inbox')!==-1) {
+          scope.mobileNavHeader = 'Inbox';
+        } else if (location.indexOf('facility-search')!==-1) {
+          scope.mobileNavHeader = 'Facilities';
+        } else{
+          scope.mobileNavHeader = '';
+        }
       }
 
 
