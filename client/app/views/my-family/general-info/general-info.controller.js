@@ -29,7 +29,6 @@
       // vm.kids = user.getKids();
       user.getDetails().then(function (userData) {
           vm.user = userData.data.data;
-          console.log(vm.user);
 
           _.forEach(vm.user.members, function(member){
             vm.certifications.push(member.certifications);
