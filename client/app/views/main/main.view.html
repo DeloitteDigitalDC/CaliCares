@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <md-sidenav md-component-id="left" class="md-sidenav-right">
-    <div class="removeIcon"><span class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="MainCtrl.closeMenu()"></span></div>
+    <div class="removeIcon"><span tabindex="0" class="icon-close" ng-click="MainCtrl.closeMenu()"></span></div>
     <div>
       <a class="nav-button profile" ui-sref="main.myFamily" ui-sref-active="active" ng-click="MainCtrl.closeMenu()">
         <!-- <div class="nav-icon family"></div> -->
@@ -15,7 +15,7 @@
         <span class="nav-name">Facilities Near You</span>
       </a>
       <a class="nav-button" ui-sref="main.userProfile" ui-sref-active="active" ng-click="MainCtrl.closeMenu()">
-        <span class="nav-name logout">Logout</span>
+        <span class="nav-name">Logout</span>
       </a>
     </div>
   </md-sidenav>

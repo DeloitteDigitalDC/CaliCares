@@ -8,7 +8,7 @@
 </app-section>
 <app-section class="bg-white" role="banner">
   <section class="app-header" ng-class="{'logged-in': user.data}">
-    <a tabindex="0" class="icon-logo-Rex" ui-sref="{{homeRoute}}" title="ReX" alt="Rex">
+    <a tabindex="0" class="icon-logo-Rex" ui-sref="{{homeRoute}}" title="CaliCares" alt="CaliCares">
       <span class="sr-only">Return to the Main Page</span>
     </a>
     <div class="nav-wrapper">
@@ -31,10 +31,10 @@
           <span class="nav-name">Help</span>
         </a> -->
       </div>
-      <md-button ng-hide="!user.data" class="visible-xs pull-right" ng-click="openLeftMenu()" aria-label="Open Menu">
+      <button ng-hide="!user.data" class="visible-xs pull-right hamburger-button" ng-click="openLeftMenu()" aria-label="Open Menu">
         <div class="icon-hamburger-menu"></div>
         <!-- <span class="glyphicon glyphicon-menu-hamburger"></span> -->
-      </md-button>
+      </button>
     </div>
   </section>
 </app-section>

@@ -131,8 +131,14 @@ img.icon {
 .icon-hamburger-menu{
   background: url('../images/hamburger.svg') no-repeat;
   width: 30px;
-  height: 19px;
+  height: 20px;
   transform: scale(1.6);
+}
+
+.icon-close {
+  background: url('../images/close_x.svg') no-repeat;
+  width: 25px;
+  height: 25px;
 }
 
 .red-bottle {
