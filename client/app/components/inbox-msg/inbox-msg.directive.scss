@@ -1,9 +1,6 @@
 .inbox-msg {
   hr{
-    border-top: 2px solid $dark-blue;
-    &.subtle{
-      border-top: 1px solid $dark-blue;
-    }
+    border-top: 1px solid $dark-blue;
   }
   
   .comment{

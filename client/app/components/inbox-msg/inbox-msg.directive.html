@@ -3,7 +3,6 @@
     <h3>{{messages[num].subject}}</h3>
     <p><span class="bold">From: </span>{{messages[num].from}}</p>
     <p><span class="bold">Sent: </span>{{messages[num].dateCreated}}</p>
-    <hr>
     <p ng-bind-html="messages[num].message"></p>
     <p class="convo-history" ng-click="toggleHistory()"><span class="bold">Show conversation history </span><i class="glyphicon" ng-class="{'glyphicon-chevron-up': showHistory, 'glyphicon-chevron-down': !showHistory}"></i></p>
     <hr class="subtle">
