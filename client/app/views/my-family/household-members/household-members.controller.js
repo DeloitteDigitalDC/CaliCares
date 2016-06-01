@@ -16,7 +16,7 @@
 
   function HouseholdMembers(user) {
     var vm = this;
-
+    vm.calculateAge = calculateAge;
     init();
 
     /**
@@ -24,8 +24,12 @@
      */
     function init() {
       user.getDetails().then(function (userData) {
-          vm.members = userData.data.data.members;
+        vm.members = userData.data.data.members;
       });
+    }
+
+    function calculateAge(birthday){
+      return (moment().diff(moment(birthday, 'MM-DD-YYYY'), 'years'));
     }
   }
 
