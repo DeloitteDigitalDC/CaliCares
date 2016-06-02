@@ -1,7 +1,7 @@
 .facility-search {
 
   .angular-google-map-container {
-    height: 400px;
+    height: 450px;
   }
 
   ui-gmap-markers{
@@ -40,6 +40,10 @@
 
   .bg-gray{
     background-color: $darkGray;
+  }
+
+  .card-list{
+    box-shadow: 20px -10px 20px -20px $boxShadowGray;
   }
 
 
