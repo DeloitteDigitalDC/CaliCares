@@ -12,13 +12,13 @@
     </style>
 </head>
 <body>
-<div class="header high">
+<div class="header low">
     <h1>Code coverage report for <span class="entity">components/search-input/search-input.directive.js</span></h1>
     <h2>
-        Statements: <span class="metric">95.83% <small>(23 / 24)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Branches: <span class="metric">75% <small>(3 / 4)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">100% <small>(5 / 5)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">95.83% <small>(23 / 24)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">20.83% <small>(5 / 24)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 4)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">20% <small>(1 / 5)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">20.83% <small>(5 / 24)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">components/search-input/</a> &#187; search-input.directive.js</div>
@@ -125,7 +125,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -136,43 +136,43 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -202,8 +202,8 @@
     .module('rex')
     .directive('searchInput', searchInput);
 &nbsp;
-  function searchInput(util, drug, $state) {
-    return {
+<span class="fstat-no" title="function not covered" >  function searchInput(util, drug, $state) {</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
       restrict   : 'EA',
       templateUrl: 'app/components/search-input/search-input.directive.html',
       scope      : {
@@ -213,44 +213,44 @@
       link       : link
     };
 &nbsp;
-    function link(scope) {
-      scope.search     = {};
-      scope.showLoader = false;
-      scope.noResults  = false;
+<span class="fstat-no" title="function not covered" >    function link(scope) {</span>
+<span class="cstat-no" title="statement not covered" >      scope.search     = {};</span>
+<span class="cstat-no" title="statement not covered" >      scope.showLoader = false;</span>
+<span class="cstat-no" title="statement not covered" >      scope.noResults  = false;</span>
 &nbsp;
-      scope.searchByName = searchByName;
+<span class="cstat-no" title="statement not covered" >      scope.searchByName = searchByName;</span>
 &nbsp;
       /**
        * Search for a drug by its name
        *
        * @memberof searchInput
        */
-      function searchByName() {
-        $state.go('main.search.searchResults');
+<span class="fstat-no" title="function not covered" >      function searchByName() {</span>
+<span class="cstat-no" title="statement not covered" >        $state.go('main.search.searchResults');</span>
 &nbsp;
-        scope.noResults     = false;
-        scope.searchResults = [];
-        scope.showLoader    = true;
+<span class="cstat-no" title="statement not covered" >        scope.noResults     = false;</span>
+<span class="cstat-no" title="statement not covered" >        scope.searchResults = [];</span>
+<span class="cstat-no" title="statement not covered" >        scope.showLoader    = true;</span>
 &nbsp;
-        var query;
+<span class="cstat-no" title="statement not covered" >        var query;</span>
 &nbsp;
-        try {
-          query = util.createSingleSearchQry(scope.search.searchTerms);
+<span class="cstat-no" title="statement not covered" >        try {</span>
+<span class="cstat-no" title="statement not covered" >          query = util.createSingleSearchQry(scope.search.searchTerms);</span>
         }
         catch (e) {
 <span class="cstat-no" title="statement not covered" >          query = '';</span>
         }
 &nbsp;
-        var drugSearch = drug.labelsSearch({search: query, limit: 100});
+<span class="cstat-no" title="statement not covered" >        var drugSearch = drug.labelsSearch({search: query, limit: 100});</span>
 &nbsp;
-        drugSearch.success(function (res) {
-          scope.searchResults = res.results || [];
+<span class="cstat-no" title="statement not covered" >        drugSearch.success(<span class="fstat-no" title="function not covered" >function (res) {</span></span>
+<span class="cstat-no" title="statement not covered" >          scope.searchResults = res.results || [];</span>
 &nbsp;
-          <span class="missing-if-branch" title="else path not taken" >E</span>if (scope.searchResults.length === 0) {
-            scope.noResults = true;
+<span class="cstat-no" title="statement not covered" >          if (scope.searchResults.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >            scope.noResults = true;</span>
           }
 &nbsp;
-          scope.showLoader = false;
+<span class="cstat-no" title="statement not covered" >          scope.showLoader = false;</span>
         });
       }
     }
@@ -264,7 +264,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jul 02 2015 11:31:31 GMT-0400 (EDT)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jun 02 2016 14:27:54 GMT-0400 (EDT)</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>

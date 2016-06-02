@@ -12,13 +12,13 @@
     </style>
 </head>
 <body>
-<div class="header high">
+<div class="header low">
     <h1>Code coverage report for <span class="entity">views/sign-up/sign-up.controller.js</span></h1>
     <h2>
-        Statements: <span class="metric">93.75% <small>(15 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Branches: <span class="metric">100% <small>(2 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">80% <small>(4 / 5)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">93.75% <small>(15 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">25% <small>(4 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">20% <small>(1 / 5)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">25% <small>(4 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">views/sign-up/</a> &#187; sign-up.controller.js</div>
@@ -76,8 +76,7 @@
 49
 50
 51
-52
-53</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+52</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -94,35 +93,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2</span>
-<span class="cline-any cline-yes">2</span>
-<span class="cline-any cline-yes">2</span>
-<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">2</span>
-<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -145,32 +143,32 @@
     .module('rex')
     .controller('SignUpCtrl', SignUpCtrl);
 &nbsp;
-  function SignUpCtrl(user) {
-    var vm = this;
+<span class="fstat-no" title="function not covered" >  function SignUpCtrl(user) {</span>
+<span class="cstat-no" title="statement not covered" >    var vm = this;</span>
 &nbsp;
-    vm.signUpForm = {};
-    vm.userInfo   = {};
-    vm.showError  = false;
-    vm.loading    = false;
+<span class="cstat-no" title="statement not covered" >    vm.signUpForm = {};</span>
+<span class="cstat-no" title="statement not covered" >    vm.userInfo   = {};</span>
+<span class="cstat-no" title="statement not covered" >    vm.showError  = false;</span>
+<span class="cstat-no" title="statement not covered" >    vm.loading    = false;</span>
 &nbsp;
-    vm.signUp = signUp;
+<span class="cstat-no" title="statement not covered" >    vm.signUp = signUp;</span>
 &nbsp;
     /**
      * create a new user
      *
      * @memberof SignUp
      */
-    function signUp() {
-      if (vm.signUpForm.$invalid) {
-        vm.showError = true;
+<span class="fstat-no" title="function not covered" >    function signUp() {</span>
+<span class="cstat-no" title="statement not covered" >      if (vm.signUpForm.$invalid) {</span>
+<span class="cstat-no" title="statement not covered" >        vm.showError = true;</span>
       }
       else {
-        vm.loading = true;
+<span class="cstat-no" title="statement not covered" >        vm.loading = true;</span>
 &nbsp;
-        user
-          .createUser(vm.userInfo.username, vm.userInfo.password, vm.userInfo.firstName)
-          .success(function () {
-            vm.loading = false;
+<span class="cstat-no" title="statement not covered" >        user</span>
+          .createUser(vm.userInfo)
+          .success(<span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >            vm.loading = false;</span>
           })
           .error(<span class="fstat-no" title="function not covered" >function () {</span>
 <span class="cstat-no" title="statement not covered" >            vm.loading = false;</span>
@@ -180,13 +178,12 @@
   }
 &nbsp;
 })();
-&nbsp;
 &nbsp;</pre></td></tr>
 </table></pre>
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jul 02 2015 11:31:31 GMT-0400 (EDT)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jun 02 2016 14:27:54 GMT-0400 (EDT)</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>

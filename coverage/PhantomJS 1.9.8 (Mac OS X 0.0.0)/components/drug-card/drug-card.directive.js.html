@@ -12,13 +12,13 @@
     </style>
 </head>
 <body>
-<div class="header high">
+<div class="header low">
     <h1>Code coverage report for <span class="entity">components/drug-card/drug-card.directive.js</span></h1>
     <h2>
-        Statements: <span class="metric">100% <small>(16 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Branches: <span class="metric">83.33% <small>(5 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">100% <small>(5 / 5)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">100% <small>(16 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">37.5% <small>(6 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">20% <small>(1 / 5)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">37.5% <small>(6 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">components/drug-card/</a> &#187; drug-card.directive.js</div>
@@ -120,7 +120,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -130,33 +130,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5</span>
-<span class="cline-any cline-yes">4</span>
-<span class="cline-any cline-yes">4</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">2</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -165,7 +145,27 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -193,8 +193,8 @@
     .module('rex')
     .directive('drugCard', drugCard);
 &nbsp;
-  function drugCard($state) {
-    return {
+<span class="fstat-no" title="function not covered" >  function drugCard($state) {</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
       restrict   : 'E',
       templateUrl: 'app/components/drug-card/drug-card.directive.html',
       scope      : {
@@ -203,14 +203,14 @@
       link       : link
     };
 &nbsp;
-    function link(scope) {
-      scope.goToDetails = goToDetails;
+<span class="fstat-no" title="function not covered" >    function link(scope) {</span>
+<span class="cstat-no" title="statement not covered" >      scope.goToDetails = goToDetails;</span>
 &nbsp;
-      var id;
+<span class="cstat-no" title="statement not covered" >      var id;</span>
 &nbsp;
-      if (scope.drug) {
-        id = scope.drug.id || <span class="branch-1 cbranch-no" title="branch not covered" >0;</span>
-        scope.expired = _checkExpired(scope.drug.expirationDate);
+<span class="cstat-no" title="statement not covered" >      if (scope.drug) {</span>
+<span class="cstat-no" title="statement not covered" >        id = scope.drug.id || 0;</span>
+<span class="cstat-no" title="statement not covered" >        scope.expired = _checkExpired(scope.drug.expirationDate);</span>
       }
 &nbsp;
       /**
@@ -218,12 +218,12 @@
        *
        * @memberof drugCard
        */
-      function goToDetails() {
-        if (scope.drug.recalled) {
-          $state.go('main.drugProfile.recalls', {name: scope.drug.name, id : id});
+<span class="fstat-no" title="function not covered" >      function goToDetails() {</span>
+<span class="cstat-no" title="statement not covered" >        if (scope.drug.recalled) {</span>
+<span class="cstat-no" title="statement not covered" >          $state.go('main.drugProfile.recalls', {name: scope.drug.name, id : id});</span>
         }
         else {
-          $state.go('main.drugProfile.uses', {name: scope.drug.name, id : id});
+<span class="cstat-no" title="statement not covered" >          $state.go('main.drugProfile.uses', {name: scope.drug.name, id : id});</span>
         }
       }
 &nbsp;
@@ -238,8 +238,8 @@
        *
        * @private
        */
-      function _checkExpired(exprDate) {
-        return moment(exprDate).isBefore(moment());
+<span class="fstat-no" title="function not covered" >      function _checkExpired(exprDate) {</span>
+<span class="cstat-no" title="statement not covered" >        return moment(exprDate).isBefore(moment());</span>
       }
     }
   }
@@ -252,7 +252,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jul 02 2015 11:31:31 GMT-0400 (EDT)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jun 02 2016 14:27:54 GMT-0400 (EDT)</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>

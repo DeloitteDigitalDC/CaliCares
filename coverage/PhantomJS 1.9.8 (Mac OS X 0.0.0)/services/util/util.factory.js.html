@@ -12,13 +12,13 @@
     </style>
 </head>
 <body>
-<div class="header medium">
+<div class="header low">
     <h1>Code coverage report for <span class="entity">services/util/util.factory.js</span></h1>
     <h2>
-        Statements: <span class="metric">56.52% <small>(13 / 23)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">26.09% <small>(6 / 23)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Branches: <span class="metric">0% <small>(0 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">66.67% <small>(4 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">56.52% <small>(13 / 23)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">16.67% <small>(1 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">26.09% <small>(6 / 23)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">services/util/</a> &#187; util.factory.js</div>
@@ -128,7 +128,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -143,20 +143,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2</span>
-<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -191,7 +191,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -213,8 +213,8 @@
     .module('rex')
     .factory('util', util);
 &nbsp;
-  function util() {
-    return {
+<span class="fstat-no" title="function not covered" >  function util() {</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
       createBasicQry       : createBasicQry,
       createSingleSearchQry: createSingleSearchQry
     };
@@ -228,10 +228,10 @@
      * @param {Object} drugs - list of drugs
      *
      */
-    function createBasicQry(drugs) {
-      var string = 'openfda.brand_name:';
+<span class="fstat-no" title="function not covered" >    function createBasicQry(drugs) {</span>
+<span class="cstat-no" title="statement not covered" >      var string = 'openfda.brand_name:';</span>
 &nbsp;
-      for (var drug in drugs) {
+<span class="cstat-no" title="statement not covered" >      for (var drug in drugs) {</span>
 <span class="cstat-no" title="statement not covered" >        if (drugs.hasOwnProperty(drug)) {</span>
 <span class="cstat-no" title="statement not covered" >          if (drugs[drug]) {</span>
 <span class="cstat-no" title="statement not covered" >            var qryReadyDrug = checkForStopWords(drugs[drug].name);</span>
@@ -239,10 +239,10 @@
           }
         }
       }
-      _.trimRight(string, '+');
-      string = '(' + string + ')'; //+AND+status:Ongoing';
+<span class="cstat-no" title="statement not covered" >      _.trimRight(string, '+');</span>
+<span class="cstat-no" title="statement not covered" >      string = '(' + string + ')'; </span>//+AND+status:Ongoing';
 &nbsp;
-      return string;
+<span class="cstat-no" title="statement not covered" >      return string;</span>
     }
 &nbsp;
     /**
@@ -276,8 +276,8 @@
      *
      * @returns {String}
      */
-    function createSingleSearchQry(searchTerms) {
-      return '(' + 'openfda.brand_name:"' + searchTerms + '")';
+<span class="fstat-no" title="function not covered" >    function createSingleSearchQry(searchTerms) {</span>
+<span class="cstat-no" title="statement not covered" >      return '(' + 'openfda.brand_name:"' + searchTerms + '")';</span>
     }
   }
 &nbsp;
@@ -288,7 +288,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jul 02 2015 11:31:31 GMT-0400 (EDT)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jun 02 2016 14:27:54 GMT-0400 (EDT)</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>

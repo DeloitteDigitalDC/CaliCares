@@ -2,7 +2,7 @@
   "name": "rex",
   "version": "0.1.1",
   "license": "MIT",
-  "repository": "https://github.com/DeloitteDigitalDC/REX",
+  "repository": "https://github.com/DeloitteDigital/CWS",
   "devDependencies": {
     "angular-jsdoc": "~0.3.0",
     "grunt": "^0.4.5",
@@ -67,7 +67,6 @@
     "directive": "yo angular-blueprint:directive"
   },
   "dependencies": {
-    "MD5": "^1.2.2",
     "bcrypt": "^0.8.3",
     "body-parser": "^1.13.1",
     "chalk": "^1.0.0",

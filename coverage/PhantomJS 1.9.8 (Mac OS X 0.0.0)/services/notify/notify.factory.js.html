@@ -12,13 +12,13 @@
     </style>
 </head>
 <body>
-<div class="header medium">
+<div class="header low">
     <h1>Code coverage report for <span class="entity">services/notify/notify.factory.js</span></h1>
     <h2>
-        Statements: <span class="metric">75% <small>(15 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Branches: <span class="metric">33.33% <small>(2 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">50% <small>(3 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">75% <small>(15 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">25% <small>(5 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">16.67% <small>(1 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">25% <small>(5 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">services/notify/</a> &#187; notify.factory.js</div>
@@ -114,11 +114,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">30</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -130,21 +128,23 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -185,10 +185,10 @@
     .module('rex')
     .factory('notify', notify);
 &nbsp;
-  function notify($rootScope, $timeout) {
-    var timeoutPromise = {};
+<span class="fstat-no" title="function not covered" >  function notify($rootScope, $timeout) {</span>
+<span class="cstat-no" title="statement not covered" >    var timeoutPromise = {};</span>
 &nbsp;
-    return {
+<span class="cstat-no" title="statement not covered" >    return {</span>
       showAlert: showAlert,
       hideAlert: hideAlert
     };
@@ -202,21 +202,21 @@
      * @param {String} type - "success", "warning", or "danger" - Different colors of alert. Default is warning
      * @param {Number} [timeout] - How long the alert should display, default is 4000ms (4seconds)
      */
-    function showAlert(message, type, timeout) {
-      $rootScope.alert = {};
+<span class="fstat-no" title="function not covered" >    function showAlert(message, type, timeout) {</span>
+<span class="cstat-no" title="statement not covered" >      $rootScope.alert = {};</span>
 &nbsp;
       //Clear any existing counters
-      $timeout.cancel(timeoutPromise);
+<span class="cstat-no" title="statement not covered" >      $timeout.cancel(timeoutPromise);</span>
 &nbsp;
-      $rootScope.alert.visible = true;
-      $rootScope.alert.type    = type || <span class="branch-1 cbranch-no" title="branch not covered" >'warning';</span>
-      $rootScope.alert.msg     = message;
+<span class="cstat-no" title="statement not covered" >      $rootScope.alert.visible = true;</span>
+<span class="cstat-no" title="statement not covered" >      $rootScope.alert.type    = type || 'warning';</span>
+<span class="cstat-no" title="statement not covered" >      $rootScope.alert.msg     = message;</span>
 &nbsp;
-      <span class="missing-if-branch" title="else path not taken" >E</span>if (_.isUndefined(timeout)) {
-        timeout = 4000;
+<span class="cstat-no" title="statement not covered" >      if (_.isUndefined(timeout)) {</span>
+<span class="cstat-no" title="statement not covered" >        timeout = 4000;</span>
       }
 &nbsp;
-      timeoutPromise = $timeout(<span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >      timeoutPromise = $timeout(<span class="fstat-no" title="function not covered" >function () {</span></span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        $rootScope.alert.visible = false;</span>
 &nbsp;
@@ -246,7 +246,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jul 02 2015 11:31:31 GMT-0400 (EDT)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jun 02 2016 14:27:54 GMT-0400 (EDT)</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>

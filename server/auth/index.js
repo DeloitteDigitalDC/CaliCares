@@ -13,8 +13,7 @@ module.exports = function(app) {
     LocalStrategy = require('passport-local').Strategy,
     bcrypt = require('bcrypt'),
     $q = require('q'),
-    db = require('../db'),
-    md5 = require('MD5');
+    db = require('../db');
 
 
   //FIXME: Comments on all these functions
@@ -94,7 +93,7 @@ module.exports = function(app) {
               hash,
               salt,
               req.body.firstName,
-              md5(req.body.username.toLowerCase()),
+              'gotRidOfGravatarHash',
               '360 Grand Ave, Oakland, CA 94610',
               '94610',
               'Marcus Taylor, Jane Taylor',

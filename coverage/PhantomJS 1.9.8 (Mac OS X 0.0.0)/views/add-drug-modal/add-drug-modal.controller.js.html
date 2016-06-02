@@ -12,13 +12,13 @@
     </style>
 </head>
 <body>
-<div class="header high">
+<div class="header low">
     <h1>Code coverage report for <span class="entity">views/add-drug-modal/add-drug-modal.controller.js</span></h1>
     <h2>
-        Statements: <span class="metric">87.5% <small>(21 / 24)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">25% <small>(6 / 24)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">60% <small>(3 / 5)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">87.5% <small>(21 / 24)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">20% <small>(1 / 5)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">25% <small>(6 / 24)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">views/add-drug-modal/</a> &#187; add-drug-modal.controller.js</div>
@@ -126,18 +126,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -162,15 +162,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -209,19 +209,19 @@
     .module('rex')
     .controller('AddDrugModalCtrl', AddDrugModalCtrl);
 &nbsp;
-  function AddDrugModalCtrl(drugToAdd, CONST, $mdDialog) {
-    var vm = this;
-    var yearCount = 10;
+<span class="fstat-no" title="function not covered" >  function AddDrugModalCtrl(drugToAdd, CONST, $mdDialog) {</span>
+<span class="cstat-no" title="statement not covered" >    var vm = this;</span>
+<span class="cstat-no" title="statement not covered" >    var yearCount = 10;</span>
 &nbsp;
-    vm.drug = drugToAdd;
-    vm.expiration = {};
-    vm.expiration.months = CONST.months;
-    vm.expirationMonth = vm.expiration.months[0];
-    vm.expiration.years = _makeYearArray(yearCount);
-    vm.expirationYear = vm.expiration.years[yearCount];
+<span class="cstat-no" title="statement not covered" >    vm.drug = drugToAdd;</span>
+<span class="cstat-no" title="statement not covered" >    vm.expiration = {};</span>
+<span class="cstat-no" title="statement not covered" >    vm.expiration.months = CONST.months;</span>
+<span class="cstat-no" title="statement not covered" >    vm.expirationMonth = vm.expiration.months[0];</span>
+<span class="cstat-no" title="statement not covered" >    vm.expiration.years = _makeYearArray(yearCount);</span>
+<span class="cstat-no" title="statement not covered" >    vm.expirationYear = vm.expiration.years[yearCount];</span>
 &nbsp;
-    vm.submit = submit;
-    vm.cancel = $mdDialog.cancel;
+<span class="cstat-no" title="statement not covered" >    vm.submit = submit;</span>
+<span class="cstat-no" title="statement not covered" >    vm.cancel = $mdDialog.cancel;</span>
 &nbsp;
     /**
      * Create the full expiration date and submit the form
@@ -245,16 +245,16 @@
      *
      * @private
      */
-    function _makeYearArray(iterations){
-      var currentYear = new Date().getFullYear(), arr = [];
+<span class="fstat-no" title="function not covered" >    function _makeYearArray(iterations){</span>
+<span class="cstat-no" title="statement not covered" >      var currentYear = new Date().getFullYear(), arr = [];</span>
 &nbsp;
-      while(iterations !== -1){
-        arr.push({id: iterations, name: currentYear + iterations});
+<span class="cstat-no" title="statement not covered" >      while(iterations !== -1){</span>
+<span class="cstat-no" title="statement not covered" >        arr.push({id: iterations, name: currentYear + iterations});</span>
 &nbsp;
-        iterations = iterations-1;
+<span class="cstat-no" title="statement not covered" >        iterations = iterations-1;</span>
       }
 &nbsp;
-      return arr;
+<span class="cstat-no" title="statement not covered" >      return arr;</span>
     }
 &nbsp;
     /**
@@ -282,7 +282,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jul 02 2015 11:31:31 GMT-0400 (EDT)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jun 02 2016 14:27:54 GMT-0400 (EDT)</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>

@@ -12,13 +12,13 @@
     </style>
 </head>
 <body>
-<div class="header high">
+<div class="header low">
     <h1>Code coverage report for <span class="entity">views/user-profile/user-profile.controller.js</span></h1>
     <h2>
-        Statements: <span class="metric">100% <small>(15 / 15)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Branches: <span class="metric">100% <small>(2 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">100% <small>(5 / 5)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">100% <small>(15 / 15)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">33.33% <small>(5 / 15)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">20% <small>(1 / 5)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">33.33% <small>(5 / 15)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">views/user-profile/</a> &#187; user-profile.controller.js</div>
@@ -93,35 +93,35 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2</span>
-<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">2</span>
-<span class="cline-any cline-yes">2</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -143,25 +143,25 @@
     .module('rex')
     .controller('UserProfileCtrl', UserProfileCtrl);
 &nbsp;
-  function UserProfileCtrl(user) {
-    var vm = this;
+<span class="fstat-no" title="function not covered" >  function UserProfileCtrl(user) {</span>
+<span class="cstat-no" title="statement not covered" >    var vm = this;</span>
 &nbsp;
-    vm.userDetails= {};
+<span class="cstat-no" title="statement not covered" >    vm.userDetails= {};</span>
 &nbsp;
-    vm.logout = user.logout;
-    vm.updateUser = updateUser;
+<span class="cstat-no" title="statement not covered" >    vm.logout = user.logout;</span>
+<span class="cstat-no" title="statement not covered" >    vm.updateUser = updateUser;</span>
 &nbsp;
-    init();
+<span class="cstat-no" title="statement not covered" >    init();</span>
 &nbsp;
     /**
      * @memberof UserProfileCtrl
      */
-    function init() {
-      user.getDetails().then(function (userData) {
-        vm.userDetails = userData.data.data;
+<span class="fstat-no" title="function not covered" >    function init() {</span>
+<span class="cstat-no" title="statement not covered" >      user.getDetails().then(<span class="fstat-no" title="function not covered" >function (userData) {</span></span>
+<span class="cstat-no" title="statement not covered" >        vm.userDetails = userData.data.data;</span>
 &nbsp;
-        if(vm.userDetails.pregnant === 1){
-          vm.userDetails.pregnant = true;
+<span class="cstat-no" title="statement not covered" >        if(vm.userDetails.pregnant === 1){</span>
+<span class="cstat-no" title="statement not covered" >          vm.userDetails.pregnant = true;</span>
         }
       });
     }
@@ -171,8 +171,8 @@
      *
      * @memberof UserProfileCtrl
      */
-    function updateUser() {
-      user.setDetails({pregnant : vm.userDetails.pregnant});
+<span class="fstat-no" title="function not covered" >    function updateUser() {</span>
+<span class="cstat-no" title="statement not covered" >      user.setDetails({pregnant : vm.userDetails.pregnant});</span>
     }
   }
 &nbsp;
@@ -183,7 +183,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jul 02 2015 11:31:31 GMT-0400 (EDT)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jun 02 2016 14:27:54 GMT-0400 (EDT)</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>
