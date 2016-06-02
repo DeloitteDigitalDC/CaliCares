@@ -22,14 +22,6 @@ app-header {
     }
   }
 
-  .icon-logo-Rex {
-    position: absolute;
-    margin-top: -32px;
-    transform: scale(.5);
-    left: 0;
-    margin-left: -80px;
-  }
-
   .sign-in{
     display: inline-block;
     right: 0;
@@ -123,13 +115,27 @@ app-header {
   .app-header {
     height: 50px;
     .icon-logo-Rex {
+      background: url('../images/CaliCares-Logo-Small.svg') no-repeat;
+      width: 150px;
+      height: 141px;
       margin-top: -45px;
-      margin-left: -120px;
-      transform: scale(.35);
+      margin-left: -50px;
+      transform: scale(.4);
+    }
+    .nav-wrapper{
+      display: flex;
+    }
+    h2{
+      padding-left: 45px;
+      margin: 0 auto;
+      text-align: center;
     }
   }
-
   .app-header.logged-in .nav-pages {
     display: none;
+  }
+  .hamburger-button{
+    background: none;
+    border: none;
   }
 }

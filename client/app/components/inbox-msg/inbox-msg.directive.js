@@ -7,7 +7,7 @@
  *
  * @description
  * directive for viewing a message
- *  
+ *
  * @property {Array} messages - a specific message object
  *
  * @example <inbox-msg messages='msgs'></inbox-msg>
@@ -32,7 +32,7 @@
     function link(scope) {
       scope.showHistory = false;
       scope.showReply = false;
-      
+
       scope.toggleHistory = function () {
         scope.showHistory = !scope.showHistory;
       };
@@ -51,13 +51,13 @@
 
         var date = new Date();
         scope.messages[scope.num].time = formatAMPM(date);
-        scope.messages[scope.num].dateCreated = date.getMonth() + '/' + date.getDate() + '/' + date.getFullYear();
+        scope.messages[scope.num].dateCreated = (date.getMonth()+1) + '/' + date.getDate() + '/' + date.getFullYear();
         scope.messages[scope.num].message = scope.replyTxt;
 
         user.getDetails().then(function (userData) {
           scope.messages[scope.num].from = userData.data.data.nickName;
         });
-        
+
         scope.replyTxt = '';
         scope.showReply = false;
       };

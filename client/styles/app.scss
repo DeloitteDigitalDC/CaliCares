@@ -73,6 +73,10 @@ body {
     opacity: 1;
     transform:translateX(100%);
   }
+
+  .edit-button-text{
+    display: none;
+  }
 }
 
 // injector
@@ -109,4 +113,5 @@ body {
 @import '../app/views/search/search.style.scss';
 @import '../app/views/sign-up/sign-up.style.scss';
 @import '../app/views/user-profile/user-profile.style.scss';
+@import '../app/views/welcome-modal/welcome-modal.style.scss';
 // endinjector

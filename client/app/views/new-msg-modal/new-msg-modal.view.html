@@ -9,7 +9,7 @@
       <div class="md-dialog-content">
 
         <label for="to">To</label>
-        <input type="text" class="form-control rex-input" id="to" ng-model="NewMsg.msg.from"></input>
+        <input type="text" class="form-control rex-input" id="to" ng-model="NewMsg.msg.to"></input>
 
         <label for="subject">Subject</label>
         <input type="text" class="form-control rex-input" id="subject" ng-model="NewMsg.msg.subject"></input>
@@ -20,12 +20,11 @@
       </div>
     </md-dialog-content>
     <md-dialog-actions>
-      <div class="md-dialog-actions">
-        <a href="" ng-click="NewMsg.closeModal()"><i class="fa fa-times-circle"></i><span>&nbsp;Cancel</span></a>
-        <span flex></span>
-          <md-button class="save-button" ng-click="NewMsg.submit()">
-            <i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Send
-          </md-button>
+      <div class="col-sm-offset-6 col-sm-3">
+        <button tabindex="3" type="button" class="btn rex-button" ng-click="NewMsg.closeModal()">Cancel</button>
+      </div>
+      <div class="col-sm-3">
+        <button tabindex="3" type="submit" class="btn rex-button" ng-click="NewMsg.submit()">Send</button>
       </div>
     </md-dialog-actions>
   </form>

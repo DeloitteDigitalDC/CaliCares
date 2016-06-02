@@ -122,10 +122,27 @@ img.icon {
 }
 
 .icon-logo-Rex {
-  background: url('../images/CWDS-Logo-Horizontal.png') no-repeat;
-  width: 355px;
-	height: 140px;
+  background: url('../images/CaliCares-Logo-Horizontal.svg') no-repeat;
+  transform: scale(0.5);
+  position: absolute;
+  width: 441px;
+  height: 125px;
+  margin-left: -120px;
+  margin-top: -25px;
   display: inline-block;
+}
+
+.icon-hamburger-menu{
+  background: url('../images/hamburger.svg') no-repeat;
+  width: 30px;
+  height: 20px;
+  transform: scale(1.6);
+}
+
+.icon-close {
+  background: url('../images/close_x.svg') no-repeat;
+  width: 25px;
+  height: 25px;
 }
 
 .red-bottle {

@@ -20,6 +20,20 @@
         </div>
       </div>
       <div class="row">
+              <div class="col-sm-offset-3 col-sm-6">
+                <input type="text"
+                       class="form-control rex-input"
+                       id="lastName"
+                       placeholder="Last Name"
+                       ng-model="signUp.userInfo.lastName"
+                       required
+                       ng-minlength="2"
+                       ng-pattern="/^[a-zA-Z]*$/"
+                       ng-disabled="signUp.loading"
+                       name="lastName"/>
+              </div>
+            </div>
+      <div class="row">
         <div class="col-sm-offset-3 col-sm-6">
           <input type="email"
                  class="form-control rex-input"
@@ -50,6 +64,9 @@
         <div class="col-sm-offset-3 col-sm-6">
           <div class="error" ng-show="signUp.signUpForm.firstName.$invalid">
             First name must be all letters and at least 2 characters long.
+          </div>
+          <div class="error" ng-show="signUp.signUpForm.lastName.$invalid">
+            Last name must be all letters and at least 2 characters long.
           </div>
           <div class="error" ng-show="signUp.signUpForm.email.$invalid">
             Email is required.

@@ -18,27 +18,27 @@
  * @property {String} [notes] - notes to be added with the drug
  * @property {Date} [expirationDate] - the expiration date of the drug
  */
-(function () {
+(function() {
 
   angular
     .module('rex')
     .factory('user', user);
 
-  function user($http, $state, modals, notify, CONST, $cookies, $q, $rootScope) {
+  function user($http, $state, modals, notify, CONST, $cookies, $q, $rootScope, $timeout) {
     var messages = CONST.messages,
-        userObj  = {};
+      userObj = {};
 
     return {
-      login            : login,
-      logout           : logout,
-      createUser       : createUser,
-      getDetails       : getDetails,
-      setDetails       : setDetails,
-      getCabinetDrugs  : getCabinetDrugs,
-      addCabinetDrug   : addCabinetDrug,
-      addDrug          : addDrug,
+      login: login,
+      logout: logout,
+      createUser: createUser,
+      getDetails: getDetails,
+      setDetails: setDetails,
+      getCabinetDrugs: getCabinetDrugs,
+      addCabinetDrug: addCabinetDrug,
+      addDrug: addDrug,
       deleteCabinetDrug: deleteCabinetDrug,
-      editDrug         : editDrug,
+      editDrug: editDrug,
       getKids: getKids,
       setPrefs: setPrefs,
       setMember: setMember
@@ -52,14 +52,17 @@
      * @param {String} username - the username
      * @param {String} password - the password
      */
-    function login(username, password) {
-      var promise = $http.post('/user/login', {username: username, password: password});
-
-      promise.success(function (data) {
-        _authenticate(data);
+    function login(username, password, firstLogin) {
+      var promise = $http.post('/user/login', {
+        username: username,
+        password: password
       });
 
-      promise.error(function (data, status) {
+      promise.success(function(data) {
+        _authenticate(data, firstLogin);
+      });
+
+      promise.error(function(data, status) {
         if (status === 401) {
           notify.showAlert('Incorrect username or password', 'danger');
         }
@@ -76,13 +79,15 @@
     function logout() {
       var logoutPromise = $http.get('/user/logout');
 
-      logoutPromise.success(function () {
+      logoutPromise.success(function() {
         $cookies.remove('uid');
         $cookies.remove('connect.sid');
 
         userObj = {};
 
-        $state.go('main.home', {}, {reload: true});
+        $state.go('main.home', {}, {
+          reload: true
+        });
       });
     }
 
@@ -95,14 +100,14 @@
      *
      * @memberof user
      */
-    function createUser(username, password, firstName) {
-      var promise = $http.post('/user/create', {username: username, password: password, firstName: firstName});
+    function createUser(dataObj) {
+      var promise = $http.post('/user/create', dataObj);
 
-      promise.success(function () {
-        login(username, password);
+      promise.success(function() {
+        login(dataObj.username, dataObj.password, true);
       });
 
-      promise.error(function (data, status) {
+      promise.error(function(data, status) {
         if (status === 400) {
           notify.showAlert('Email address is already in use', 'danger');
         }
@@ -131,11 +136,10 @@
         deferred.resolve(userObj);
 
         return deferred.promise;
-      }
-      else {
+      } else {
         deferred = $http.get('/user/' + $cookies.get('uid') + '/details/');
 
-        deferred.success(function (data) {
+        deferred.success(function(data) {
           userObj = data.data;
         });
 
@@ -217,7 +221,7 @@
     function addCabinetDrug(evt, drug, cb) {
       var modal = modals.addDrug(evt, drug);
 
-      modal.then(function (data) {
+      modal.then(function(data) {
         addDrug(data, cb);
       });
 
@@ -235,11 +239,11 @@
     function addDrug(drug, cb) {
       $rootScope.loading = true;
 
-      var promise   = $http.post('/user/' + $cookies.get('uid') + '/cabinet', drug);
+      var promise = $http.post('/user/' + $cookies.get('uid') + '/cabinet', drug);
       console.info(userObj);
       userObj.drugs = userObj.drugs || [];
 
-      promise.success(function () {
+      promise.success(function() {
         userObj.drugs.push(drug);
 
         $rootScope.loading = false;
@@ -251,7 +255,7 @@
         notify.showAlert('Drug successfully added to you cabinet', 'success');
       });
 
-      promise.error(function () {
+      promise.error(function() {
         $rootScope.loading = false;
 
         notify.showAlert('Error adding drug', 'danger');
@@ -271,11 +275,11 @@
     function editDrug(drug, cb) {
       $rootScope.loading = true;
 
-      var promise   = $http.patch('/user/' + $cookies.get('uid') + '/cabinet/' + drug.id, drug);
+      var promise = $http.patch('/user/' + $cookies.get('uid') + '/cabinet/' + drug.id, drug);
       console.info(userObj);
       userObj.drugs = userObj.drugs || [];
 
-      promise.success(function () {
+      promise.success(function() {
         $rootScope.loading = false;
 
         if (cb) {
@@ -285,7 +289,7 @@
         notify.showAlert('Drug successfully added to you cabinet', 'success');
       });
 
-      promise.error(function () {
+      promise.error(function() {
         $rootScope.loading = false;
 
         notify.showAlert('Error adding drug', 'danger');
@@ -309,8 +313,8 @@
 
       userObj.drugs = userObj.drugs || {};
 
-      promise.success(function () {
-        _.remove(userObj.drugs, function (drug) {
+      promise.success(function() {
+        _.remove(userObj.drugs, function(drug) {
           return drug.id === drugId;
         });
 
@@ -323,7 +327,7 @@
         $rootScope.loading = false;
       });
 
-      promise.error(function () {
+      promise.error(function() {
         notify.showAlert('Error deleting drug', 'danger');
 
         $rootScope.loading = false;
@@ -342,14 +346,14 @@
      *
      * @private
      */
-    function _authenticate(data) {
+    function _authenticate(data, firstLogin) {
+
       if (data.code) {
         notify.showAlert(messages[data.code], 'danger');
 
         $rootScope.loading = false;
-      }
-      else {
-        _userLoggedIn(data.toLowerCase());
+      } else {
+        _userLoggedIn(data.toLowerCase(), firstLogin);
 
         $rootScope.loading = false;
       }
@@ -362,14 +366,26 @@
      *
      * @private
      */
-    function _userLoggedIn(data) {
+    function _userLoggedIn(data, firstLogin) {
       var expireDate = moment().add(30, 'minutes').toDate();
 
-      $cookies.put('uid', data, {expires: expireDate});
+      $cookies.put('uid', data, {
+        expires: expireDate
+      });
 
       getDetails();
 
-      $state.go('main.myFamily', {}, {reload: true});
+      $state.go('main.myFamily', {}, {reload: true}).then(function() {
+        if (firstLogin) {
+          $timeout(function() {
+                modals.welcome();
+          }, 500);
+        }
+
+
+      });
+
+
     }
   }
 
