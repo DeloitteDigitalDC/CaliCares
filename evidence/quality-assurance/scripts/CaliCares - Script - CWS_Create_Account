@@ -1,0 +1,19 @@
+import junit.framework.Test;
+import junit.framework.TestSuite;
+
+public class CWS_Create_Account {
+
+  public static Test suite() {
+    TestSuite suite = new TestSuite();
+    suite.addTestSuite(Launch Page.class);
+    suite.addTestSuite(Create Account - Error Check.class);
+    suite.addTestSuite(logout.class);
+    suite.addTestSuite(Sign In - Error Check.class);
+    suite.addTestSuite(Logout.class);
+    return suite;
+  }
+
+  public static void main(String[] args) {
+    junit.textui.TestRunner.run(suite());
+  }
+}
