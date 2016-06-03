@@ -19,7 +19,6 @@
 
     vm.closeModal = closeModal;
     vm.submit = submit;
-    vm.msg;
 
     function closeModal() {
       $mdDialog.cancel();

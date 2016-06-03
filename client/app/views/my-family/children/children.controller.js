@@ -17,7 +17,6 @@
   function Children(user) {
     var vm = this;
 
-
     init();
 
     /**
@@ -27,6 +26,7 @@
       vm.kids = user.getKids();
       console.log(vm.kids);
     }
+
   }
 
 })();

@@ -16,7 +16,7 @@
 
   function FacilitySearch(facilities, uiGmapGoogleMapApi) {
     var vm = this;
-    vm.userZip = '90008'; //need to get from user
+    vm.userZip = '94610';
     vm.zipcodeSearch = vm.userZip;
     vm.userLatitude = 0;
     vm.userLongitude = 0;
@@ -24,12 +24,13 @@
     vm.getIndex = getIndex;
     vm.searchZip = searchZip;
     vm.markers = [];
+    var googleMaps = {};
     vm.map = {
       center: {
         latitude: 0,
         longitude: 0
       },
-      zoom: 12,
+      zoom: 13,
       markersEvents: {
         click: function(marker, eventName, model) {
           vm.map.window.model = model;
@@ -57,6 +58,7 @@
     }
 
     uiGmapGoogleMapApi.then(function(maps) {
+      googleMaps = maps;
       init();
     });
 
@@ -84,20 +86,19 @@
       geocoder.geocode({
         'address': address
       }, function(results, status) {
-        if (status === google.maps.GeocoderStatus.OK && results.length > 0) {
+        if (status === googleMaps.GeocoderStatus.OK && results.length > 0) {
+        // if (status === google.maps.GeocoderStatus.OK && results.length > 0) {
           var location = results[0].geometry.location,
             lat = location.lat(),
             lng = location.lng();
           if (addMarker) {
             try {
-              debugger;
               var marker = {
                 id: String(vm.markers.length),
                 facilityName: facility.facility_name.toLowerCase(),
                 facilityType: facility.facility_type.toLowerCase(),
                 facilityAddress: facility.facility_address.toLowerCase(),
-                // facilityAddress2: facility.facility_city.toLowerCase() + ", " + facility.facility_state + " " + facility.facility_zip,
-                facilityAddress2: facility.facility_state + ' ' + facility.facility_zip,
+                facilityAddress2: facility.facility_city.toLowerCase() + ', ' + facility.facility_state + ' ' + facility.facility_zip,
                 facilityPhone: facility.facility_telephone_number,
                 facilityCapacity: facility.facility_capacity,
                 markerCoords: {
@@ -119,7 +120,9 @@
     }
 
     function init() {
-      var geocoder = new google.maps.Geocoder();
+      vm.showMap = true;
+      var geocoder = new googleMaps.Geocoder();
+      // var geocoder = new google.maps.Geocoder();
       vm.markers = [];
       vm.facilitiesInZip = [];
       getCoords(geocoder, vm.userZip, false);

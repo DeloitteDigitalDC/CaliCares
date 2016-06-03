@@ -6,7 +6,7 @@
 </section>
 <section class="general-info profile-tab-content" ng-hide="GeneralInfo.showEditGeneral || GeneralInfo.showEditPrefs">
   <div class="tab-sub-section">
-    <a class="edit-button pull-right" ng-click="GeneralInfo.showEditGeneral = true">Edit<span class="glyphicon glyphicon-pencil"></span></a>
+    <a class="edit-button pull-right" ng-click="GeneralInfo.showEditGeneral = true"><span class="edit-button-text">Edit</span><span class="glyphicon glyphicon-pencil"></span></a>
     <h3>Household Information</h3>
     <div class="row">
       <div class="col-sm-6">
@@ -24,7 +24,7 @@
     </div>
   </div>
   <div class="tab-sub-section">
-    <a class="edit-button pull-right" ng-click="GeneralInfo.showEditPrefs = true">Edit<span class="glyphicon glyphicon-pencil"></span></a>
+    <a class="edit-button pull-right" ng-click="GeneralInfo.showEditPrefs = true"><span class="edit-button-text">Edit</span><span class="glyphicon glyphicon-pencil"></span></a>
     <h3>Household Preferences</h3>
     <div class="row">
       <div class="col-sm-6">
@@ -33,7 +33,7 @@
         <div><b>Number of Children:&nbsp;</b>{{GeneralInfo.user.prefNumChildren}}</div>
       </div>
       <div class="col-sm-6">
-        <div><b>Unable to accomodate:&nbsp;</b>{{GeneralInfo.user.prefUnable}}</div>
+        <div><b>Unable to accommodate:&nbsp;</b>{{GeneralInfo.user.prefUnable}}</div>
         <div><b>Languages:&nbsp;</b>{{GeneralInfo.user.prefLanguages}}</div>
       </div>
     </div>

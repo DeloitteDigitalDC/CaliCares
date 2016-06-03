@@ -1,7 +1,7 @@
 .facility-search {
 
   .angular-google-map-container {
-    height: 400px;
+    height: 450px;
   }
 
   ui-gmap-markers{
@@ -42,10 +42,14 @@
     background-color: $darkGray;
   }
 
+  .card-list{
+    box-shadow: 20px -10px 20px -20px $boxShadowGray;
+  }
+
 
 }
 
-@media #{$lessThanSmall}  {
+@media #{$lessThanTablet}  {
   .facility-search {
     .card-list {
       padding-right: 15px;
@@ -53,9 +57,11 @@
     .right-panel {
       padding-left: 15px;
     }
-
     .subHeader h4 {
       transform: translateY(0);
+    }
+    h2{
+      display: none;
     }
   }
 
