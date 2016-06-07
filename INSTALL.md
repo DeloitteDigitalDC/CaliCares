@@ -3,11 +3,11 @@ CaliCares - Install Instructions
 
 ### Prerequisites
 
-Install [NodeJs](https://nodejs.org/)
+Install [NodeJs](https://nodejs.org/)  (If you have errors with the latest node, try version 4.x)
 
 Install Bower ```npm install -g bower``` (if you have permission errors on OSX, ```sudo !!```)
 
-CaliCares uses a SQlLite database which is built with npm's internal version of node-gyp, and thus your system must meet [node-gyp's requirements](https://github.com/TooTallNate/node-gyp#installation).
+CaliCares uses a SQlLite database which is built with npm's internal version of node-gyp, and thus your system must meet node-gyp's requirements.  Please follow the installation guide at: (https://github.com/TooTallNate/node-gyp#installation).
 
 Issues installing any of the above? Check out info on [installing node via packages] (https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager).
 
@@ -16,15 +16,27 @@ Issues installing any of the above? Check out info on [installing node via packa
 Clone the repo
 
 ```
-git clone https://github.com/DeloitteDigitalDC/CWS.git <projectName>
+git clone https://github.com/DeloitteDigitalDC/CaliCares.git <projectName>
 cd <project-name>
-bower install && npm install
+bower install
+npm install
 ```
 
 Optionally, to remove git commit history
 
 ```
 rm -rf .git
+```
+
+In the event of an error with any of the packages, check that you have the following installed/built:
+```
+ npm install –g grunt
+ npm install –g grunt-cli
+ npm install –g bower
+ npm install –g node-gyp
+ npm install bcrypt --save
+ npm install sqlite3 –save
+ npm rebuild node-sass
 ```
 
 ### Configure App
