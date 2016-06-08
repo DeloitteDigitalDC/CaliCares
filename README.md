@@ -3,7 +3,7 @@
 
 [Install locally.][install]
 
-View the video.
+[View the video.][video] (password: CaliCares)
 
 [See how we met the requirements.][matrix]
 
@@ -50,11 +50,12 @@ We deployed CaliCares using our automated build pipeline. This maximized our dep
 Just because the app is shipped doesn't mean we're finished. We used the [Nagios][devops] continuous monitoring tool to monitor system status and health (e.g., disk usage, current users, current load, etc.), and the environment is set up to notify us when a key metric moves outside normal operating ranges.
 Once we completed the automated unit tests to test our code and the product manager gave final approval, we deployed our product to [URL][calicares] and uploaded our final artifacts to GitHub. We were able to continuously monitor the application to confirm that it was performing as expected.
 
-When we [create and deliver a product][agile], it’s more than working hard, each team member is committed to the best possible results. To see a little bit of what our process looks like in action, make sure to check out the [video][video] we put together of the footage we captured along the way.
+When we [create and deliver a product][agile], it’s more than working hard, each team member is committed to the best possible results. To see what our process looks like in action, make sure to check out the [video][video] (password: CaliCares) we put together of the footage we captured along the way.
 
    [calicares]: <http://calicares.io/>
    [tips]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/CaliCares-Tips.pdf>
    [install]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/INSTALL.md>
+   [video]: <https://vimeo.com/169863877>
    [matrix]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence>
    [orgchart]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/CaliCares-OrgChart.pdf>
    [agile]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/process/CaliCares-AgileProcess.pdf>
