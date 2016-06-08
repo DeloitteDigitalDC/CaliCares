@@ -3,7 +3,7 @@
 
 [Install locally.][install]
 
-[View the video.][video]
+View the video.
 
 [See how we met the requirements.][matrix]
 
@@ -55,7 +55,6 @@ When we [create and deliver a product][agile], it’s more than working hard, ea
    [calicares]: <http://calicares.io/>
    [tips]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/CaliCares-Tips.pdf>
    [install]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/INSTALL.md>
-   [video]: <>
    [matrix]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence>
    [orgchart]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/CaliCares-OrgChart.pdf>
    [agile]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/process/CaliCares-AgileProcess.pdf>
