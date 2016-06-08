@@ -11,7 +11,7 @@
 At Deloitte Digital, we have a core belief that great design doesn’t just happen. Ideas alone are common. It takes discipline, research, and relentlessly talented and creative minds to make insights into something tangible that we can build, test, and iterate on. 
 That said, meet our experienced, multidisciplinary and collaborative [team][orgchart] using nine labor categories identified in the RFI:
 
- - Brian, Product Manager
+- Brian, Product Manager
 - Bob, Agile Coach
 - Jenna, Delivery Manager/Business Analyst
 - Lauren, Technical Architect
