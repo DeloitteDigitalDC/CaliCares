@@ -1,73 +1,74 @@
-# REX by Deloitte Digital
+# CaliCares by Deloitte Digital
+[Access the prototype.][calicares] (View [tips][tips] to see features of the application)
 
-[Install REX locally.](https://github.com/DeloitteDigitalDC/REX/blob/master/INSTALL.md)
+[Install locally.][install]
 
-[Access the prototype.](http://askrex.io/) (View [tips](https://github.com/DeloitteDigitalDC/REX/blob/master/USER-TIPS.md) to quickly see features of the application)
+[View the video.][video]
 
-[View the video.](https://vimeo.com/132462802) (A lower resolution version of the video is located in the repository [here](https://github.com/DeloitteDigitalDC/REX/blob/master/evidence/media/18F-Proposal-720p.mp4))
+[See how we met the requirements.][matrix]
 
+# CHHS Agile Development Pre-Qualified (ADPQ) Vendor Pool – Deloitte Digital’s Technical Approach
+At Deloitte Digital, we have a core belief that great design doesn’t just happen. Ideas alone are common. It takes discipline, research, and relentlessly talented and creative minds to make insights into something tangible that we can build, test, and iterate on. 
+That said, meet our experienced, multidisciplinary and collaborative [team][orgchart] using nine labor categories identified in the RFI:
 
-## GSA/18F Agile Delivery Services – Deloitte Digital Approach
+ - Brian, Product Manager
+- Bob, Agile Coach
+- Jenna, Delivery Manager/Business Analyst
+- Lauren, Technical Architect
+- Mike & Steven, Interaction Designers
+- Emily, Writer
+- Jason, Visual Designer
+- Sid, Rohit, Front-end web developers
+- Ryan, DevOps Engineer
+- Nabeel, QA
 
-At Deloitte Digital, we have a core belief that great design doesn’t just happen. Ideas alone are common. It takes discipline, research, and relentlessly talented and creative minds to make insights into something tangible that we can build, test, and iterate on. In this section, we will describe our approach towards building the prototype for the GSA Agile Delivery Services BPA.
+We identified and empowered Brian as our Product Manager. He was given authority to make final decisions on concept, UX, design, and functionality.
 
-We take the team thing seriously. Our experienced, cross-disciplinary teams act as one team building one product.
+Going from concept to completion requires a flexible approach that enables ongoing evaluation. For the ADPQ, we developed our prototype using our agile approach that is based on Scrum and the U.S. Digital Services Playbook. We quickly assembled a small, highly-coordinated, cross-functional team to create working software in [three phases: (1) Discovery, (2) Sprint Cycles, and (3) Release][agile]. All of these phases were met with a commitment to focusing on the user and using open source software and standards.
 
-That said, meet our diverse [prototype team](https://github.com/DeloitteDigitalDC/REX/blob/master/evidence/ReX-OrgChart.pdf):
-* Kevin, Product manager
-* Aaron, Technical architect
-* Bassel, Interaction designer
-* Alex, Visual designer
-* Lauren & Danny, Frontend web developers
-* Mark, DevOps engineer
-* Matt, Business analyst
-* Seef, Delivery manager
+# 1. Discovery
+With us, it’s all about the user. During the Discovery phase, we learned as much as we could, as fast as we could about the users, their problems, expectations, and pain points. We utilized over 4 human-centered design tools and techniques throughout.
 
-We identified and empowered Kevin as our product manager. Kevin was given authority to make final decisions on concept, UX, design, and functionality and was ultimately responsible for bringing this product to life.
+After we reviewed the [CWS API][api], our Interaction designer, Visual Designer, and Business Analyst engaged with user “proxies” and stakeholders with child welfare industry experience. With that background, we began our own separate research data on tasks, needs, goals, tools, and pain points. Using this cross-disciplinary approach, we acquired an understanding of different user perspectives to design the experience as well as a name, CaliCares, to bring it to life.
 
-Taking a project from concept to completion requires a flexible approach enabling ongoing evaluation. We developed our prototype using the Studio Agile Model where small, highly-coordinated, cross-functional teams release working builds during sprint cycles organized into four phases: (1) Discovery, (2) Design, (3) Develop, and (4) Deploy.
+Based on our discoveries, we created a [persona][persona] to target a distinct user profile for our prototype and to focus our design. We then set up our initial backlog of epics and user stories, and prioritized and estimated them. Finally, we conducted Release Planning, arriving at a plan of three one-day sprints. 
 
-## 1. Discovery
+Based on our findings, we had the information necessary to start mapping out initial designs and build the code foundation concurrently. Our Interaction Designer, Architect, Business Analyst, Visual Designer, and Product Manager [sketched out concepts][wireframeprocess] for discussion and iteration. The Interaction Designer led a journey-mapping exercise, resulting in a [user journey map][journeymap] outlining the target users’ end-to-end experience and emotional responses. With this, the team followed into a design ideation exercise with the output of an agreed upon flow and sketched wires. In parallel, our Visual Designer created a design [Style Guide][styleguide]. Meanwhile, our developers spun up the code repository, created the app scaffolding and set up the [continuous integration build pipeline][devops].
 
-With us, it’s all about the user. Discovery is about learning as much as we can, as fast as we can about the available data, users, their problems, expectations, and pain points. We utilized human-centered design tools and techniques, which include ethnographic research, rapid prototyping, and personas.
+# 2. Sprint Cycles: Design, Develop, & Test
+We held a Sprint Planning session and were off-and-running. We conducted design sprints for future iterations in parallel with development sprints for already designed features. We held daily Scrums and created new user stories and bugs based on feedback and usability testing. We held Sprint Reviews and Retrospectives and incorporated feedback into the subsequent sprints.
 
-After we reviewed the open.fda.gov APIs, our interaction designer, visual designer, and business analyst engaged with three distinct focus groups of 3-4 potential users. Those interactions provided us with ethnographic data (e.g., demographics, tasks, needs, goals, tools, and pain points). Using this cross-disciplinary approach, we acquired an understanding of different user perspectives to design superior experiences.
+We continued persona-based ideation and created additional wireframes. The wireframes were moved into concept validation and usability testing. Bringing in different users was essential, as they provided fresh perspectives to drive a second iteration. In parallel, our Visual Designer began applying the Style Guide to create visual comps. We performed multiple rounds of usability testing on wireframes, visual compositions, and our web desktop and mobile prototype. Notes from our usability testing can be seen [here][usertesting].
 
-Based on our discoveries, we created personas to target the distinct user profiles for our prototype. Our efforts resulted in [two personas](https://github.com/DeloitteDigitalDC/REX/blob/master/evidence/ux/ReX-Personas-Final.pdf) and the decision to focus on a desktop product responsive to mobile platforms.
+Agile development means delivering early and often, which our engineers did by using responsive design pattern libraries to build components. Our approach was to get a minimum viable product (MVP) as quickly as possible to test it with users and iterate based on their feedback.
 
-During discovery, we also conducted our sprint planning, set up our initial backlog of user stories, and prioritization. We initially planned a one-week sprint. As our sprint was running, our team created new user stories based on user feedback and usability testing.
-When the first RFQ submission extension was announced, we scoped a second sprint, and groomed our backlog to prioritize any potential future sprints. This current, prioritized backlog was exported from Jira, and can be viewed [here](https://github.com/DeloitteDigitalDC/REX/blob/master/evidence/ReX-Backlog.png) and the completed user stories from both sprints can be viewed [here](https://github.com/DeloitteDigitalDC/REX/blob/master/evidence/Rex-StoryExport.xlsx).
+During our sprints the developers constructed unit tests for the user stories and QA executed [functional tests and built automated tests][scripts]. The tests were run as an integral part of our build pipeline. In addition to functional testing, we also performed [accessibility testing][accessibility]. Our entire [application stack][stack] leverages over six free and/or modern, open-source technologies like Angular and Node, and we used containerized deployment techniques to package our application and associated dependencies.
 
+# 3. Release
+We deployed CaliCares using our automated build pipeline. This maximized our deployment speed while reducing the risk of environment inconsistencies. The process started with the Jenkins CI server monitoring our configuration management tool, Git, for code changes. Once a code change was detected, it was compiled and tested. Jenkins then built the Docker container and deployed it to our production environment. For this request, we used [Amazon Web Services (AWS)][devops] virtual server instances as our infrastructure as a service.
 
-## 2. Design
+Just because the app is shipped doesn't mean we're finished. We used the [Nagios][devops] continuous monitoring tool to monitor system status and health (e.g., disk usage, current users, current load, etc.), and the environment is set up to notify us when a key metric moves outside normal operating ranges.
+Once we completed the automated unit tests to test our code and the product manager gave final approval, we deployed our product to [URL][calicares] and uploaded our final artifacts to GitHub. We were able to continuously monitor the application to confirm that it was performing as expected.
 
-Great design isn’t just beautiful, it’s emphatic. We used persona-based product concept ideation and user journey mapping and concluded with best practices-driven wireframe creation and usability testing.
+When we [create and deliver a product][agile], it’s more than working hard, each team member is committed to the best possible results. To see a little bit of what our process looks like in action, make sure to check out the [video][video] we put together of the footage we captured along the way.
 
-Our interaction designer, technical architect, business analyst, visual designer, and product manager sketched out initial concepts for discussion and iteration.  The interaction designer led the team in journey mapping, resulting in a user [journey map](https://github.com/DeloitteDigitalDC/REX/blob/master/evidence/ux/ReX-GSA%20ADS%20Journey%20Map_Deloitte.pdf) outlining the target users’ end-to-end experience and emotional responses.
-
-Armed with these tools, our interaction designer created initial wireframes in Omnigraffle. The wireframes were moved into concept validation and usability testing after approval. Bringing in different users was essential, as they were able to provide fresh perspectives to drive a second iteration.
-
-While the initial wireframes were being developed, our visual designer created a product [style guide](https://github.com/DeloitteDigitalDC/REX/blob/master/evidence/design/ReX-Styleguide-V3.pdf) for product manager approval and the development of visual compositions in Adobe Creative Suite. Following approval, our interaction designer conducted a round of usability testing, resulting in feedback that was used to update our designs. We performed multiple rounds of usability testing on our wireframes, visual compositions, and our web prototype. Notes from our usability testing can be seen [here](https://github.com/DeloitteDigitalDC/REX/tree/master/evidence/quality-assurance).  Two examples of iterations made to our product are explained below:
-
-1. In the [first version of the wireframes](https://github.com/DeloitteDigitalDC/REX/blob/master/evidence/ux/ReX-Wireframes-v1.pdf), we provided users with a slide out sidebar navigation which users found redundant and confusing.  Based on this feedback, we [revised the design](https://github.com/DeloitteDigitalDC/REX/blob/master/evidence/ux/ReX-Wireframes-v5.pdf) to remove sidebar navigation was and we implemented intuitive icon driven navigation (e.g. logo, profile).  We verified that this change improved the application flow by asking users questions like, "How would you navigate back to your Drug Cabinet?" during usability testing with a paper prototype from design comps.  We completed the verification process during another round of usability testing with a live version of the app where users successfully completed the tasks related to navigating the application.
-
-2. In early iterations, we provided the capability for users to compare two drugs in their virtual cabinet ([shown here](https://github.com/DeloitteDigitalDC/REX/blob/master/evidence/design/ReX-Comps-v2.pdf)).  During usability testing, users questioned the purpose of the comparison feature given the data we were able to capture from the API. Based on the results of our testing, we determined that this feature would not add value to the product and we decided to remove it ([as shown here](https://github.com/DeloitteDigitalDC/REX/blob/master/evidence/design/ReX-Comps-v3.pdf)). This was removed entirely from the design before a single line of code was written for this feature.
-
-## 3. Develop
-
-Agile development means delivering early and often. Our engineering approach was to get a minimum viable product (MVP) as quickly as possible so we could test the product with users and iterate based upon their feedback.
-
-Our technical architect, DevOps engineer, and frontend web developers kicked off Sprint 0 as soon as we got underway.  Our team spun up the source repository, created the app scaffolding and set up the build pipeline ([as seen here](https://github.com/DeloitteDigitalDC/REX/blob/master/evidence/ReX-DevOps.pdf)).  Our build pipeline was designed and built from the ground up to maximize the speed with which we can build and ship a feature while also adhering to QA and configuration management processes that are so critical to building a quality product.
-
-During our sprints the frontend web developers implemented and constructed unit tests for the identified user stories and delivery manager coordinated the creation of functional tests and test automation ([seen here](https://github.com/DeloitteDigitalDC/REX/tree/master/evidence/quality-assurance)).  All of the tests were run as an integral part of our build pipeline.  In addition to functional testing, our team also performed [accessibility testing](https://github.com/DeloitteDigitalDC/REX/tree/master/evidence/quality-assurance/accessability).  Our entire [application stack](https://github.com/DeloitteDigitalDC/REX/blob/master/evidence/ReX-App.pdf) leverages free and/or open source technologies like Angular and Node, and we used containerized deployment techniques using Docker to package our application and associated dependencies.
-
-## 4. Deploy
-
-When we ship we work to minimize mistakes.  That’s why we deploy using an automated process with containerized deployments, maximizing our deployment speed while reducing the risk of environment inconsistencies.  Our CI server monitored the code repository for changes made to the production branch (master) and – after a successful compile and test run – built the production container and shipped it to our production environment.  We’re set up to handle all kinds of infrastructure environments, but for this request we used Amazon Web Services virtual server instances for all of our deployment environments – dev/test/prod as well as monitoring and CI.
-
-Just because the app is shipped doesn't mean we're finished. We used a continuous monitoring tool (Nagios) to monitor system status and environment health (e.g. system load, disk usage, current users, current load, etc.), and the environment is set up to notify us when one of the key metrics moves outside normal operating ranges.
-
-When all unit and end-to-end testing was completed and the product manager gave his final approval, we deployed our product to http://askrex.io and uploaded to GitHub for review per the Request for Quotation instructions. In our production environment, we were able to continuously monitor the application to ensure that it was performing as expected.  In addition to uploading [installation instructions](https://github.com/DeloitteDigitalDC/REX/blob/master/INSTALL.md), we have also added [tips](https://github.com/DeloitteDigitalDC/REX/blob/master/USER-TIPS.md) to view some of features of the application.
-
-When we create and deliver a product, it’s more than just working hard days and long hours. It’s a labor of passion and love for us, where each member of our team is committed to putting out the best that they can. To see a little bit of what our process looks like in action, make sure to check out the [video](https://vimeo.com/132462802) we put together and some of the [pictures](https://github.com/DeloitteDigitalDC/REX/tree/master/evidence/media) we captured along the way.
-
+   [calicares]: <http://calicares.io/>
+   [tips]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/CaliCares-Tips.pdf>
+   [install]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/INSTALL.md>
+   [video]: <>
+   [matrix]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence>
+   [orgchart]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/CaliCares-OrgChart.pdf>
+   [agile]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/process/CaliCares-AgileProcess.pdf>
+   [api]: <https://chhs.data.ca.gov/Facilities-and-Services/Community-Care-Licensing-Foster-Family-Agency-Loca/v9bn-m9p9>
+   [persona]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/ux/persona/CaliCares%20-%20User%20Persona%20v2.pdf>
+   [wireframeprocess]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/process/CaliCares-WireframeProcess.pdf>
+   [wireframe]: <https://github.com/DeloitteDigitalDC/CaliCares/tree/master/evidence/ux/wireframes>
+   [journeymap]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/ux/user-journey/CaliCares-JourneyMapv4.pdf>
+   [usertesting]: <https://github.com/DeloitteDigitalDC/CaliCares/tree/master/evidence/ux/testing>
+   
+   [styleguide]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/design/visual-compositions/styleguide/CHHS-Styleguide-V2.pdf>
+   [devops]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/CaliCares-DevOps.pdf>
+   [stack]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/CaliCares-App.pdf>
+   [scripts]: <https://github.com/DeloitteDigitalDC/CaliCares/tree/master/evidence/quality-assurance/scripts>
+   [accessibility]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/quality-assurance/accessibility%20testing/CaliCares%20-%20Accessibility%20Testing%20-%20Edit%20General%20Information.png>
+   
