@@ -3,7 +3,7 @@
 
 [Install locally.][install]
 
-[View the video.][video]
+View the video.
 
 [See how we met the requirements.][matrix]
 
@@ -11,7 +11,7 @@
 At Deloitte Digital, we have a core belief that great design doesn’t just happen. Ideas alone are common. It takes discipline, research, and relentlessly talented and creative minds to make insights into something tangible that we can build, test, and iterate on. 
 That said, meet our experienced, multidisciplinary and collaborative [team][orgchart] using nine labor categories identified in the RFI:
 
- - Brian, Product Manager
+- Brian, Product Manager
 - Bob, Agile Coach
 - Jenna, Delivery Manager/Business Analyst
 - Lauren, Technical Architect
@@ -55,7 +55,6 @@ When we [create and deliver a product][agile], it’s more than working hard, ea
    [calicares]: <http://calicares.io/>
    [tips]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/CaliCares-Tips.pdf>
    [install]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/INSTALL.md>
-   [video]: <>
    [matrix]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence>
    [orgchart]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/CaliCares-OrgChart.pdf>
    [agile]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/process/CaliCares-AgileProcess.pdf>

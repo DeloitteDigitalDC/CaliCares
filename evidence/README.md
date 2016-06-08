@@ -53,7 +53,6 @@ RFI REQ | Item | Details
 [licenses]: <https://github.com/DeloitteDigitalDC/CaliCares/tree/master/evidence/licenses>
    [tips]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/CaliCares-Tips.pdf>
    [install]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/INSTALL.md>
-   [video]: <>
    [process]: <https://github.com/DeloitteDigitalDC/CaliCares/tree/master/evidence/process>
    [matrix]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/CaliCares-Requirements.pdf>
    [orgchart]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/CaliCares-OrgChart.pdf>
