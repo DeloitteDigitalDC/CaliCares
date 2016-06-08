@@ -22,10 +22,10 @@ RFI REQ | Item | Details
 |2|Demonstrate following of U.S. Digital Services Playbook|**Bring in experienced teams:** We leveraged experienced team members from across various disciplines. [View here][orgchart]|
 |2|Demonstrate following of U.S. Digital Services Playbook|**Choose a modern technology stack:** We chose a modern web and deployment technology stack. [View here][stack]|
 |2|Demonstrate following of U.S. Digital Services Playbook|**Deploy in a flexible hosting environment:** We deployed using a cloud hosting provider, Amazon Web Services. [View here][devops]|
-|2|Demonstrate following of U.S. Digital Services Playbook|Automate testing and deployments: We built a continuous integration pipeline that automated our tests and deployments. [View scripts][scripts] [View DevOps][devops]|
+|2|Demonstrate following of U.S. Digital Services Playbook|**Automate testing and deployments:** We built a continuous integration pipeline that automated our tests and deployments. [View scripts][scripts] [View DevOps][devops]|
 |2|Demonstrate following of U.S. Digital Services Playbook|**Manage security and privacy:** While security and privacy are critical and we have deep understanding, experience, and abilities to meet requirements, the play was deemed not relevant to the prototype itself.|
 |2|Demonstrate following of U.S. Digital Services Playbook|**Use data to drive decisions:** When conducting usability testing, we measured how many users were able to correctly identify how to complete a task. This data helped us to identify opportunities for improvement. [View here][usertesting]
-|2|Demonstrate following of U.S. Digital Services Playbook|**Default to open:** We started with our existing open source “REX” repository—which already consisted of open source frameworks—then forked it (copied it) and built out the CaliCares prototype.
+|2|Demonstrate following of U.S. Digital Services Playbook|**Default to open:** We started with our existing open source “REX” repository—which already consisted of open source frameworks—then forked it (copied it) and built out the CaliCares prototype. [View here][coderepository]
 |2.a.|Assigned One Leader Responsible|We assigned one Product Manager, Brian Blankenship, and gave him authority and responsibility and held him accountable for the quality of the prototype. [View here][orgchart]
 |2.b.|Assembled a Multi-Disciplinary Team |We assembled a team consisting of: Product Manager, Agile Coach, Delivery Manager, Business Analyst, Technical Architect, Interaction Designer (2), Visual Designer, Writer, Front End Web Developer, DevOps Engineer, and Quality Assurance. [View here][orgchart]
 |2.c.|Included people in the prototype development and  design process|We conducted user interviews and usability tests on wireframes and visual compositions. [View here][usertesting]|
@@ -77,5 +77,5 @@ RFI REQ | Item | Details
    [accessibility]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/quality-assurance/accessibility%20testing/CaliCares%20-%20Accessibility%20Testing%20-%20Edit%20General%20Information.png>
    
    [storyexport]:<https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/CaliCares-StoryExport.xlsx>
-   [backlog]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/CaliCare-BacklogExport.xlsx>
+   [backlog]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/CaliCares-BacklogExport.xlsx>
    

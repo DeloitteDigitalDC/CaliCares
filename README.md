@@ -3,7 +3,7 @@
 
 [Install locally.][install]
 
-[View the video.][video] (password: CaliCares)
+[View the video (password: CaliCares)][video] or download [here][videogit]
 
 [See how we met the requirements.][matrix]
 
@@ -33,7 +33,7 @@ After we reviewed the [CWS API][api], our Interaction designer, Visual Designer,
 
 Based on our discoveries, we created a [persona][persona] to target a distinct user profile for our prototype and to focus our design. We then set up our initial backlog of epics and user stories, and prioritized and estimated them. Finally, we conducted Release Planning, arriving at a plan of three one-day sprints. 
 
-Based on our findings, we had the information necessary to start mapping out initial designs and build the code foundation concurrently. Our Interaction Designer, Architect, Business Analyst, Visual Designer, and Product Manager [sketched out concepts][wireframeprocess] for discussion and iteration. The Interaction Designer led a journey-mapping exercise, resulting in a [user journey map][journeymap] outlining the target users’ end-to-end experience and emotional responses. With this, the team followed into a design ideation exercise with the output of an agreed upon flow and sketched wires. In parallel, our Visual Designer created a design [Style Guide][styleguide]. Meanwhile, our developers spun up the code repository, created the app scaffolding and set up the [continuous integration build pipeline][devops].
+Based on our findings, we had the information necessary to start mapping out initial designs and build the code foundation concurrently. Our Interaction Designer, Architect, Business Analyst, Visual Designer, and Product Manager [sketched out concepts][wireframeprocess] for discussion and iteration. The Interaction Designer led a journey-mapping exercise, resulting in a [user journey map][journeymap] outlining the target users’ end-to-end experience and emotional responses. With this, the team followed into a design ideation exercise with the output of an agreed upon flow and sketched wires. In parallel, our Visual Designer created a design [Style Guide][styleguide]. Meanwhile, our developers spun up the [code repository][client], created the app scaffolding and set up the [continuous integration build pipeline][devops].
 
 # 2. Sprint Cycles: Design, Develop, & Test
 We held a Sprint Planning session and were off-and-running. We conducted design sprints for future iterations in parallel with development sprints for already designed features. We held daily Scrums and created new user stories and bugs based on feedback and usability testing. We held Sprint Reviews and Retrospectives and incorporated feedback into the subsequent sprints.
@@ -55,7 +55,9 @@ When we [create and deliver a product][agile], it’s more than working hard, ea
    [calicares]: <http://calicares.io/>
    [tips]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/CaliCares-Tips.pdf>
    [install]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/INSTALL.md>
+   [client]: <https://github.com/DeloitteDigitalDC/CaliCares/tree/master/client>
    [video]: <https://vimeo.com/169863877>
+   [videogit]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/process/CaliCares-Video.mp4>
    [matrix]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence>
    [orgchart]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/CaliCares-OrgChart.pdf>
    [agile]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/process/CaliCares-AgileProcess.pdf>
