@@ -45,12 +45,12 @@ Agile development means delivering early and often, which our engineers did by u
 During our sprints the developers constructed unit tests for the user stories and QA executed [functional tests and built automated tests][scripts]. The tests were run as an integral part of our build pipeline. In addition to functional testing, we also performed [accessibility testing][accessibility]. Our entire [application stack][stack] leverages over six free and/or modern, open-source technologies like Angular and Node, and we used containerized deployment techniques to package our application and associated dependencies.
 
 # 3. Release
-We deployed CaliCares using our automated build pipeline. This maximized our deployment speed while reducing the risk of environment inconsistencies. The process started with the Jenkins CI server monitoring our configuration management tool, Git, for code changes. Once a code change was detected, it was compiled and tested. Jenkins then built the Docker container and deployed it to our production environment. For this request, we used [Amazon Web Services (AWS)][devops] virtual server instances as our infrastructure as a service.
+We deployed CaliCares using our automated build pipeline. This maximized our deployment speed while reducing the risk of environment inconsistencies. The process started with the Jenkins CI server monitoring our configuration management tool, Git, for code changes. Once a code change was detected, it was compiled and tested. Jenkins then built the Docker container and deployed it to our production environment. For this request, we used [Amazon Web Services (AWS)][stack] virtual server instances as our infrastructure as a service.
 
 Just because the app is shipped doesn't mean we're finished. We used the [Nagios][devops] continuous monitoring tool to monitor system status and health (e.g., disk usage, current users, current load, etc.), and the environment is set up to notify us when a key metric moves outside normal operating ranges.
 Once we completed the automated unit tests to test our code and the product manager gave final approval, we deployed our product to [URL][calicares] and uploaded our final artifacts to GitHub. We were able to continuously monitor the application to confirm that it was performing as expected.
 
-When we [create and deliver a product][agile], it’s more than working hard, each team member is committed to the best possible results. To see what our process looks like in action, make sure to check out the [video][video] (password: CaliCares) we put together of the footage we captured along the way.
+When we create and deliver a product, it’s more than working hard, each team member is committed to the best possible results. To see what our process looks like in action, make sure to check out the [video][video] (password: CaliCares) we put together of the footage we captured along the way.
 
    [calicares]: <http://calicares.io/>
    [tips]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/CaliCares-Tips.pdf>
@@ -58,7 +58,7 @@ When we [create and deliver a product][agile], it’s more than working hard, ea
    [client]: <https://github.com/DeloitteDigitalDC/CaliCares/tree/master/client>
    [video]: <https://vimeo.com/169863877>
    [videogit]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/process/CaliCares-Video.mp4>
-   [matrix]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence>
+   [matrix]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/README.md>
    [orgchart]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/CaliCares-OrgChart.pdf>
    [agile]: <https://github.com/DeloitteDigitalDC/CaliCares/blob/master/evidence/process/CaliCares-AgileProcess.pdf>
    [api]: <https://chhs.data.ca.gov/Facilities-and-Services/Community-Care-Licensing-Foster-Family-Agency-Loca/v9bn-m9p9>
