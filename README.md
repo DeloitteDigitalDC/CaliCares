@@ -3,12 +3,12 @@
 
 [Install locally.][install]
 
-[View the video (password: CaliCares)][video] or download [here][videogit]
+[View the video (password: CaliCares)][video] or download [here.][videogit]
 
 [See how we met the requirements.][matrix]
 
 # CHHS Agile Development Pre-Qualified (ADPQ) Vendor Pool – Deloitte Digital’s Technical Approach
-At Deloitte Digital, we have a core belief that great design doesn’t just happen. Ideas alone are common. It takes discipline, research, and relentlessly talented and creative minds to make insights into something tangible that we can build, test, and iterate on. 
+At Deloitte Digital, we have a core belief that great design doesn’t just happen. It takes discipline, research, and relentlessly talented and creative minds to make insights into something tangible that we can build, test, and iterate on. 
 That said, meet our experienced, multidisciplinary and collaborative [team][orgchart] using nine labor categories identified in the RFI:
 
 - Brian, Product Manager
@@ -24,10 +24,10 @@ That said, meet our experienced, multidisciplinary and collaborative [team][orgc
 
 We identified and empowered Brian as our Product Manager. He was given authority to make final decisions on concept, UX, design, and functionality.
 
-Going from concept to completion requires a flexible approach that enables ongoing evaluation. For the ADPQ, we developed our prototype using our agile approach that is based on Scrum and the U.S. Digital Services Playbook. We quickly assembled a small, highly-coordinated, cross-functional team to create working software in [three phases: (1) Discovery, (2) Sprint Cycles, and (3) Release][agile]. All of these phases were met with a commitment to focusing on the user and using open source software and standards.
+Going from concept to completion requires a flexible approach that enables ongoing evaluation. For the ADPQ, we developed our prototype using our agile approach that is based on Scrum and the U.S. Digital Services Playbook, which you'll see demonstrated throughout our Technical Approach and our [Requirements Matrix][matrix]. We quickly assembled a small, highly-coordinated, cross-functional team to create working software in [three phases: (1) Discovery, (2) Sprint Cycles, and (3) Release][agile]. All of these phases were met with a commitment to focusing on the user and using open source software and standards.
 
 # 1. Discovery
-With us, it’s all about the user. During the Discovery phase, we learned as much as we could, as fast as we could about the users, their problems, expectations, and pain points. We utilized over 4 human-centered design tools and techniques throughout.
+During the Discovery phase, we learned as much as we could, as fast as we could about the users, their problems, expectations, and pain points. We utilized over 4 human-centered design tools and techniques throughout.
 
 After we reviewed the [CWS API][api], our Interaction designer, Visual Designer, and Business Analyst engaged with user “proxies” and stakeholders with child welfare industry experience. With that background, we began our own separate research data on tasks, needs, goals, tools, and pain points. Using this cross-disciplinary approach, we acquired an understanding of different user perspectives to design the experience as well as a name, CaliCares, to bring it to life.
 
@@ -38,7 +38,7 @@ Based on our findings, we had the information necessary to start mapping out ini
 # 2. Sprint Cycles: Design, Develop, & Test
 We held a Sprint Planning session and were off-and-running. We conducted design sprints for future iterations in parallel with development sprints for already designed features. We held daily Scrums and created new user stories and bugs based on feedback and usability testing. We held Sprint Reviews and Retrospectives and incorporated feedback into the subsequent sprints.
 
-We continued persona-based ideation and created additional wireframes. The wireframes were moved into concept validation and usability testing. Bringing in different users was essential, as they provided fresh perspectives to drive a second iteration. In parallel, our Visual Designer began applying the Style Guide to create visual comps. We performed multiple rounds of usability testing on wireframes, visual compositions, and our web desktop and mobile prototype. Notes from our usability testing can be seen [here][usertesting].
+We continued persona-based ideation and created additional wireframes. The wireframes were moved into concept validation and usability testing. Bringing in different users was essential, as they provided fresh perspectives to drive a second iteration. In parallel, our Visual Designer began applying the Style Guide to create visual comps. We performed multiple rounds of usability testing on wireframes and visual compositions. Notes from our usability testing can be seen [here][usertesting].
 
 Agile development means delivering early and often, which our engineers did by using responsive design pattern libraries to build components. Our approach was to get a minimum viable product (MVP) as quickly as possible to test it with users and iterate based on their feedback.
 
